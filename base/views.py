@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView, CreateView
-from django.views.generic import View
+# from django.views.generic import View
+from django.views import View
 from django.shortcuts import render
 
 from rest_framework import generics, mixins
@@ -51,18 +52,31 @@ class Privacy(TemplateView):
  #ENDPOINT to post Volunteer model collection
 
 
-class VolCreateView(CreateView):
+class VolCreateView(View):
     template_name = 'base/volunteer.html'
-    form_class = VolunteerForm
-    success_url = 'vs'
 
-    def form_valid(self,form):
-         
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = VolunteerForm(request.POST)
 
         if form.is_valid():
             form.save()
-            return redirect('vs')
-        return super().form_valid(form)
+            return redirect('glf:vs')
+        
+        print(form.errors)
+        return redirect('glf:main')
+
+
+    # def form_valid(self,form):
+         
+
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('vs')
+    #     return super().form_valid(form)
 
 
       

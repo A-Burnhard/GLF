@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en"> 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
-      href="/assets/images/logo-one-removebg-preview.png"
+      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}" 
       type="image/icon type"
       style="border-radius: 100%"
     />
-    <link rel="stylesheet" href="/assets/css/chapters.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="{% static 'base/assets/css/chapters.css' %}" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -23,29 +24,29 @@
     />
     <link
       rel="stylesheet"
-      href="/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}" 
     />
     <link
       rel="stylesheet"
-      href="/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}" 
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" /> 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Chapters</title>
     <link
       rel="icon"
-      href="/assets/images/logo-one.jpg"
+      href="{% static 'base/assets/images/logo-one.jpg' %}"    
       type="image/icon type"
       style="border-radius: 100%"
     />
   </head>
   <body>
     <div class="loader">
-      <img src="/assets/icons/twirl-preloader.gif" alt="" />
+      <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" /> 
     </div>
 
     <div class="first-section">
-      <img src="/assets/images/logo-removebg-preview.png" alt="logo-image" />
+      <img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image" /> 
     </div>
     <nav class="navigation" id="navigation">
       <ul class="links">
@@ -99,7 +100,7 @@
 
         <div class="glf-header">
           <a href="/index.html"
-            ><img src="/assets/images/logo-removebg-preview.png" alt=""
+            ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="" 
           /></a>
         </div>
         <!-- <a href="#" class="list-element-button">
@@ -165,8 +166,8 @@
       >. All rights reserved.
     </div>
 
-    <script src="/scripts.js"></script>
-    <script src="/assets/scripts/chapters.js"></script>
+    <script src="{% static 'base/scripts.js' %}"></script>  
+    <script src="{% static 'base/assets/scripts/chapters.js' %}"></script>  
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

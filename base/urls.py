@@ -6,7 +6,7 @@ from base.views import *
 #( VolunteerDetailAPIView, DonorDetailAPIView,
 #TourDetailAPIView, VolunteerListCreateAPIView, DonorListCreateAPIView, TourListCreateAPIView)
 
-
+app_name = 'glf'
 urlpatterns = [
     #CreateAPI Routers
     path('', HomePage.as_view(), name ="main"),

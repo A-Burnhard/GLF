@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+import notifications.urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
     path('manager/', include('manager.urls')),
     path('api/', include('api.urls')),
+    path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
   #  path('login/', auth_views.LoginView.as_view(template_name='manager/login.html'), name ='login'),
    # path('logout/', auth_views.LogoutView.as_view(template_name='manager/logout.html'), name ='logout'),
 

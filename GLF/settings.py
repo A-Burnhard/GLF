@@ -163,6 +163,3 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated"
     ]
 }
-
-CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
-# CSRF_TRUSTED_ORIGINS = ['*']

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="en"> {% static 'base' %}
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,11 +8,11 @@
     <title>Global Leaders Foundation</title>
     <link
       rel="icon"
-      href="/assets/images/logo-one-removebg-preview.png"
+      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"  {% static 'base' %}
       type="image/icon type"
       style="border-radius: 100%"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" />  {% static 'base' %}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,23 +25,23 @@
     />
     <link
       rel="stylesheet"
-      href="./assets/bootstrap-5.2.0-dist/css/bootstrap.min.css"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}" 
     />
     <link
       rel="stylesheet"
-      href="./assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}" 
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="loader">
-      <img src="/assets/icons/twirl-preloader.gif" alt="" />
+      <!-- <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" />  -->
     </div>
 
     <div class="first-section">
       <img
-        src="./assets/images/logo-removebg-preview.png"
+        src="{% static 'base/assets/images/logo-removebg-preview.png' %}" 
         alt="logo-image"
         data-aos="fade-down"
       />
@@ -48,44 +49,44 @@
     <nav class="navigation">
       <ul class="links">
         <li>
-          <a href="/index.html"
+          <a href="{% url 'glf:main' %}" 
             ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
           >
         </li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <li>
-          <a href="/assets/about/about.html"
+          <a href="/assets/about/about.html" {% static 'base' %}
             ><span class="fa fa-address-card-o"></span> About Us</a
           >
         </li>
         <li>
-          <a href="/assets/management/management.html"
+          <a href="/assets/management/management.html" {% static 'base' %}
             ><span class="fa fa-briefcase"></span> Management Team</a
           >
         </li>
         <li>
-          <a href="/assets/programmes/programmes.html"
+          <a href="/assets/programmes/programmes.html" {% static 'base' %}
             ><span class="fa fa-calendar"></span> Programmes</a
           >
         </li>
         <li>
-          <a href="./assets/volunteerScreen/volunteer.html"
+          <a href="./assets/volunteerScreen/volunteer.html" {% static 'base' %}
             ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
             Volunteer With Us</a
           >
         </li>
         <li>
-          <a href="/assets/chapters/chapters.html"
+          <a href="/assets/chapters/chapters.html" {% static 'base' %}
             ><span class="fa fa-bookmark"></span> Chapters</a
           >
         </li>
         <li>
-          <a href="/assets/donate/donate.html"
+          <a href="/assets/donate/donate.html" {% static 'base' %}
             ><span class="fa fa-money"></span> Donate</a
           >
         </li>
         <li>
-          <a href="/assets/contact/contact.html"
+          <a href="/assets/contact/contact.html" {% static 'base' %}
             ><samp class="fa fa-phone"></samp> Contact</a
           >
         </li>
@@ -96,9 +97,9 @@
         </a>
 
         <div class="glf-header">
-          <a href="/index.html"
-            ><img src="/assets/images/logo-removebg-preview.png" alt=""
-          /></a>
+          <a href="{% url 'glf:main' %}" 
+            ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="" 
+          /></a> 
         </div>
 
         <!-- <a href="#" class="list-element-button">
@@ -140,35 +141,35 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="./assets/images/managment.jpg"
+                src="{% static 'base/assets/images/managment.jpg' %}" 
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/images/rsz_1slider.jpg"
+                src="{% static 'base/assets/images/rsz_1slider.jpg' %}" 
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/images/volunteer.png"
+                src="{% static 'base/assets/images/volunteer.png' %}" 
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/images/hiv.jpg"
+                src="{% static 'base/assets/images/hiv.jpg' %}" 
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/images/excort.jpg"
+                src="{% static 'base/assets/images/excort.jpg' %}" 
                 class="d-block w-100"
                 alt="..."
               />
@@ -200,12 +201,12 @@
     </div>
     <section class="two" data-aos="fade-up" data-aos-duration="2000">
       <div class="leader-section">
-        <img src="./assets/images/director-edit.jpg" alt="leader-image" />
+        <img src="{% static 'base/assets/images/director-edit.jpg' %}" alt="leader-image" /> 
       </div>
       <div class="information-icon-text">
         <div class="info-icon-container">
           <img
-            src="./assets/icons/information icon logo.svg"
+            src=" {% static 'base/assets/icons/information icon logo.svg' %}"
             alt="information icon"
           />
         </div>
@@ -228,7 +229,7 @@
     <div class="obj" data-aos="fade-right">OBJECTIVES</div>
     <section class="objectives" data-aos="fade-up" data-aos-duration="2000">
       <div class="obj-icon-container">
-        <img src="./assets/icons/objectives.svg" alt="objectives" />
+        <img src="{% static 'base/assets/icons/objectives.svg' %}" alt="objectives" /> 
       </div>
       <div class="obj-intro">
         We hope to achieve the following objectives as an organization by your
@@ -252,14 +253,14 @@
     <div class="partners-header" data-aos="fade-right">OUR PARTNERS</div>
     <div class="partner-grid">
       <div data-aos="flip-left">
-        <img src="/assets/images/unaids.jpg" alt="unaids" loading="lazy" />
+        <img src=" {% static 'base/assets/images/unaids.jpg' %}" alt="unaids" loading="lazy" />
       </div>
       <div data-aos="flip-left">
-        <img src="/assets/images/aids-com.jpg" alt="aids-com" loading="lazy" />
+        <img src="{% static 'base/assets/images/aids-com.jpg' %}" alt="aids-com" loading="lazy" /> 
       </div>
       <div data-aos="flip-left">
         <img
-          src="/assets/images/spearhead-logo.png"
+           src="{% static 'baseassets/images/spearhead-logo.png' %} " 
           alt="spearhead-logo"
           loading="lazy"
         />
@@ -276,9 +277,9 @@
       <div class="left-section">
         <div class="brand">Global Leaders Foundation</div>
         <div class="lists">
-          <a href="/index.html">Home <span>|</span></a>
-          <a href="/assets/about/about.html">About<span> |</span></a>
-          <a href="/assets/contact/contact.html">Contact</a>
+          <a href="/index.html">Home <span>|</span></a> 
+          <a href="/assets/about/about.html">About<span> |</span></a> 
+          <a href="/assets/contact/contact.html">Contact</a> 
           <div></div>
         </div>
       </div>
@@ -320,16 +321,16 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      <a href="/index.html" style="color: #15a2d7; text-decoration: none"
-        >Global Leaders Foundation</a
+      <a href="{% url 'glf:main' %}"
+        > Global Leaders Foundation</a" style="color: #15a2d7; text-decoration: none" 
       >. All rights reserved.
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="./assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
-    <script src="./scripts.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{% static 'base/assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js' %}"></script> 
+    <script src="{% static 'base/assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.js' %}"></script>  
+    <script src="{% static 'base/scripts.js' %}"></script>  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
     <script>
       AOS.init();
     </script>

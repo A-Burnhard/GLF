@@ -13,49 +13,9 @@ placement = (
 )
 
 class VolunteerForm(forms.ModelForm):
-
-
     class Meta:
         model = Volunteer
-        fields = '__all__'
-        labels = {
-            "username" : "Full name",
-            "DateOfBirth" : " Date of Birth",
-            "email" : "Email",
-            "phoneNumber" : "Phone Number",
-            "address" : "Residential Address",
-            "city" : "City",
-            "country" : "Country",
-            "academicBg" : "Academic Background", 
-            "skills" : "Skills" ,
-            "IntAreaOfPlacement" : "Interested Area of Placement",
-            "DurOfPLacement" : "Duration of Placement",
-            "citizenship" : " Citizenship",
-            "comments" : "Comments",
-
-
-        } 
-
-
-
-
-        widgets = {
-
-              'username': forms.TextInput(attrs={'class': 'form-control', "type" : "text", "class" : "firstname-input", "placeholder" : " Full name"}),
-              'DateOfBirth': forms.DateInput(attrs={'class': 'form-control', 'type' : 'date' ,'class' : 'date-input', 'name' : 'DateOfBirth' }),
-             'email': forms.EmailInput(attrs={'class': 'form-control',  'type' : "email", 'class': "email-input" ,'name' : "email", 'placeholder' : "emailus@sample.com"}),
-              'phoneNumber': forms.NumberInput(attrs={'class': 'form-control', 'type' : "phone", 'class': "phone-input", 'name' :"phoneNumber", 'placeholder' :"Enter phone number"}),
-              'address': forms.TextInput(attrs={'class': 'form-control','type':"address", 'class' :"address-input", 'name' :"address", 'placeholder': "Enter residential address"  }),
-               'city': forms.TextInput(attrs={'class': 'form-control', "type" : "city", "class" : "city-input" , "placeholder" : "Enter city name"}),
-                'country': forms.TextInput(attrs={'class': 'form-control', "type" : "country", "class" : "city-input" , "placeholder" : "Enter  name"}),
-                 'academicBg': forms.TextInput(attrs={ 'class' : 'form-control', "type" : "text", "class" : "academics-input", "placeholder" : "Academic background"  }),
-                  'skills': forms.TextInput(attrs={ 'class' : 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : " Your skills" }),
-                   'IntAreaOfPlacement': forms.TextInput(attrs={ 'class' : 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : "Interested area of placement "}),
-                    'DurOfPLacement': forms.TextInput(attrs={'class' : 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : " Less than a month or two "}),
-                     'citizenship': forms.TextInput(attrs={'class' : 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : "American "}),
-                      'comments': forms.TextInput(attrs={'class' : 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : "Any comments" }),
-
-        }
+        exclude = ['id']
         
 
 class DonorForm(forms.ModelForm):

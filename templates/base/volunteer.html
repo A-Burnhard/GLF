@@ -42,9 +42,9 @@
     />
   </head>
   <body>
-    <div class="loader">
+    <!-- <div class="loader">
       <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" /> 
-    </div>
+    </div> -->
 
     <div class="first-section">
       <img src=" {% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image" />
@@ -52,7 +52,7 @@
     <nav class="navigation">
       <ul class="links">
         <li>
-          <a href="{% url 'main' %}"   
+          <a href="{% url 'glf:main' %}"   
             ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
           >
         </li>
@@ -99,7 +99,7 @@
           <span class="fa fa-navicon"></span>
         </a>
         <div class="glf-header">
-          <a href="{% url 'main' %}" 
+          <a href="{% url 'glf:main' %}" 
             ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt=""  
           /></a>
         </div>
@@ -256,49 +256,47 @@
       >
         <div class="fiber">Join Us</div>
         <div class="header">Become a volunteer today</div>
-        <form action="/mainvol/" method="post">
+
+        
+        <form action="{% url 'glf:mainvol' %}" method="POST">
           {% csrf_token %}
-          <label for="firstname" class="f-name">First name</label>
+          <label for="name" class="f-name">Full name</label>
           <input
             type="text"
-            class="firstname-input"
-            placeholder="Enter first name"
-            required
+            name="username"
+            class="name-input"
+            placeholder="Enter full name"
           />
-          <label for="lastname" class="l-name">Last name</label>
-          <input
-            type="text"
-            class="lastname-input"
-            placeholder="Enter last name"
-            required
-          />
+
           <label for="email" class="email">E-mail</label>
           <input
             type="email"
             class="email-input"
+            name="email"
             placeholder="okantey@example.com"
-            required
           />
           <label for="dob" class="dob">Date of birth</label>
-          <input type="date" class="date-input" required />
+          <input type="date" name="DateOfBirth" class="date-input" required />
+          
           <label for="telephone" class="phone">Phone number</label>
           <input
             type="phone"
             class="phone-input"
+            name="phoneNumber"
             placeholder="Enter phone number"
-            required
           />
           <label for="address" class="address">Address</label>
           <input
             type="address"
             class="address-input"
+            name="address"
             placeholder="Enter residential address"
-            required
           />
           <label for="city" class="city">City</label>
           <input
             type="city"
             class="city-input"
+            name="city"
             placeholder="Enter city name"
             required
           />
@@ -306,13 +304,13 @@
           <input
             type="text"
             class="academics-input"
+            name="academicBg"
             placeholder="Academic background"
-            required
           />
           <label for="country">Country</label
           ><span style="display: inline; float: none"></span>
 
-          <select id="country" name="country" class="form-control" required>
+          <select id="country"  name="country" class="form-control" required>
             <option value="Select your country">
               -----Select Your Country-----
             </option>
@@ -612,7 +610,7 @@
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
           <label for="area" class="area">Interested area of placement</label>
-          <select name="placement" id="placement" required>
+          <select name="IntAreaOfPlacement"  id="placement" required>
             <option value="Select area of placement">
               -----Select area of placement-----
             </option>
@@ -640,7 +638,7 @@
             </option>
           </select>
           <label for="duration" class="duration">Duration of placement</label>
-          <select name="duration" id="duration" required>
+          <select name="DurOfPLacement" id="duration" required>
             <option value="Select duration">-----Select duration-----</option>
             <option value="month or less">Month or less</option>
             <option value="1-3 months">1-3 Month(s)</option>
@@ -723,7 +721,7 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      <a href="{% url 'main' %}" style="color: #15a2d7; text-decoration: none"
+      <a href="{% url 'glf:main' %}" style="color: #15a2d7; text-decoration: none"
         >Global Leaders Foundation</a
       >. All rights reserved.
     </div>

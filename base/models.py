@@ -10,26 +10,20 @@ from django.dispatch import receiver
 
 
 class Volunteer(models.Model):
-    #id = models.BigAutoField(primary_key = True)
-  #  user=models.ForeignKey(
-    #    User, on_delete=models.CASCADE, null= True, blank = True
-    placement = (
-     (1, 'okay'),
-     (2, 'something') )
     
     id = models.AutoField(primary_key= True)
     username = models.CharField(max_length=250, null= True)
-    DateOfBirth = models.DateField()
-    email = models.EmailField(null =True)
+    DateOfBirth = models.DateField(null=True)
+    email = models.EmailField(null =True,)
     phoneNumber = models.TextField(null = True)
-    address= models.CharField(max_length=200, null=True)
-    city = models.CharField(max_length=100, null=True, choices=placement)
+    address= models.CharField(max_length=15, null=True)
+    city = models.CharField(max_length=100, null=True)
     country = models.CharField(max_length=50, null=True)
-    academicBg = models.CharField(max_length=200)
-    skills = models.TextField(max_length=250)
-    IntAreaOfPlacement = models.CharField(max_length=100)
-    DurOfPLacement = models.CharField(max_length=100)
-    comments = models.TextField(max_length=350)
+    academicBg = models.CharField(max_length=200, null=True)
+    skills = models.TextField(max_length=250, null=True)
+    IntAreaOfPlacement = models.CharField(max_length=100, null=True) 
+    DurOfPLacement = models.CharField(max_length=100, null=True)
+    comments = models.TextField(max_length=350, null=True)
     date = models.DateTimeField(auto_now_add = True, null = True)
 
     class Meta:
