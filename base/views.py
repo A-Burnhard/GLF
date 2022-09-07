@@ -16,7 +16,11 @@ class SuccessPage200(ListView):
     success_url = reverse_lazy('success')
    
 
+<<<<<<< HEAD
 def volunteer(request):
+=======
+def volunteer(view):
+>>>>>>> 06f116afd90ef19ffb6ee4d0b927eaffa734d44c
     form = VolunteerForm()
 
     if request.method == 'POST':
