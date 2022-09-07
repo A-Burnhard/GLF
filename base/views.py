@@ -1,24 +1,12 @@
-from django.shortcuts import render, redirect
-from django.views.generic.base import TemplateView
+from django.http import HttpResponse
+from django.shortcuts import render,redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
-
-from django.contrib.auth.forms import UserCreationForm
 from django.views import View
-from .models import Tour, Volunteer
-from .forms import VolunteerForm
+from .models import Tour, Volunteer, Donor
+from .forms import VolunteerForm, DonorForm, TourForm
 
-class VolunteerView(FormView):
-
-    template_name = 'volunteer.html'
-    form_class = VolunteerForm
-    success_url = reverse_lazy('Success')
-
-class HomeView(ListView):
-
-    template_name = 'home.html'
-    success_url = reverse_lazy('home')
 
 
 class SuccessPage200(ListView):
@@ -27,3 +15,38 @@ class SuccessPage200(ListView):
     context_object_name = 'success'
     success_url = reverse_lazy('success')
    
+
+def volunteer(request):
+    form = VolunteerForm()
+
+    if request.method == 'POST':
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form' : form}
+    return render(request, 'volunteer.html', context)
+
+
+def donor(request):
+    form = DonorForm()
+
+    if request.method == 'POST':
+        form = DonorForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form' : form}
+    return render(request, 'donor.html', context)
+
+    
+def tour(request):
+    form = TourForm()
+
+    if request.method == 'POST':
+        form = TourForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form' : form}
+    return render(request, 'tour.html', context)

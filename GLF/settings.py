@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'manager.apps.ManagerConfig',
+
      # General use templates & template tags (should appear first)
     
      # Optional: Django admin theme (must be before django.contrib.admin)
@@ -129,6 +131,7 @@ MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+    'manager/static/',
     ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
