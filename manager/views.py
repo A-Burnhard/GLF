@@ -1,11 +1,10 @@
+from django.views.generic.base import TemplateView
 from django.http import HttpResponse
+from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views import View
 
-<<<<<<< HEAD
-=======
-class manager(View):
-    template_name = 'index.html'
-  #  success_url = reverse_lazy('success')
-   
->>>>>>> 06f116afd90ef19ffb6ee4d0b927eaffa734d44c
+class HomePageView(TemplateView):
+
+  template_name = "index.html"
+  SUCCESS_URL = reverse_lazy('index.html')
