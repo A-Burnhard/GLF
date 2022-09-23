@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'manager.apps.ManagerConfig',
+    'api.apps.ApiConfig',
+#Third party packages/apps
+    'corsheaders',
+    'rest_framework',
 
-     # General use templates & template tags (should appear first)
-    
-     # Optional: Django admin theme (must be before django.contrib.admin)
     
 ]
 
