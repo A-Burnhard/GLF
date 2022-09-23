@@ -8,7 +8,8 @@ from base.views import *
 
 
 urlpatterns = [
-    
+
+    path('', HomePage.as_view(), name ="home"),
     path('volunteer/', VolunteerCreateAPIView.as_view(), name="vol_url"),
     path('donor/', DonorCreateAPIView.as_view(), name="don_url"),
     path('tour/', TourCreateAPIView.as_view(), name="tour_url"),

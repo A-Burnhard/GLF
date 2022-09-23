@@ -1,3 +1,6 @@
+from django.views.generic.base import TemplateView
+
+
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -6,6 +9,10 @@ from django.shortcuts import get_list_or_404
 
 from .models import Volunteer, Donor, Tour
 from .serializers import VolunteerSerializer, DonorSerializer, TourSerializer
+
+
+class HomePage(TemplateView):
+    template_name = "index.html"
 
 
 ############### MAKING ONLY ENTRIES #########################
@@ -29,19 +36,19 @@ class TourCreateAPIView(generics.CreateAPIView):
 
 
 ############### VIEWING ALL ENTRIES #########################
- #ENDPOINT to read-only Tour Volunteer collection
+ #ENDPOINT to read-only all Tour Volunteer collection
 class VolunteerListAPIView( generics.ListAPIView):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Donor model collection
+ #ENDPOINT to read-only all Donor model collection
 class DonorListAPIView( generics.ListAPIView):
     queryset = Donor.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Tour model collection
+ #ENDPOINT to read-only all Tour model collection
 class TourListAPIView( generics.ListAPIView):
     queryset = Tour.objects.all()
     serializer_class = VolunteerSerializer
@@ -50,6 +57,7 @@ class TourListAPIView( generics.ListAPIView):
 
 
 ############### VIEWING SINGLE ENTRIES #########################
+ #ENDPOINT to read-only Volunteer model instance
 class VolunteerDetailAPIView( generics.RetrieveAPIView):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer
