@@ -1,52 +1,43 @@
-from django.http import HttpResponse
-from django.shortcuts import render,redirect
-from django.views.generic.list import ListView
-from django.views.generic.edit import FormView
-from django.urls import reverse_lazy
-from django.views import View
-from .models import Tour, Volunteer, Donor
-from .forms import VolunteerForm, DonorForm, TourForm
+from rest_framework import generics, mixins
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from django.shortcuts import get_list_or_404
+
+from .models import Volunteer, Donor, Tour
+from .serializers import VolunteerSerializer, DonorSerializer, TourSerializer
+
+############### VIEWING ENTRIES #########################
+class VolunteerDetailAPIView( generics.RetrieveAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
+
+ #ENDPOINT to read-only Donor model instance
+class DonorDetailAPIView( generics.RetrieveAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
+
+ #ENDPOINT to read-only Tour model instance
+class TourDetailAPIView( generics.RetrieveAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
 
 
+############### ENTERING ENTRIES #########################
+ #ENDPOINT to make entries into Volunteer model instance
+class VolunteerListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
 
-class SuccessPage200(ListView):
-    model = Volunteer
-    template_name = 'Success.html'
-    context_object_name = 'success'
-    success_url = reverse_lazy('success')
-   
+ #ENDPOINT to make entries into Donor model instance
+class DonorListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = DonorSerializer
 
-def volunteer(request):
-    form = VolunteerForm()
-
-    if request.method == 'POST':
-        form = VolunteerForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    context = {'form' : form}
-    return render(request, 'volunteer.html', context)
-
-
-def donor(request):
-    form = DonorForm()
-
-    if request.method == 'POST':
-        form = DonorForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    context = {'form' : form}
-    return render(request, 'donor.html', context)
-
-    
-def tour(request):
-    form = TourForm()
-
-    if request.method == 'POST':
-        form = TourForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    context = {'form' : form}
-    return render(request, 'tour.html',context )
+ #ENDPOINT to make entries into Tour model instance
+class TourListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = TourSerializer
