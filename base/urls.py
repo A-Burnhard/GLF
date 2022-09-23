@@ -25,8 +25,8 @@ urlpatterns = [
     path('tourlist/', TourListAPIView.as_view(), name="tour_list"),
 
     #ListCreateAPI Routers
-    path('volunteerlistcreate/', VolunteerListAPIView.as_view(), name="vol_lc"),
-    path('donorlistcreate/', DonorListAPIView.as_view(), name="don_lc"),
-    path('tourlistcreate/', TourListAPIView.as_view(), name="tour_lc"),
+    path('volunteerlistcreate/', VolunteerListCreateAPIView.as_view(), name="vol_lc"),
+    path('donorlistcreate/', DonorListCreateAPIView.as_view(), name="don_lc"),
+    path('tourlistcreate/', TourListCreateAPIView.as_view(), name="tour_lc"),
 
 ]
