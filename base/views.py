@@ -9,41 +9,41 @@ from .serializers import VolunteerSerializer, DonorSerializer, TourSerializer
 
 
 ############### MAKING ONLY ENTRIES #########################
- #ENDPOINT to read-only Donor model instance
-class VolunteerCreateAPIView( generics.CreateAPIView):
+ #ENDPOINT to post Volunteer model collection
+class VolunteerCreateAPIView(generics.CreateAPIView):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Donor model instance
-class DonorCreateAPIView( generics.CreateAPIView):
-    queryset = Volunteer.objects.all()
+ #ENDPOINT to post Donor model collection
+class DonorCreateAPIView(generics.CreateAPIView):
+    queryset = Donor.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Tour model instance
-class TourCreateAPIView( generics.CreateAPIView):
-    queryset = Volunteer.objects.all()
+ #ENDPOINT to post Tour model collection
+class TourCreateAPIView(generics.CreateAPIView):
+    queryset = Tour.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
 
 ############### VIEWING ALL ENTRIES #########################
- #ENDPOINT to read-only Donor model instance
+ #ENDPOINT to read-only Tour Volunteer collection
 class VolunteerListAPIView( generics.ListAPIView):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Donor model instance
+ #ENDPOINT to read-only Donor model collection
 class DonorListAPIView( generics.ListAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Donor.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
- #ENDPOINT to read-only Tour model instance
+ #ENDPOINT to read-only Tour model collection
 class TourListAPIView( generics.ListAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Tour.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
@@ -57,13 +57,13 @@ class VolunteerDetailAPIView( generics.RetrieveAPIView):
 
  #ENDPOINT to read-only Donor model instance
 class DonorDetailAPIView( generics.RetrieveAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Donor.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 
  #ENDPOINT to read-only Tour model instance
 class TourDetailAPIView( generics.RetrieveAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Tour.objects.all()
     serializer_class = VolunteerSerializer
     # lookup_field = 'pk' ??
 

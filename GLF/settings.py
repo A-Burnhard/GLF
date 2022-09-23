@@ -132,7 +132,6 @@ MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
-    'manager/static/',
     ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
