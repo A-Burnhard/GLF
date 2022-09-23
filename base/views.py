@@ -45,7 +45,7 @@ class VolunteerListAPIView( generics.ListAPIView):
  #ENDPOINT to read-only all Donor model collection
 class DonorListAPIView( generics.ListAPIView):
     queryset = Donor.objects.all()
-    serializer_class = TourSerializer
+    serializer_class = DonorSerializer
     # lookup_field = 'pk' ??
 
  #ENDPOINT to read-only all Tour model collection
