@@ -8,6 +8,26 @@ from .models import Volunteer, Donor, Tour
 from .serializers import VolunteerSerializer, DonorSerializer, TourSerializer
 
 
+############### MAKING ONLY ENTRIES #########################
+ #ENDPOINT to read-only Donor model instance
+class VolunteerCreateAPIView( generics.CreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
+
+ #ENDPOINT to read-only Donor model instance
+class DonorCreateAPIView( generics.CreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
+
+ #ENDPOINT to read-only Tour model instance
+class TourCreateAPIView( generics.CreateAPIView):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
+    # lookup_field = 'pk' ??
+
+
 ############### VIEWING ALL ENTRIES #########################
  #ENDPOINT to read-only Donor model instance
 class VolunteerListAPIView( generics.ListAPIView):
