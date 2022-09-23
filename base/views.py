@@ -34,10 +34,10 @@ class VolunteerListCreateAPIView(generics.ListCreateAPIView):
 
  #ENDPOINT to make entries into Donor model instance
 class DonorListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Donor.objects.all()
     serializer_class = DonorSerializer
 
  #ENDPOINT to make entries into Tour model instance
 class TourListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Volunteer.objects.all()
+    queryset = Tour.objects.all()
     serializer_class = TourSerializer
