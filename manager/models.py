@@ -4,6 +4,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
+'''
+Superadmin -> Director
+Superstaff -> Other Top executives
+Staff -> other members of staff
+'''
+
 class Superadmin(AbstractUser):
     username = models.CharField(max_length=150, null=True)
     first_name = models.CharField(max_length=30, blank=True)
@@ -14,7 +20,7 @@ class Superadmin(AbstractUser):
 
     avatar = models.ImageField(null=True)
 
-class admin(AbstractUser):
+class Superstaff(AbstractUser):
     username = models.CharField(max_length=150, null=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
