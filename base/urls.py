@@ -15,9 +15,9 @@ urlpatterns = [
     path('tour/', TourCreateAPIView.as_view(), name="tour_post"),
 
     #DetailAPI Routers
-    path('volunteerdetail/', VolunteerDetailAPIView.as_view(), name="vol_detail"),
-    path('donordetail/', DonorDetailAPIView.as_view(), name="don_detail"),
-    path('tourdetail/', TourDetailAPIView.as_view(), name="tour_detail"),
+    path('volunteerdetail/<int:pk>/', VolunteerDetailAPIView.as_view(), name="vol_detail"),
+    path('donordetail/<int:pk>/', DonorDetailAPIView.as_view(), name="don_detail"),
+    path('tourdetail/<int:pk>/', TourDetailAPIView.as_view(), name="tour_detail"),
 
     #ListAPI Routers
     path('volunteerlist/', VolunteerListAPIView.as_view(), name="vol_list"),

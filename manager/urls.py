@@ -3,6 +3,6 @@ from .views import *
 
 urlpatterns = [
 
-    path('', DashBoard.as_view(), name='index.html')
+    path('', DashBoard.as_view(), name = 'dash')
 
 ]
