@@ -20,6 +20,9 @@ class Superadmin(AbstractUser):
 
     avatar = models.ImageField(null=True)
 
+    def __str__(self):
+        return self.username
+
 class Superstaff(AbstractUser):
     username = models.CharField(max_length=150, null=True)
     first_name = models.CharField(max_length=30, blank=True)
@@ -30,6 +33,9 @@ class Superstaff(AbstractUser):
 
     avatar = models.ImageField(null=True)
 
+    def __str__(self):
+        return self.username
+      
 class Staff(AbstractUser):
     username = models.CharField(max_length=150, null=True)
     first_name = models.CharField(max_length=30, blank=True)
@@ -40,5 +46,6 @@ class Staff(AbstractUser):
 
     avatar = models.ImageField(null=True)
 
-
+    def __str__(self):
+        return self.username
 
