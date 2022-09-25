@@ -1,5 +1,3 @@
-from msilib.schema import AdminExecuteSequence
-from multiprocessing import Value, managers
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -16,7 +14,7 @@ class Superadmin(AbstractUser):
     last_name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(unique=True, blank=True)
     bio = models.TextField(null=True)
-    is_staff = models.BooleanField()
+ #   is_staff = models.BooleanField()
 
     avatar = models.ImageField(null=True)
 
@@ -29,7 +27,7 @@ class Superstaff(AbstractUser):
     last_name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(unique=True, blank=True)
     bio = models.TextField(null=True)
-    is_staff = models.BooleanField()
+ #   is_staff = models.BooleanField()
 
     avatar = models.ImageField(null=True)
 
@@ -42,10 +40,12 @@ class Staff(AbstractUser):
     last_name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(unique=True, blank=True)
     bio = models.TextField(null=True)
-    is_staff = models.BooleanField()
+ #   is_staff = models.BooleanField()
 
     avatar = models.ImageField(null=True)
 
     def __str__(self):
         return self.username
+
+
 
