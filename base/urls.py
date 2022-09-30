@@ -10,8 +10,8 @@ from base.views import *
 urlpatterns = [
     #CreateAPI Routers
     path('', HomePage.as_view(), name ="home"),
-    path('volunteer/', VolunteerCreateAPIView.as_view(), name="vol_post"),
-    path('donor/', DonorCreateAPIView.as_view(), name="don_post"),
-    path('tour/', TourCreateAPIView.as_view(), name="tour_post"),
+    path('volunteer/', VolCreateView.as_view(), name="vol_post"),
+    path('donor/', DonCreateView.as_view(), name="don_post"),
+    path('tour/', TourCreateView.as_view(), name="tour_post"),
 
 ]

@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import FormView
 
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
@@ -18,18 +19,22 @@ class HomePage(TemplateView):
 
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
-class VolunteerCreateAPIView(generics.CreateAPIView):
-    queryset = Volunteer.objects.all()
+class VolCreateView(FormView):
+  #  template_name = ''
     serializer_class = VolunteerSerializer
+    form_class = VolunteerForm
+    success_url = '//'
 
  #ENDPOINT to post Donor model collection
-class DonorCreateAPIView(generics.CreateAPIView):
-    queryset = Donor.objects.all()
-    serializer_class = DonorSerializer
+class DonCreateView(FormView):
+   # template_name = ''
+   form_class = DonorForm
+   success_url = '//'
 
  #ENDPOINT to post Tour model collection
-class TourCreateAPIView(generics.CreateAPIView):
-    queryset = Tour.objects.all()
-    serializer_class = TourSerializer
+class TourCreateView(FormView):
+   # template_name = ''
+    success_url = '//'
+    form_class = TourForm
     lookup_field = 'pk' 
 
