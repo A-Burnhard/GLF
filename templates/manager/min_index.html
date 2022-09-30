@@ -1,6 +1,6 @@
-{% load static %}
-{% static 'manager/' %}
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -150,6 +150,21 @@
             </div>
 
             <!-- ... Your content goes here ... -->
+            
+            {% if volunteer %}
+            <ul>
+            {% for message in messages %}
+
+            <li> {{}} </li>
+
+            {% endfor %}
+
+             </ul>
+            {% endif %}
+
+
+
+
 
         </div>
     </div>

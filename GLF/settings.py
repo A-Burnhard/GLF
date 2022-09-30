@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     
 ]
 
-AUTH_USER_MODEL = 'manager.User'
+#AUTH_USER_MODEL = 'manager.User'
 
 
 MIDDLEWARE = [
