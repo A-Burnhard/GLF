@@ -20,21 +20,22 @@ class HomePage(TemplateView):
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
 class VolCreateView(FormView):
-  #  template_name = ''
-    serializer_class = VolunteerSerializer
+    template_name = 'volunteer.html'
     form_class = VolunteerForm
-    success_url = '//'
+    success_url = '/success/'
 
  #ENDPOINT to post Donor model collection
 class DonCreateView(FormView):
-   # template_name = ''
+   template_name = 'donor.html'
    form_class = DonorForm
-   success_url = '//'
+   success_url = '/success/'
 
  #ENDPOINT to post Tour model collection
 class TourCreateView(FormView):
-   # template_name = ''
-    success_url = '//'
+    template_name = 'tour.html'
+    success_url = '/success/'
     form_class = TourForm
     lookup_field = 'pk' 
 
+class SuccessView(TemplateView):
+    template_name = "success.html"
