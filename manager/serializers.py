@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from .models import Volunteer, Donor, Tour
+from base import models
+from base.models import Volunteer, Donor, Tour
 
 class VolunteerSerializer(serializers.ModelSerializer):
     class Meta:

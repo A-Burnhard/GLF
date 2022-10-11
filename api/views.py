@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 
 from base.models import Volunteer,Tour, Donor
-from base.serializers import VolunteerSerializer, TourSerializer, DonorSerializer
+from manager.serializers import VolunteerSerializer, TourSerializer, DonorSerializer
 
 @api_view(['POST'])
 def api_home(request, *args, **kwargs):

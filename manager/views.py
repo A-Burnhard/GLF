@@ -40,6 +40,9 @@ def loginPage(request):
     context = {'page':page}
     return render(request, 'manager/login.html', context)
 
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
 
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
