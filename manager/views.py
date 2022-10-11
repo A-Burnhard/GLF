@@ -1,16 +1,45 @@
 from django.views.generic.base import TemplateView
+from manager import serializers
+
 from rest_framework import generics, mixins
-
-
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from django.shortcuts import get_list_or_404
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
-from base import models, serializers
+from base import models
 from base.models import Volunteer, Donor, Tour
-from base.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
+from .models import Profile
+from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
+
+
+def loginPage(request):
+    page = 'login'
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
+        email = request.POST.get('email').lower()
+        password = request.POST.get('password')
+
+        try:
+            user = Profile.objects.get(email=email)
+        except:
+            messages.error(request,'User does not exist')
+
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username or password incorrect')
+    context = {'page':page}
+    return render(request, 'manager/login.html', context)
+
 
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
