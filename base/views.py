@@ -33,8 +33,8 @@ class DonCreateView(FormView):
  #ENDPOINT to post Tour model collection
 class TourCreateView(FormView):
     template_name = 'tour.html'
-    success_url = '/success/'
     form_class = TourForm
+    success_url = '/success/'
     lookup_field = 'pk' 
 
 class SuccessView(TemplateView):
