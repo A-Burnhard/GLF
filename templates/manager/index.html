@@ -195,7 +195,8 @@
                             <div class="collapse show" id="dashboardsCollapse">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a href="./index.html" class="nav-link active">
+                                        <a href="{% static 'manager/index.html' %}" class="nav-link active"> 
+
                                             Primary
                                         </a>
                                     </li>
@@ -206,65 +207,36 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link " href="#pagesCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pagesCollapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>common-file-double-1</title><path class="a" d="M17.25,23.25H3.75a1.5,1.5,0,0,1-1.5-1.5V5.25"/><rect class="a" x="5.25" y="0.75" width="16.5" height="19.5" rx="1" ry="1"/></svg>
-                                <span>Pages</span>
+                                <span>Guests</span>
                             </a>
                             <div class="collapse " id="pagesCollapse">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a href="./account.html" class="nav-link ">
-                                            Account
+                                        <a href="{% static 'manager/volunteerlist.html' %}" class="nav-link "> 
+
+                                            Volunteers
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./user.html" class="nav-link ">
-                                            User
+                                        <a href="{% static 'manager/tourlist.html' %}" class="nav-link ">
+                                            Tourists
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./pricing.html" class="nav-link ">
-                                            Pricing
+                                        <a href="{% static 'manager/donorlist.html' %}" class="nav-link ">
+                                            Donors
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./wizard.html" class="nav-link ">
-                                            Wizard
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./help-center.html" class="nav-link ">
-                                            Help Center
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./invoice.html" class="nav-link ">
-                                            Invoice
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./api-keys.html" class="nav-link ">
-                                            API Keys
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./maintenance.html" class="nav-link ">
-                                            Maintenance
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="./chat.html">
+                            <a class="nav-link " href="{% static 'manager/chat.html' %}">
                                 <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M11.25,18.75a1.5,1.5,0,0,1-1.5-1.5V9.75a1.5,1.5,0,0,1,1.5-1.5h10.5a1.5,1.5,0,0,1,1.5,1.5v7.5a1.5,1.5,0,0,1-1.5,1.5h-1.5v4.5l-4.5-4.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.75,12.75l-3,3v-4.5H2.25a1.5,1.5,0,0,1-1.5-1.5V2.25A1.5,1.5,0,0,1,2.25.75h10.5a1.5,1.5,0,0,1,1.5,1.5v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
                                 <span>Chat</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="./calendar.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
-                                <span>Calendar</span>
-                            </a>
-                        </li>
+                       
                         <li class="nav-item dropdown">
                             <a class="nav-link " href="#emailCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="emailCollapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>envelope</title><rect class="a" x="0.75" y="4.5" width="22.5" height="15" rx="1.5" ry="1.5"/><line class="a" x1="15.687" y1="9.975" x2="19.5" y2="13.5"/><line class="a" x1="8.313" y1="9.975" x2="4.5" y2="13.5"/><path class="a" d="M22.88,5.014l-9.513,6.56a2.406,2.406,0,0,1-2.734,0L1.12,5.014"/></svg>
@@ -273,18 +245,25 @@
                             <div class="collapse " id="emailCollapse">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a href="./inbox.html" class="nav-link ">
+                                        <a href="{% static 'manager/inbox.html' %}" class="nav-link ">
                                             Inbox
                                             <span class="badge text-bg-primary badge-circle ms-3">7</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./read-email.html" class="nav-link ">
-                                            Read Email
+                                        <a href="{% static 'manager/send-email.html' %}" class="nav-link ">
+                                            Send Email
                                         </a>
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% static './manager/calendar.html' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
+                                <span>Calendar</span>
+                            </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link " href="#tasksCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="tasksCollapse">
@@ -306,167 +285,9 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="./file-manager.html">
-                                <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M20.25,9.75v-3a1.5,1.5,0,0,0-1.5-1.5H8.25V3.75a1.5,1.5,0,0,0-1.5-1.5H2.25a1.5,1.5,0,0,0-1.5,1.5v16.3a1.7,1.7,0,0,0,3.336.438l2.351-9.657A1.5,1.5,0,0,1,7.879,9.75H21.75A1.5,1.5,0,0,1,23.2,11.636l-2.2,9A1.5,1.5,0,0,1,19.55,21.75H2.447" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
-                                <span>File Manager</span>
-                                <span class="badge text-bg-success rounded-pill ms-auto">New</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " href="#authenticationCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationCollapse">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.75 9.75H5.25C4.42157 9.75 3.75 10.4216 3.75 11.25V21.75C3.75 22.5784 4.42157 23.25 5.25 23.25H18.75C19.5784 23.25 20.25 22.5784 20.25 21.75V11.25C20.25 10.4216 19.5784 9.75 18.75 9.75Z"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 9.75V6C6.75 4.60761 7.30312 3.27226 8.28769 2.28769C9.27226 1.30312 10.6076 0.75 12 0.75C13.3924 0.75 14.7277 1.30312 15.7123 2.28769C16.6969 3.27226 17.25 4.60761 17.25 6V9.75"/><path stroke="currentColor" stroke-width="1.5" d="M12 16.5C11.7929 16.5 11.625 16.3321 11.625 16.125C11.625 15.9179 11.7929 15.75 12 15.75"/><path stroke="currentColor" stroke-width="1.5" d="M12 16.5C12.2071 16.5 12.375 16.3321 12.375 16.125C12.375 15.9179 12.2071 15.75 12 15.75"/></svg>
-                                <span>Authentication</span>
-                            </a>
-                            <div class="collapse " id="authenticationCollapse">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#authenticationSignUpCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationSignUpCollapse">
-                                            Sign up
-                                        </a>
-                                        <div class="collapse " id="authenticationSignUpCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./sign-up-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./sign-up-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./sign-up-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#authenticationSignInCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationSignInCollapse">
-                                            Sign In
-                                        </a>
-                                        <div class="collapse " id="authenticationSignInCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./sign-in-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./sign-in-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./sign-in-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#authenticationResetPasswordCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationResetPasswordCollapse">
-                                            Reset Password
-                                        </a>
-                                        <div class="collapse " id="authenticationResetPasswordCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./reset-password-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./reset-password-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./reset-password-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#authenticationEmailVerificationCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationEmailVerificationCollapse">
-                                            Email Verification
-                                        </a>
-                                        <div class="collapse " id="authenticationEmailVerificationCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./email-verification-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./email-verification-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./email-verification-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#authentication2StepVerificationCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authentication2StepVerificationCollapse">
-                                            2-step Verification
-                                        </a>
-                                        <div class="collapse " id="authentication2StepVerificationCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./2-step-verification-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./2-step-verification-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./2-step-verification-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link dropdown " href="#authenticationErrorCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="authenticationErrorCollapse">
-                                            Error
-                                        </a>
-                                        <div class="collapse " id="authenticationErrorCollapse">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="./error-cover.html" class="nav-link ">
-                                                        Cover
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./error-illustration.html" class="nav-link ">
-                                                        Illustration
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="./error-basic.html" class="nav-link ">
-                                                        Basic
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        
+                        
+                            
                         <li class="nav-item w-100">
                             <hr>
                         </li>
@@ -477,22 +298,17 @@
                                 <span class="badge text-bg-primary rounded-pill ms-auto">v1.0</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="./docs/accordion.html" class="nav-link">
-                                <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M22.91,6.953,12.7,1.672a1.543,1.543,0,0,0-1.416,0L1.076,6.953a.615.615,0,0,0,0,1.094l10.209,5.281a1.543,1.543,0,0,0,1.416,0L22.91,8.047a.616.616,0,0,0,0-1.094Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M.758,12.75l10.527,5.078a1.543,1.543,0,0,0,1.416,0L23.258,12.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M.758,17.25l10.527,5.078a1.543,1.543,0,0,0,1.416,0L23.258,17.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
-                                <span>Components</span>
-                            </a>
-                        </li>
+                        
                     </ul>
                     <!-- End of Navigation -->
         
                     <!-- Info box -->
                     <div class="help-box rounded-3 py-5 px-4 text-center mt-auto">
                         <img src="https://d33wubrfki0l68.cloudfront.net/87584482299b2cc1ec6f1e31ccfb1d42669f7a7a/4abee/assets/images/illustrations/upgrade-illustration.svg" alt="..." class="img-fluid mb-4" width="160" height="160">    
-                        <h6>Upgrade to explore<br> <span class="emphasize">premium</span> features</h6>
+                        <h6>UGo to home<br> <span class="emphasize">premium</span> features</h6>
                         
                         <!-- Button -->
-                        <a class="btn w-100 btn-sm btn-primary" href="javascript: void(0);">Upgrade to Business</a>
+                        <a class="btn w-100 btn-sm btn-primary" href="javascript: void(0);">Click to main site</a>
                     </div>
                 </div>
                 <!-- End of Collapse -->
@@ -2064,5 +1880,5 @@
         <!-- <script src="./assets/js/vendors.bundle.js"></script> -->
         
         <!-- Theme JS -->
-        <script src="./assets/js/theme.bundle.js"></script>    </body>
-</html>
+        <script src="{% static 'manager/assets/js/theme.bundle.js' %} "
+        </html></script>    </body>
