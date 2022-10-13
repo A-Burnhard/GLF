@@ -16,25 +16,31 @@ class HomePage(TemplateView):
     template_name = "index.html"
 
 
+
+
+
+
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
 class VolCreateView(FormView):
     template_name = 'volunteer.html'
     form_class = VolunteerForm
-    success_url = '/success/'
+    success_url = '/success-v/'
+
+    def form_valid(self,form):
+        form.save()
+        return super().form_valid(form)
 
  #ENDPOINT to post Donor model collection
 class DonCreateView(FormView):
    template_name = 'donor.html'
    form_class = DonorForm
-   success_url = '/success/'
+   success_url = '/success-d/'
 
  #ENDPOINT to post Tour model collection
 class TourCreateView(FormView):
     template_name = 'tour.html'
     form_class = TourForm
-    success_url = '/success/'
+    success_url = '/success-t/'
     lookup_field = 'pk' 
 
-class SuccessView(TemplateView):
-    template_name = "success.html"
