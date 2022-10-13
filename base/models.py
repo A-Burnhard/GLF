@@ -28,6 +28,7 @@ class Volunteer(models.Model):
 class Donor(models.Model):
 
      Name = models.CharField(max_length=200)
+     email = models.EmailField()
      PhoneNumber = models.IntegerField(null=True)
      MeansofGiving = models.CharField(max_length=120)
      FReqOfGiving = models.CharField(max_length=100)
@@ -43,7 +44,7 @@ class Tour(models.Model):
     nationality = models.CharField(max_length=100)
     PassportNmber = models.IntegerField(null=True)
     PermResAddress = models.TextField(null=True, blank=True)
-    EmailAddress = models.EmailField()
+    EmailAddress = models.EmailField(null = True)
     EmergContact = models.IntegerField(null=True)
     NameOfInstOrOcc = models.CharField(max_length=200)
 
