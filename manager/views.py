@@ -56,7 +56,7 @@ class new(TemplateView):
 class VolunteerListAPIView(generics.ListAPIView):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer
-
+    
  #ENDPOINT to read-only all Donor model collection
 class DonorListAPIView(generics.ListAPIView):
     queryset = Donor.objects.all()

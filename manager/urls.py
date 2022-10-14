@@ -3,7 +3,7 @@ from manager.views import *
 
 urlpatterns = [
 
-    path('', DashBoard.as_view(), name = 'dash'),
+    path('', DashBoard.as_view(), name = 'home'),
     path('new/', new.as_view(), name = 'new'),
 
     #DetailAPI Routers

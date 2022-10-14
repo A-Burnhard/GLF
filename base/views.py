@@ -37,10 +37,18 @@ class DonCreateView(FormView):
    form_class = DonorForm
    success_url = '/success-d/'
 
+   def form_valid(self,form):
+        form.save()
+        return super().form_valid(form)
+
  #ENDPOINT to post Tour model collection
 class TourCreateView(FormView):
     template_name = 'tour.html'
     form_class = TourForm
     success_url = '/success-t/'
     lookup_field = 'pk' 
+
+    def form_valid(self,form):
+        form.save()
+        return super().form_valid(form)
 
