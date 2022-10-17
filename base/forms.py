@@ -9,7 +9,7 @@ class VolunteerForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-             'surname': forms.TextInput(attrs={'class': 'form-control'}),
+             'surname': forms.TextInput(attrs={'class': 'form-control' }),
              'otherNames': forms.TextInput(attrs={'class': 'form-control'}),
              'DateOfBirth': forms.DateInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
@@ -33,13 +33,13 @@ class DonorForm(forms.ModelForm):
         model = Donor
         fields = '__all__'
 
-        widgets = {
-        'Name': forms.TextInput(attrs={'class': 'form-control'}),
-         'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
-          'MeansofGiving': forms.TextInput(attrs={'class': 'form-control'}),
-            'FReqOfGiving': forms.TextInput(attrs={'class': 'form-control'}),
+        # widgets = {
+        # 'Name': forms.TextInput(attrs={'class': 'form-control'}),
+        #  'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
+        #   'MeansofGiving': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'FReqOfGiving': forms.TextInput(attrs={'class': 'form-control'}),
 
-        }
+        # }
 
 class TourForm(forms.ModelForm):
     class Meta:
