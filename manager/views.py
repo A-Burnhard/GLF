@@ -5,6 +5,9 @@ from rest_framework import generics, mixins
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.renderers import TemplateHTMLRenderer
+
 
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
@@ -17,39 +20,20 @@ from .models import Profile
 from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
 
 
-def loginPage(request):
-    page = 'login'
-    if request.user.is_authenticated:
-        return redirect('home')
-
-    if request.method == 'POST':
-        email = request.POST.get('email').lower()
-        password = request.POST.get('password')
-
-        try:
-            user = Profile.objects.get(email=email)
-        except:
-            messages.error(request,'User does not exist')
-
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Username or password incorrect')
-    context = {'page':page}
-    return render(request, 'manager/login.html', context)
-
-def logoutUser(request):
-    logout(request)
-    return redirect('home')
-
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
 
 class new(TemplateView):
     template_name = "manager/min_index.html"
 
+
+class VolunteerList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'manager/vollist.html'
+
+    def get(self, request):
+        queryset = Volunteer.objects.all()
+        return Response({'vol': queryset})
 
 ############### VIEWING ALL ENTRIES #########################
  #ENDPOINT to read-only all Tour Volunteer collection
@@ -107,3 +91,33 @@ class TourListCreateAPIView(generics.ListCreateAPIView):
     queryset = Tour.objects.all()
     serializer_class = TourSerializer
     lookup_field = 'pk'
+
+
+
+
+def loginPage(request):
+    page = 'login'
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
+        email = request.POST.get('email').lower()
+        password = request.POST.get('password')
+
+        try:
+            user = Profile.objects.get(email=email)
+        except:
+            messages.error(request,'User does not exist')
+
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username or password incorrect')
+    context = {'page':page}
+    return render(request, 'manager/login.html', context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')

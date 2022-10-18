@@ -5,6 +5,7 @@ urlpatterns = [
 
     path('', DashBoard.as_view(), name = 'home'),
     path('new/', new.as_view(), name = 'new'),
+    path('volunteers/', VolunteerList.as_view(), name= 'vols'),
 
     #DetailAPI Routers
     path('volunteerdetail/<int:pk>/', VolunteerDetailAPIView.as_view(), name="vol_detail"),

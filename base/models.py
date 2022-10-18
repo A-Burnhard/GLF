@@ -1,4 +1,5 @@
 
+from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 
@@ -22,6 +23,7 @@ class Volunteer(models.Model):
     citizenship = models.CharField(max_length=50)
     comments = models.TextField(max_length=200)
 
+    #date = models.DateTimeField(auto_now_add = True)
     def _str_(self):
         return self.surname + '' + self.otherNames
 
@@ -33,6 +35,8 @@ class Donor(models.Model):
      MeansofGiving = models.CharField(max_length=120)
      FReqOfGiving = models.CharField(max_length=100)
     
+    # date = models.DateTimeField(auto_now_add = True)
+
      def _str_(self):
         return self.donorname 
 
@@ -47,6 +51,8 @@ class Tour(models.Model):
     EmailAddress = models.EmailField(null = True)
     EmergContact = models.IntegerField(null=True)
     NameOfInstOrOcc = models.CharField(max_length=200)
+
+    #date = models.DateTimeField(auto_now_add = True)
 
     def _str_(self):
       return self.Tname

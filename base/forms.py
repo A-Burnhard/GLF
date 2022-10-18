@@ -33,13 +33,13 @@ class DonorForm(forms.ModelForm):
         model = Donor
         fields = '__all__'
 
-        # widgets = {
-        # 'Name': forms.TextInput(attrs={'class': 'form-control'}),
-        #  'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
-        #   'MeansofGiving': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'FReqOfGiving': forms.TextInput(attrs={'class': 'form-control'}),
+        widgets = {
+        'Name': forms.TextInput(attrs={'class': 'form-control'}),
+         'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
+          'MeansofGiving': forms.TextInput(attrs={'class': 'form-control'}),
+            'FReqOfGiving': forms.TextInput(attrs={'class': 'form-control'}),
 
-        # }
+        }
 
 class TourForm(forms.ModelForm):
     class Meta:
