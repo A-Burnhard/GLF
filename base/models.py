@@ -1,5 +1,7 @@
 
 from datetime import datetime
+from operator import truediv
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 
@@ -8,8 +10,9 @@ class Volunteer(models.Model):
   #  user=models.ForeignKey(
     #    User, on_delete=models.CASCADE, null= True, blank = True
   #  )
-    surname = models.CharField(max_length=200, null= True)
-    otherNames = models.CharField(max_length=250, null = True)
+    
+    id = models.IntegerField(primary_key = True)
+    username = models.CharField(max_length=250, null= True)
     DateOfBirth = models.DateField()
     email = models.EmailField()
     phoneNumber = models.IntegerField(null = True)
@@ -21,27 +24,29 @@ class Volunteer(models.Model):
     IntAreaOfPlacement = models.CharField(max_length=100)
     DurOfPLacement = models.CharField(max_length=100)
     citizenship = models.CharField(max_length=50)
-    comments = models.TextField(max_length=200)
+    comments = models.TextField(max_length=350)
+    date = models.DateTimeField(auto_now_add = True, null = True)
 
-    #date = models.DateTimeField(auto_now_add = True)
     def _str_(self):
         return self.surname + '' + self.otherNames
 
 class Donor(models.Model):
 
+     id = models.IntegerField(primary_key= True)
      Name = models.CharField(max_length=200)
      email = models.EmailField()
      PhoneNumber = models.IntegerField(null=True)
      MeansofGiving = models.CharField(max_length=120)
      FReqOfGiving = models.CharField(max_length=100)
-    
-    # date = models.DateTimeField(auto_now_add = True)
+     date = models.DateTimeField(auto_now_add = True, null =True)
 
      def _str_(self):
         return self.donorname 
 
 
 class Tour(models.Model):
+
+    id = models.IntegerField(primary_key = True)
     name = models.CharField(max_length=100)
     CountryOfBirth = models.CharField(max_length=100)
     Gender = models.CharField(max_length=10)
@@ -51,8 +56,7 @@ class Tour(models.Model):
     EmailAddress = models.EmailField(null = True)
     EmergContact = models.IntegerField(null=True)
     NameOfInstOrOcc = models.CharField(max_length=200)
-
-    #date = models.DateTimeField(auto_now_add = True)
+    date = models.DateTimeField(auto_now_add = True, null=True)
 
     def _str_(self):
       return self.Tname
