@@ -6,7 +6,7 @@ class VolunteerForm(forms.ModelForm):
 
     class Meta:
         model = Volunteer
-        fields = '__all__'
+        fields = ['__all__']
 
         # widgets = {
         #      'surname': forms.TextInput(attrs={'class': 'form-control' }),
