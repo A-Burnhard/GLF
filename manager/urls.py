@@ -1,11 +1,16 @@
+
 from django.urls import path
 from manager.views import *
 
 urlpatterns = [
-
+     #Template Routers
     path('', DashBoard.as_view(), name = 'home'),
-    path('new/', new.as_view(), name = 'new'),
-    path('volunteers/', VolunteerList.as_view(), name= 'vols'),
+    path('volunteer/', VolunteerList.as_view(), name= 'vol'),
+    path('tour/', TourList.as_view(), name= 'tour'),
+    path('donor/', DonorList.as_view(), name= 'don'),
+    path('calendar/', Calendar.as_view(), name= 'cal'),
+    path('primary/', Primary.as_view(), name= 'prim'),
+
 
     #DetailAPI Routers
     path('volunteerdetail/<int:pk>/', VolunteerDetailAPIView.as_view(), name="vol_detail"),

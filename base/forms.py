@@ -6,7 +6,7 @@ class VolunteerForm(forms.ModelForm):
 
     class Meta:
         model = Volunteer
-        fields = ['__all__']
+        fields = '__all__'
 
         # widgets = {
         #      'surname': forms.TextInput(attrs={'class': 'form-control' }),
@@ -31,7 +31,7 @@ class DonorForm(forms.ModelForm):
 
     class Meta:
         model = Donor
-        fields = ['__all__']
+        fields = '__all__'
 
         # widgets = {
         # 'Name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -44,7 +44,7 @@ class DonorForm(forms.ModelForm):
 class TourForm(forms.ModelForm):
     class Meta:
         model = Tour
-        fields =  ['__all__']
+        fields =  '__all__'
 
         # widgets = {
         # 'name': forms.TextInput(attrs={'class': 'form-control'}),

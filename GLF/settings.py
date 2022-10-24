@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'manager.apps.ManagerConfig',
     'api.apps.ApiConfig',
+    'users.apps.UsersConfig',
 #Third party packages/apps
     'corsheaders',
     'rest_framework',
@@ -49,7 +50,6 @@ INSTALLED_APPS = [
     
 ]
 
-#AUTH_USER_MODEL = 'manager.User'
 
 
 MIDDLEWARE = [

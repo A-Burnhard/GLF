@@ -1,9 +1,11 @@
 
 from datetime import datetime
-from operator import truediv
-from unittest.util import _MAX_LENGTH
+from enum import auto
+
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import User
+ 
+
 
 class Volunteer(models.Model):
     #id = models.BigAutoField(primary_key = True)
@@ -14,16 +16,15 @@ class Volunteer(models.Model):
     id = models.IntegerField(primary_key = True)
     username = models.CharField(max_length=250, null= True)
     DateOfBirth = models.DateField()
-    email = models.EmailField()
+    email = models.EmailField(null =True)
     phoneNumber = models.IntegerField(null = True)
     address= models.CharField(max_length=200, null=True)
-    city = models.CharField(max_length=100)
-    country = models.CharField(max_length=50)
+    city = models.CharField(max_length=100, null=True)
+    country = models.CharField(max_length=50, null=True)
     academicBg = models.CharField(max_length=200)
     skills = models.TextField(max_length=250)
     IntAreaOfPlacement = models.CharField(max_length=100)
     DurOfPLacement = models.CharField(max_length=100)
-    citizenship = models.CharField(max_length=50)
     comments = models.TextField(max_length=350)
     date = models.DateTimeField(auto_now_add = True, null = True)
 
@@ -34,8 +35,9 @@ class Donor(models.Model):
 
      id = models.IntegerField(primary_key= True)
      Name = models.CharField(max_length=200)
-     email = models.EmailField()
+     email = models.EmailField(null = True)
      PhoneNumber = models.IntegerField(null=True)
+     country = models.CharField(max_length = 200)
      MeansofGiving = models.CharField(max_length=120)
      FReqOfGiving = models.CharField(max_length=100)
      date = models.DateTimeField(auto_now_add = True, null =True)
@@ -60,3 +62,5 @@ class Tour(models.Model):
 
     def _str_(self):
       return self.Tname
+
+

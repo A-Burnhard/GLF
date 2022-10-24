@@ -16,15 +16,17 @@ from django.contrib.auth import authenticate, login, logout
 
 from base import models
 from base.models import Volunteer, Donor, Tour
-from .models import Profile
 from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
 
 
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
 
-class new(TemplateView):
-    template_name = "manager/min_index.html"
+class Calendar(TemplateView):
+    template_name = "manager/calendar.html"
+
+class Primary(TemplateView):
+    template_name = "manager/primary.html"
 
 
 class VolunteerList(APIView):
@@ -34,6 +36,22 @@ class VolunteerList(APIView):
     def get(self, request):
         queryset = Volunteer.objects.all()
         return Response({'vol': queryset})
+
+class TourList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'manager/tourlist.html'
+
+    def get(self, request):
+        queryset = Tour.objects.all()
+        return Response({'tour': queryset})
+
+class DonorList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'manager/donorlist.html'
+
+    def get(self, request):
+        queryset = Donor.objects.all()
+        return Response({'don': queryset})    
 
 ############### VIEWING ALL ENTRIES #########################
  #ENDPOINT to read-only all Tour Volunteer collection

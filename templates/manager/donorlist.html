@@ -95,7 +95,7 @@
    
 
     <!-- Page Title -->
-    <title>Admin | Tour</title>
+    <title>Admin | Volunteers</title>
 </head>
 
 <body>
@@ -116,7 +116,7 @@
                     });
                 }
             }
-        }
+        }a
     </script>
     <!-- NAVIGATION -->
     <nav id="mainNavbar" class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark">
@@ -140,7 +140,7 @@
 
             <!-- Brand -->
             <a class="navbar-brand" href=" {% url 'home' %}">
-                    <img src="https://d33wubrfki0l68.cloudfront.net/33193ecc0db7caa7d7efee3dca8af1b145fa2135/16978/assets/images/logo-small.svg" class="navbar-brand-img logo-light logo-small" alt="..." width="19" height="25">
+                <img src="https://d33wubrfki0l68.cloudfront.net/33193ecc0db7caa7d7efee3dca8af1b145fa2135/16978/assets/images/logo-small.svg" class="navbar-brand-img logo-light logo-small" alt="..." width="19" height="25">
                     <img src="https://d33wubrfki0l68.cloudfront.net/ba6b91b7d508187d153e48318c22d0773a9cedfc/36afa/assets/images/logo.svg" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="25">
         
                     <img src="https://d33wubrfki0l68.cloudfront.net/8b6c92837e3b7aa8c9017d33298ead6b9b859d79/fa79b/assets/images/logo-dark-small.svg" class="navbar-brand-img logo-dark logo-small" alt="..." width="19" height="25">
@@ -165,7 +165,7 @@
                         <div class="collapse " id="dashboardsCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link ">
+                                    <a href="{% url 'home' %}" class="nav-link ">
                                             Primary
                                         </a>
                                 </li>
@@ -182,7 +182,7 @@
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a href="{% url 'vol' %}" class="nav-link ">
-                                            Volunteers
+                                            Tour
                                         </a>
                                 </li>
                                 <li class="nav-item">
@@ -297,16 +297,13 @@
 
                   {% if current_time|add:"0" > 12 %}
                       Good Afternoon <span style="color:#00bac7;">Admin</span>
-                  {%  elif current_time > 17 %}
-                  Good Evening <span style="color:#00bac7;">Admin</span>
-
-                  {% else %}
-                      Good Morning  <span style="color:#00bac7;">Admin</span>
+                      {% else %}              
+                      Good Morning <span style="color:#00bac7;">Admin</span>
                   {% endif %}
           </h2>
           </h2>
 
-
+         
             <!-- Top buttons -->
             <div class="d-flex align-items-center ms-auto me-n1 me-lg-n2">
 
@@ -777,7 +774,7 @@
             
              <!-- Heading -->
              <h1 class="h2">
-                Volunteers
+                Donors
             </h1>
                 
             </div>
@@ -790,7 +787,7 @@
         <div class="col">
 
             <!-- Card -->
-            <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="users">
+            <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="tour">
                 <div class="card-header border-0 card-header-space-between">
 
                     <!-- Title -->
@@ -799,18 +796,16 @@
                     </h2>
 
                  
-
-     
                 </div>
+
                 <!-- Table -->
+                <div class="row">  
+                    <div class="col">
                 <div class="table-responsive">
                     <table class="table align-middle table-edge table-hover table-nowrap mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th class="w-60px">
-                                    
-                                </th>
-                                <th>
+                                                               <th>
                                     <a href="javascript: void(0);" class="text-muted list-sort">
                                         Full name
                                     </a>
@@ -832,36 +827,36 @@
                                 </th>
                                 <th class="w-150px min-w-150px">
                                     <a href="javascript: void(0);" class="text-muted list-sort" data-sort="date">
+                                        Means of Giving
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        Frequency of Giving 
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);" class="text-muted list-sort" >
                                         Date
                                     </a>
                                 </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Interested Area of placement
-                                    </a>
-                                </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Duration of Placement
-                                    </a>
-                                </th>
+                               
                             </tr>
                         </thead>
 
                         <tbody class="list">
                             <div class="col-12 ">
-                                {% for volunteer in vol %}
+                                {% for dor in don %}
                             <tr>
-                               
-                               
-                            
-                                <td class="name"> {{ volunteer.username }} </td>
-                                <td class="email"> {{ volunteer.email }} </td>
-                                <td class="number"> {{ volunteer.phoneNumber }}</td>
-                                <td class="country" > {{ volunteer.country }}</td>
-                                <td class="date" > {{ volunteer.date }}</td>
-                                <td class="name" > {{ volunteer.IntAreaOfPlacement }}</td>
-                                <td class="name" > {{ volunteer.DurOfPLacement }}</td>
+                                                           
+                                <td class="name"> {{ dor.Name }} </td>
+                                <td class="email"> {{ dor.email }} </td>
+                                <td class="number"> {{ dor.PhoneNumber }}</td>
+                                <td class="country" > {{ dor.country }}</td>
+                                <td class="number" > {{ dor.date }}</td>
+                                <td class="number" > {{ dor.PassportNmber }}</td>
+                                <td class="name" > {{ dor.MeansofGiving }}</td>
+                                <td class="name" > {{ dor.FReqOfGiving }}</td>
 
                             </tr>
                           
@@ -883,12 +878,10 @@
                         <ul class="pagination list-pagination mb-0"></ul>
                     </div>
                 </div>
-                
-            </div>
-        </div>
+           
+    </div>
     </div> <!-- / .row -->
 </div> <!-- / .container-fluid -->
-
 
 
 

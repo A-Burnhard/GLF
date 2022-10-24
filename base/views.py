@@ -22,7 +22,7 @@ class HomePage(TemplateView):
 class VolCreateView(FormView):
     template_name = 'volunteer.html'
     form_class = VolunteerForm
-   # success_url = '/success-v/'
+    success_url = '/success-v/'
 
     def form_valid(self,form):
         form.save()
@@ -43,8 +43,7 @@ class TourCreateView(FormView):
     template_name = 'tour.html'
     form_class = TourForm
     success_url = '/success-t/'
-    lookup_field = 'pk' 
-
+    
     def form_valid(self,form):
         form.save()
         return super().form_valid(form)
