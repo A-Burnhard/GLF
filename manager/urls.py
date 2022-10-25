@@ -1,5 +1,6 @@
 
 from django.urls import path
+from . import views
 from manager.views import *
 
 urlpatterns = [
@@ -10,8 +11,9 @@ urlpatterns = [
     path('donor/', DonorList.as_view(), name= 'don'),
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
-    path('docs/', Documentation.as_view(), name= 'dot'),
-
+    path('docs/', Documentation.as_view(), name= 'docs'),
+    path('login_user', views.login_user, name="login"),
+    path('logout_user', views.logout_user, name='logout'),
 
 
     #DetailAPI Routers

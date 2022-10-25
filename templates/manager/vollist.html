@@ -95,7 +95,7 @@
    
 
     <!-- Page Title -->
-    <title>Admin | Tour</title>
+    <title>Admin | Volunteers</title>
 </head>
 
 <body>
@@ -261,7 +261,7 @@
                         <hr>
                     </li>
                     <li class="nav-item">
-                        <a href="./docs/index.html" class="nav-link">
+                        <a href="{% url 'docs' %}" class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><path d="M22.627 14.87 15 22.5l-3.75.75.75-3.75 7.631-7.63a2.113 2.113 0 0 1 2.991 0l.009.008a2.116 2.116 0 0 1-.004 2.992zM8.246 20.25h-6a1.5 1.5 0 0 1-1.5-1.5V2.25a1.5 1.5 0 0 1 1.5-1.5h15a1.5 1.5 0 0 1 1.5 1.5V9m-10.5-3.75h6m-9 4.5h9m-9 4.5h7.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
                                 <span>Documentation</span>
                                 <span class="badge text-bg-primary rounded-pill ms-auto">v1.0</span>
@@ -806,9 +806,7 @@
                     <table class="table align-middle table-edge table-hover table-nowrap mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th class="w-60px">
-                                    
-                                </th>
+                                
                                 <th>
                                     <a href="javascript: void(0);" class="text-muted list-sort">
                                         Full name
@@ -858,9 +856,9 @@
                                 <td class="email"> {{ volunteer.email }} </td>
                                 <td class="number"> {{ volunteer.phoneNumber }}</td>
                                 <td class="country" > {{ volunteer.country }}</td>
-                                <td class="date" > {{ volunteer.date }}</td>
+                                <td class="number" > {{ volunteer.date }}</td>
                                 <td class="name" > {{ volunteer.IntAreaOfPlacement }}</td>
-                                <td class="name" > {{ volunteer.DurOfPLacement }}</td>
+                                <td class="number" > {{ volunteer.DurOfPLacement }}</td>
 
                             </tr>
                           
@@ -882,10 +880,22 @@
                         <ul class="pagination list-pagination mb-0"></ul>
                     </div>
                 </div>
-                
-            </div>
         </div>
-    </div> <!-- / .row -->
+</div> <!-- / .row -->
+
+    <footer class="mt-auto">
+        <div class="container-fluid mt-4 mb-6 text-muted">
+            <div class="row justify-content-between">
+                <div class="col">
+                    © GLF. 2022 
+                </div>
+    
+                <div class="col-auto">
+                    v1.0.0
+                </div>
+            </div> <!-- / .row -->
+        </div>
+    </footer>
 </div> <!-- / .container-fluid -->
 
 

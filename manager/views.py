@@ -15,9 +15,35 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from base import models
-from base.models import Volunteer, Donor, Tour
+from base.models import Volunteer, Donor, Tour, User
 from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
 
+
+from django.views.generic import View
+
+
+def login_user(request):
+	if request.method == "POST":
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(request, username=username, password=password)
+		if user is not None:
+			login(request, user)
+			return redirect('home')
+		else:
+			messages.success(request, ("There Was An Error Logging In, Try Again..."))	
+			return redirect('login')	
+
+
+	else:
+		return render(request, 'manager/login.html', {})
+
+def logout_user(request):
+	logout(request)
+	messages.success(request, ("You Were Logged Out!"))
+	return redirect('home')
+
+   
 
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
@@ -118,30 +144,3 @@ class TourListCreateAPIView(generics.ListCreateAPIView):
 
 
 
-
-def loginPage(request):
-    page = 'login'
-    if request.user.is_authenticated:
-        return redirect('home')
-
-    if request.method == 'POST':
-        email = request.POST.get('email').lower()
-        password = request.POST.get('password')
-
-        try:
-            user = Profile.objects.get(email=email)
-        except:
-            messages.error(request,'User does not exist')
-
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Username or password incorrect')
-    context = {'page':page}
-    return render(request, 'manager/login.html', context)
-
-def logoutUser(request):
-    logout(request)
-    return redirect('home')
