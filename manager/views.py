@@ -22,11 +22,17 @@ from manager.serializers import VolunteerSerializer,DonorSerializer, TourSeriali
 class DashBoard(TemplateView):
     template_name = "manager/index.html"
 
+class Primary(TemplateView):
+    template_name = "manager/primary.html"
+
 class Calendar(TemplateView):
     template_name = "manager/calendar.html"
 
 class Primary(TemplateView):
     template_name = "manager/primary.html"
+
+class Documentation(TemplateView):
+    template_name = "manager/docs.html"
 
 
 class VolunteerList(APIView):

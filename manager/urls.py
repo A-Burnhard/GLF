@@ -10,6 +10,8 @@ urlpatterns = [
     path('donor/', DonorList.as_view(), name= 'don'),
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
+    path('docs/', Documentation.as_view(), name= 'dot'),
+
 
 
     #DetailAPI Routers

@@ -165,7 +165,7 @@
                         <div class="collapse " id="dashboardsCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link ">
+                                    <a href="{% url 'home' %}" class="nav-link ">
                                             Primary
                                         </a>
                                 </li>
@@ -174,7 +174,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link " href="#pagesCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pagesCollapse">
+                        <a class="nav-link active " href="#pagesCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pagesCollapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>common-file-double-1</title><path class="a" d="M17.25,23.25H3.75a1.5,1.5,0,0,1-1.5-1.5V5.25"/><rect class="a" x="5.25" y="0.75" width="16.5" height="19.5" rx="1" ry="1"/></svg>
                                 <span>Guests</span>
                             </a>
@@ -203,7 +203,7 @@
                    
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href=" {">
+                        <a class="nav-link " href=" {% url 'cal' %} ">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
                                 <span>Calendar</span>
                             </a>
@@ -296,12 +296,11 @@
                   {% now "H" as current_time %}
 
                   {% if current_time|add:"0" > 12 %}
-                      Good Afternoon <span style="color:#00bac7;">Admin</span>
-                  {%  elif current_time > 17 %}
-                  Good Evening <span style="color:#00bac7;">Admin</span>
-
+                {% if user.is_authenticated %} Good Afternoon <span style="color:#00bac7;">{{ user.first_name }}</span>.{% endif %}
+                       
+               
                   {% else %}
-                      Good Morning  <span style="color:#00bac7;">Admin</span>
+                  {% if user.is_authenticated %} Good Morning <span style="color:#00bac7;">{{ user.first_name }}</span>.{% endif %}
                   {% endif %}
           </h2>
           </h2>
@@ -727,7 +726,7 @@
                                     <img src="https://www.flaticon.com/free-icon/user_149071?term=profile&page=1&position=14&page=1&position=14&related_id=149071&origin=tag" alt="..." class="avatar-img" width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h4 class="mb-0">Admin</h4>
+                                    <h4 class="mb-0">{{ user.first_name }} {{ user.last_name }}</h4>
                                     <p class="card-text">sample@gmail.com</p>
                                 </div>
                             </div>

@@ -203,7 +203,7 @@
                    
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href=" {">
+                        <a class="nav-link active" href=" {% url 'cal' %} ">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
                                 <span>Calendar</span>
                             </a>
@@ -827,17 +827,17 @@
                                 </th>
                                 <th class="w-150px min-w-150px">
                                     <a href="javascript: void(0);" class="text-muted list-sort" data-sort="date">
-                                        Means of Giving
-                                    </a>
-                                </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Frequency of Giving 
-                                    </a>
-                                </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
                                         Date
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        Means of Giving 
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        Frequency of Givng
                                     </a>
                                 </th>
                                
@@ -854,7 +854,6 @@
                                 <td class="number"> {{ dor.PhoneNumber }}</td>
                                 <td class="country" > {{ dor.country }}</td>
                                 <td class="number" > {{ dor.date }}</td>
-                                <td class="number" > {{ dor.PassportNmber }}</td>
                                 <td class="name" > {{ dor.MeansofGiving }}</td>
                                 <td class="name" > {{ dor.FReqOfGiving }}</td>
 
