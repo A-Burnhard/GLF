@@ -5,13 +5,15 @@ from manager.views import *
 
 urlpatterns = [
      #Template Routers
-    path('', DashBoard.as_view(), name = 'home'),
+    path('', Dashboard.as_view(), name = 'home'),
     path('volunteer/', VolunteerList.as_view(), name= 'vol'),
     path('tour/', TourList.as_view(), name= 'tour'),
     path('donor/', DonorList.as_view(), name= 'don'),
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
     path('docs/', Documentation.as_view(), name= 'docs'),
+    path('sample/', sample.as_view(), name= 'sample'),
+
     path('login_user', views.login_user, name="login"),
     path('logout_user', views.logout_user, name='logout'),
 

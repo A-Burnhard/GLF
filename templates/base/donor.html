@@ -1,77 +1,69 @@
+                    <!-- Form -->
+                    <form class="form" action = "" method="POST">
+                        {% csrf_token %}
 
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" data-theme="light"  data-sidebar-behaviour="fixed" data-navigation-color="inverted" data-is-fluid="true">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Webinning" name="author" />
-        
-            <!-- Theme CSS --> 
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-4">
 
-            <link rel="stylesheet" href="{% static 'manager/assets/css/theme.bundle.css' %}" id="stylesheetLTR" /> 
-            <link rel="stylesheet" href=" {% static 'manager/assets/css/theme.rtl.bundle.css' %}" id="stylesheetRTL"/>            
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        <!-- no-JS fallback -->
-        <noscript>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        </noscript>
-        
-      <body>
+                                    <!-- Label -->
+                                    <label for="username" class="form-label">
+                                       Username
+                                    </label>
+    
+                                    <!-- Input -->
+                                    <input type="text"  name = "username" class="form-control" placeholder="Your username" >
+                                </div>
+                            </div>
 
+                            <div class="col-lg-6">
+                                <!-- Password -->
+                                <div class="mb-4">
 
-		<div class="container">
-			<div class="row">
-			  <div class="col-6 offset-md-3">
-<!-- Forms-->
-<form class="form" action="" method = "post">
-    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col">
 
-thisi is a sample 
- <div class=" form__group mb-3">
-	<label class="form-label" for="donor_name">Name</label>
-	<input type="text" id="#" class="form-control" placeholder="Enter name here">
-</div>
- 
-<div class="form__group">
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Email</label>
-	<input type="email" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder=" text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Phone Number</label>
-	<input type="number" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2"> Means of giving </label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2"> Frequency of Giving</label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
+                                            <!-- Label -->
+                                            <label class="form-label">
+                                                Password
+                                            </label>
+                                        </div>
 
- 
- 
-<button type="submit" class="btn btn-primary">Submit</button>
+                                        <div class="col-auto">
+                                            
+                                            <!-- Help text -->
+                                            <a href="#" class="form-text small text-muted link-primary">Forgot password</a>
+                                        </div>
+                                    </div> <!-- / .row -->
+    
+                                    <!-- Input -->
+                                    <div class="input-group input-group-merge">
+                                        <input type="password"  name = "password" class="form-control" autocomplete="off" data-toggle-password-input placeholder="Your password">
+                                        
+                                        <button type="button" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- / .row -->
 
+                        <div class="form-check">
 
-	</div>
-</div>
-</form>
+                            <!-- Input -->
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <!-- Label -->
+                            <label class="form-check-label" for="remember">
+                                Remember me
+                            </label>
+                        </div>
 
-        <!-- JAVASCRIPT-->
-        <!-- Vendor JS -->
-        <!-- <script src="./assets/js/vendors.bundle.js"></script> -->
-       
-        <!-- Theme JS -->
-		<script> src = "https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.2.0/dist/js/bootstrap-select-country.min.js" </script>
-        <script src= "{% static 'manager/assets/js/theme.bundle.js' "
-        </html></script>    </body>
+                        
+                        <input type="submit" value="submit" class="btn btn-primary mt-3">
+                    </form>
+                </div>
+
+                <div class="mt-auto">
+
+                  
+                </div>
+                
+            </div>

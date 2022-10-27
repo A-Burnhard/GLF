@@ -45,20 +45,49 @@ def logout_user(request):
 
    
 
-class DashBoard(TemplateView):
-    template_name = "manager/index.html"
 
-class Primary(TemplateView):
-    template_name = "manager/primary.html"
+class sample(TemplateView):
+    template_name = "manager/sample.html"
 
+ 
 class Calendar(TemplateView):
     template_name = "manager/calendar.html"
 
-class Primary(TemplateView):
-    template_name = "manager/primary.html"
+class Primary(APIView):
+  renderer_classes = [TemplateHTMLRenderer]
+  template_name = 'manager/index.html'
+
+  def get(self, request):
+        dcount = Donor.objects.all().count()
+        tcount = Tour.objects.all().count()
+        vcount = Volunteer.objects.all().count()
+        total = dcount+tcount+vcount
+        
+        return render(request,'manager/primary.html' ,{ "dc" : dcount ,
+        "tc" : tcount,
+        "vc" : vcount,
+        "all_total": total  })
 
 class Documentation(TemplateView):
     template_name = "manager/docs.html"
+
+class Dashboard(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'manager/index.html'
+
+  
+    def get(self, request):
+        dcount = Donor.objects.all().count()
+        tcount = Tour.objects.all().count()
+        vcount = Volunteer.objects.all().count()
+        total = dcount+tcount+vcount
+
+        return render(request,'manager/index.html' ,{ "dc" : dcount ,
+        "tc" : tcount,
+        "vc" : vcount,
+        "all_total": total  })
+
+
 
 
 class VolunteerList(APIView):

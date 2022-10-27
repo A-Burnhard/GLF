@@ -8,10 +8,16 @@ class VolunteerSerializer(serializers.ModelSerializer):
         model = Volunteer
         fields = '__all__'
 
+    def get_vol_total(self, obj):
+        return Volunteer.objects.all.count()
+
 class DonorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donor
         fields = '__all__'
+
+    def get_don_total(self, obj):
+        return Donor.objects.all.count()
 
 class TourSerializer(serializers.ModelSerializer):
     class Meta:

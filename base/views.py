@@ -21,7 +21,7 @@ class HomePage(TemplateView):
  #ENDPOINT to post Volunteer model collection
 class VolCreateView(FormView):
     template_name = 'volunteer.html'
-    form_class = VolunteerForm
+    form_class = VolunteerForm()
     success_url = '/success-v/'
 
     def form_valid(self,form):
@@ -31,7 +31,7 @@ class VolCreateView(FormView):
  #ENDPOINT to post Donor model collection
 class DonCreateView(FormView):
    template_name = 'donor.html'
-   form_class = DonorForm
+   form_class = DonorForm()
    success_url = '/success-d/'
 
    def form_valid(self,form):
@@ -41,7 +41,7 @@ class DonCreateView(FormView):
  #ENDPOINT to post Tour model collection
 class TourCreateView(FormView):
     template_name = 'tour.html'
-    form_class = TourForm
+    form_class = TourForm()
     success_url = '/success-t/'
     
     def form_valid(self,form):
