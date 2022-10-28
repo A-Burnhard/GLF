@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'manager.apps.ManagerConfig',
     'api.apps.ApiConfig',
-    'users.apps.UsersConfig',
 #Third party packages/apps
     'corsheaders',
     'rest_framework',
@@ -147,3 +146,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 Login_url = 'login'
 Logout_url = 'logout'
+
+REST_FRAMEWORK = {
+    
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated"
+    ]
+}

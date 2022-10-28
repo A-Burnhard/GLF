@@ -139,10 +139,11 @@
         <div class="container-fluid">
 
             <!-- Brand -->
-            <a class="navbar-brand" href=" {% url 'home' %}">
-                    <img src=" { static '/images/glfadmin.jpeg'}" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="25">
-        
-                </a>
+            <a class="navbar-brand" href="{%  url 'base:home' kwargs %}">
+                <img src="{% static '/images/glfadmin.jpeg' %}" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="43">
+    
+                <img src="{% static '/images/glfadmin.jpeg' %}" class="navbar-brand-img logo-dark logo-large" alt="..." width="125" height="43">
+            </a>
 
             <!-- Navbar toggler -->
             <a href="javascript: void(0);" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -274,7 +275,7 @@
                     <h6>Admin panel for<br> <span class="emphasize">Global Leaders Foundation</span> website</h6>
 
                     <!-- Button -->
-                    <a class="btn w-100 btn-sm btn-primary" href="javascript: void(0);">Click to main site</a>
+                    <a class="btn w-100 btn-sm btn-primary" href="#">Click to main site</a>
                 </div>
             </div>
             <!-- End of Collapse -->
@@ -764,7 +765,7 @@
 
                         <hr class="dropdown-divider">
 
-                        <a class="dropdown-item" href="#">Sign out</a>
+                        <a class="dropdown-item" href=" {% static 'url' %}">Sign out</a>
                     </div>
                 </div>
             </div>

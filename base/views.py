@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView
 
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
@@ -10,7 +10,7 @@ from django.shortcuts import get_list_or_404
 from .models import Volunteer, Donor, Tour
 from api.mixins import IsSuperAdminPermissionMixin, IsSuperStaffPermissionMixin, IsStaffPermissionMixin
 
-from .forms import *
+from base.forms import *
 
 class HomePage(TemplateView):
     template_name = "index.html"
@@ -39,12 +39,11 @@ class DonCreateView(FormView):
         return super().form_valid(form)
 
  #ENDPOINT to post Tour model collection
-class TourCreateView(FormView):
-    template_name = 'tour.html'
-    form_class = TourForm()
-    success_url = '/success-t/'
+class TourCreateView(CreateView):
+    template_name = 'base/tour.html'
+    form_class =  DonorForm
+    success_url = 'home'
     
-    def form_valid(self,form):
-        form.save()
+    def form_valid(self, form):
         return super().form_valid(form)
 

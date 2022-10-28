@@ -1,8 +1,7 @@
 from django.views.generic.base import TemplateView
 from manager import serializers
 
-from rest_framework import generics, mixins
-from rest_framework import generics, mixins
+from rest_framework import generics, mixins, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -48,14 +47,20 @@ def logout_user(request):
 
 class sample(TemplateView):
     template_name = "manager/sample.html"
+    permission_classes = [permissions.IsAuthenticated]
+
 
  
 class Calendar(TemplateView):
     template_name = "manager/calendar.html"
+    permission_classes = [permissions.IsAuthenticated]
+
 
 class Primary(APIView):
   renderer_classes = [TemplateHTMLRenderer]
   template_name = 'manager/index.html'
+  permission_classes = [permissions.IsAuthenticated]
+
 
   def get(self, request):
         dcount = Donor.objects.all().count()
@@ -70,10 +75,13 @@ class Primary(APIView):
 
 class Documentation(TemplateView):
     template_name = "manager/docs.html"
+    permission_classes = [permissions.IsAuthenticated]
+
 
 class Dashboard(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/index.html'
+    permission_classes = [permissions.IsAuthenticated]
 
   
     def get(self, request):
@@ -93,6 +101,7 @@ class Dashboard(APIView):
 class VolunteerList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/vollist.html'
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         queryset = Volunteer.objects.all()
@@ -101,6 +110,8 @@ class VolunteerList(APIView):
 class TourList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/tourlist.html'
+    permission_classes = [permissions.IsAuthenticated]
+
 
     def get(self, request):
         queryset = Tour.objects.all()
@@ -109,6 +120,8 @@ class TourList(APIView):
 class DonorList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/donorlist.html'
+    permission_classes = [permissions.IsAuthenticated]
+
 
     def get(self, request):
         queryset = Donor.objects.all()
