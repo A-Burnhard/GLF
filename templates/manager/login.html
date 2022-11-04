@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Webinning" name="author" />
+        <meta content="Global Leaders Foundation" name="GLF" />
         
             <!-- Theme CSS --> 
 
@@ -89,10 +89,7 @@
             });
         }
     </script>
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any" />
-
-   
+  
 
     <!-- Page Title -->
     <title>Admin | Login</title>
@@ -130,16 +127,18 @@
             <div class="col-md-7 col-lg-6 px-lg-4 px-xl-8 d-flex flex-column vh-100 py-6">
 
                 <!-- Brand -->
-                <a class="navbar-brand mb-auto" href="{% url 'home' %}">
-                        <img src=" {% static 'images/glfadmin.jpeg' %}" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="25">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static '/images/logo.jpg' %}" class="navbar-brand-img logo-light logo-large" alt="..." width="170" height="80">
+        
+                    <img src="{% static '/images/logo.jpg' %}" class="navbar-brand-img logo-dark logo-large" alt="..." width="170" height="80">
                 </a>
-
                 <div>
                     <!-- Title -->
                     <h1 class="mb-2">
                         Sign In
                     </h1>
 
+                    
                     <!-- Subtitle -->
                     <p class="text-secondary">
                         Enter your username and password to access admin panel
@@ -218,7 +217,8 @@
             <div class="col-md-5 col-lg-6 d-none d-lg-block">
 
                 <!-- Image -->
-                <div class="bg-size-cover bg-position-center bg-repeat-no-repeat overlay overlay-dark overlay-50 vh-100 me-n4" style="background-image: url(./assets/images/covers/sign-in-cover.jpeg);"></div>
+                <div class="bg-size-cover bg-position-center bg-repeat-no-repeat overlay overlay-dark overlay-50 vh-100 me-n4" style="background-image: url('');">
+                    <img src="{% static 'base/assets/images/elmina_castle.jpg' %} " height="663"></div>
             </div>
      
      

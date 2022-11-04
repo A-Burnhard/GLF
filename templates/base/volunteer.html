@@ -1,119 +1,189 @@
-
 <!DOCTYPE html>
 {% load static %}
-<html lang="en" data-theme="light"  data-sidebar-behaviour="fixed" data-navigation-color="inverted" data-is-fluid="true">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Webinning" name="author" />
-        
-            <!-- Theme CSS --> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
+  <link rel="stylesheet" href="{% static 'base/assets/css/volunteer.css' %}"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"  href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
+  <link rel="stylesheet" href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <title>Become a volunteer</title> 
+  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
+</head>
+<body>
+  <div class="first-section">
+    <img src="{% static 'base/assets/images/logo.jpg' %} " alt="logo-image"> 
+  <nav class="navigation">
+      <ul class="links">
+        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
+        <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
+        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
+        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
+        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
+        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
+        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
+        <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
+      </ul>
+      <div class="mobile">
+      <a href="#" class="toggle-switch-button">
+        <span class="fa fa-navicon"></span>
+      </a>
+      <div class="glf-header">
+        <img src="{% static 'base/assets/images/logo.jpg' %}" alt=""> 
+      </div>
+      <!-- <a href="#" class="list-element-button">
+        <span class="fa fa-ellipsis-v"></span>
+      </a> -->
+      </div>
+  </nav>
 
-            <link rel="stylesheet" href="{% static'manager/assets/css/theme.bundle.css' %} " id="stylesheetLTR" /> 
-            <link rel="stylesheet" href=" {% static 'manager/assets/css/theme.rtl.bundle.css ' %} " id="stylesheetRTL" />            
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        <!-- no-JS fallback -->
-        <noscript>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-        </noscript>
-        
-      <body>
+      <div class="member-cont">
+        <div class="member">
+          <h1>
+            Become a <span>VOLUNTEER</span> Today
+          </h1>
+          <div class="notice reveal">
+            Global Leaders Foundation is looking for people with the following skills and attributes
+          </div>
+          <div class="text-items reveal">
+            <p><span class="fa fa-check"></span>Passion about making a difference in the world</p>
+            <p><span class="fa fa-check"></span>Ability to adopt to different environment</p>
+            <p><span class="fa fa-check"></span>Ability to take initiative and direction</p>
+            <p><span class="fa fa-check"></span>Well-organized</p>
+            <p><span class="fa fa-check"></span>Flexible and open-minded</p>
+            <p><span class="fa fa-check"></span>Ability to interact respectfully with people from diverse racial, cultural, and economic backgrounds</p>
+            <p><span class="fa fa-check"></span>Team player</p>
+            <p><span class="fa fa-check"></span>Innovative/Creative</p>
+          </div>
+             
+        </div>
+        <div class="member-image reveal">
+          <img src="{% static 'base/assets/images/j.jpg' %}" alt=""> 
+        </div>
+      </div>
+
+      <div class="member-cont-two reveal">
+        <div class="member-image">
+          <img src="{% static 'base/assets/images/become.jpg' %}" alt="join-us"> 
+        </div>
+        <div class="member">
+          <div class="notice">
+            Volunteer Placement Procedures are:
+          </div>
+            <div class="starter">
+              <!-- <p>You select the programme type, duration, and project portfolio of interest. You provide details on skills, interests, academic background, and professional experiences.</p>
+              <p>Programme Director evaluate your application and project preferences to best match you with a project maximizing benefit to the community.</p> -->
+              <p>Depending upon your length of stay, the programme Director will send you the cost for the following</p>
+            </div>
+            <div class="text-items reveal">
+              <p><span class="fa fa-check"></span>Airport Pick-up</p>
+              <p><span class="fa fa-check"></span>Accommodation (private room in a comfortable home-stay setting)</p>
+              <p><span class="fa fa-check"></span>Three meals daily</p>
+              <p><span class="fa fa-check"></span>24/7 In-country support</p>
+              <p><span class="fa fa-check"></span>Accra city tour upon arrival</p>
+              <p><span class="fa fa-check"></span>Volunteer placement arrangements and follow-up</p>
+              <p><span class="fa fa-check"></span>Personalized Souvenir</p>
+              <p><span class="fa fa-check"></span>Visitation to a partner orphanage home</p>
+              <p><span class="fa fa-check"></span>Airport Drop-off</p>
+            </div>
+        </div>
+      </div>
+      <div class="registration-cont reveal">
+        <div class="account-container reveal">
+            <div class="fiber">Join Us</div>
+            <div class="header">Become a volunteer today</div>
+            <form class= "form" action="" method="POST">
+              {% csrf_token %}
+
+              {{ form.as_p }}
+              
+              
+              <input  type = "submit" value = "submit"  
+              style="color:white;
+               background-color: #15A2D7 ;
+              border: none;
+              border-radius: .3rem;  
+              border: 1px solid #15A2D7;
+              transition: color 0.15s, background-color 0.15s;
+              font-family: 'Epilogue', sans-serif;
+              text-transform: uppercase;
+              padding-block: .4rem;
+              padding-inline: 1rem;
+              font-weight: 500;
+            " class="submit" >
+              
+             
+            </form>
+        </div>
+      </div>      
+  <footer>
+    <div class="left-section">
+      <div class="brand">Global Leaders Foundation</div>
+      <div class="lists">
+        <div>Home |</div>
+        <div> About |</div>
+        <div> Contact |</div>
+        <div></div>
+      </div>
+      <div class="copyright">Copyright &#169; 2022 GlobalLeadersFoundation <br> All rights reserved</div>
+    </div>
+    <div class="middle-section">
+      <div class="reach">
+        Get In Touch With Us
+      </div>
+      <div class="location">
+        <div><span class="fa fa-map-marker"></span></div>
+        <div>
+          P.O. Box CT 7883
+          Cantonments <br>Accra
+          Ghana, West Africa.</div>
+      </div>
+      <div class="call">
+        <div><span class="fa fa-phone"></span></div>
+        <div>+233 (0) 24 529 6586</div>
+      </div>
+      <div class="mail">
+        <div><span class="fa fa-envelope"></span></div>
+        <div>info@GlobalLeadersFoundation.org</div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="about-header">About Us</div>
+      <div class="about-text">
+        Global Leaders Foundation is a value-based Non-Governmental Organization (NGO). By this, we mean all our programs, activities, operational structure, and development are driven and determined by a set of core values. 
+        We operate with the values of cultural infusion, integrity, respect for all, and connectedness. We also recognize the need for networking and connectivity. We value healthy sustainable processes and structures.
+      </div>
+      <div class="social-icons">
+        <div>
+          <span class="fa fa-facebook fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-instagram fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-twitter fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-google fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-linkedin fa-2x"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
-		<div class="container">
-			<div class="row">
-			  <div class="col-6 offset-md-3">
-<!-- Forms-->
-<form class="form" action="" method = "post">
+  
+ <script src="{% static 'base/assets/scripts/volunteer.js' %}"></script> 
+ <script src="{% static 'base/scripts.js' %}"></script> 
+</body>
+</html>
 
 
- <div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Yesa</label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="P">
-</div>
- 
-
-
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Other names</label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Date of Birth</label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Email</label>
-	<input type="email" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2">Phone number</label>
-	<input type="number" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label">Address</label>
-	<input type="text" class="form-control" value="">
-</div>
- 
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlInput4">City</label>
-	<input type="number" id="exampleFormControlInput4" class="form-control" placeholder="name@domain.com">
-
-</div>
-
-<div class="mb-3">
-	<label class="form-label" for="exampleFormControlPlaceholderInput2"> Country</label>
-	<input type="text" id="exampleFormControlPlaceholderInput2" class="form-control" placeholder="Placeholder text">
-</div>
-
-<div class="mb-3">
-	<label class="form-label">Academic Background</label>
-	<input type="text" class="form-control" value="">
-</div>
-
-<div class="mb-3">
-	<label class="form-label">skills</label>
-	<input type="text" class="form-control" value="">
-</div>
-
- <div class="mb-3">
-	<label class="form-label">Interested area of placement</label>
-	<input type="text" class="form-control" value="">
-</div>
-
-<div class="mb-3">
-	<label class="form-label">Duration of placement</label>
-	<input type="text" class="form-control" value="">
-</div>
-
-<div class="mb-3">
-	<label class="form-label">Citizenship</label>
-	<input type="text" class="form-control" value="">
-</div>
-<div class="mb-3">
-	<label class="form-label">Coments</label>
-	<input type="text" class="form-control" value="">
-</div>
-
-<button type="submit" class="btn btn-primary">Submit</button>
-
-
-	</div>
-</div>
-</form>
-
-        <!-- JAVASCRIPT-->
-        <!-- Vendor JS -->
-        <!-- <script src="./assets/js/vendors.bundle.js"></script> -->
-       
-        <!-- Theme JS -->
-		<script> src = "https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.2.0/dist/js/bootstrap-select-country.min.js" </script>
-        <script src= "{% static 'manager/assets/js/theme.bundle.js' %} "
-        </html></script>    </body>

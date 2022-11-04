@@ -11,13 +11,13 @@ class Volunteer(models.Model):
     #id = models.BigAutoField(primary_key = True)
   #  user=models.ForeignKey(
     #    User, on_delete=models.CASCADE, null= True, blank = True
-  #  )
+  
     
     id = models.AutoField(primary_key= True)
     username = models.CharField(max_length=250, null= True)
     DateOfBirth = models.DateField()
     email = models.EmailField(null =True)
-    phoneNumber = models.IntegerField(null = True)
+    phoneNumber = models.TextField(null = True)
     address= models.CharField(max_length=200, null=True)
     city = models.CharField(max_length=100, null=True)
     country = models.CharField(max_length=50, null=True)
@@ -32,14 +32,14 @@ class Volunteer(models.Model):
         ordering = ['-date']
 
     def _str_(self):
-        return self.surname + '' + self.otherNames
+        return self.surname + '' + self.username
 
 class Donor(models.Model):
 
      id = models.AutoField(primary_key= True)
      Name = models.CharField(max_length=200)
      email = models.EmailField(null = True)
-     PhoneNumber = models.IntegerField(null=True)
+     PhoneNumber = models.TextField(null = True)
      country = models.CharField(max_length = 200)
      MeansofGiving = models.CharField(max_length=120)
      FReqOfGiving = models.CharField(max_length=100)
@@ -49,7 +49,7 @@ class Donor(models.Model):
         ordering = ['-date']
 
      def _str_(self):
-        return self.donorname 
+        return self.Name 
 
 
 class Tour(models.Model):
@@ -71,6 +71,6 @@ class Tour(models.Model):
 
 
     def _str_(self):
-      return self.Tname
+      return self.name
 
 

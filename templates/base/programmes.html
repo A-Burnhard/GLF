@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="{% static 'assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;">
+  <link rel="stylesheet" href="{% static 'base/assets/css/programmes.css' %}"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"  href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
+  <link rel="stylesheet" href=" {% static '/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <title>Our Programmes</title> 
+  <link rel="icon" href="{% static '/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
+</head>
+<body>
+  <div class="first-section">
+    <img src="  {% static 'base/assets/images/logo.jpg' %}" alt="logo-image"> 
+  </div>
+  <nav class="navigation">
+      <ul class="links">
+        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
+        <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
+        <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team</a></li> -->
+        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
+        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
+        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
+        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
+        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
+        <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
+      </ul>
+      <div class="mobile">
+      <a href="#" class="toggle-switch-button">
+        <span class="fa fa-navicon"></span>
+      </a>
+      <div class="glf-header">
+        <img src="{% static 'base/assets/images/logo.jpg' %}" alt=""> 
+      </div>
+      <!-- <a href="#" class="list-element-button">
+        <span class="fa fa-ellipsis-v"></span>
+      </a> -->
+      </div>
+  </nav>
+  <h1>Nzulezu Stilt Village</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+      The spectacular scenery of stilt propped water settlement of Nzulezu built on lake Tadane located in the Jomoro District in the Western Region of Ghana stands out as a magnificent interplay between man and his environment. Nzulezu is an Nzema word meaning "surface of water." The inhabitants of the village are said to have migrated from Walata, a city in ancient Ghana Empire' the earliest of the Western Sudanese States. According to tradition, ancestors of the village were brought to their present place under the guide of a snail. The serene ambience of the surrounding landscape coupled with the general activities of life point to a dynamic relationship between man and nature. Traditional village life is adapted to the watery conditions to the amazement of the visitor. All activities pertaining to normal life chores such as pounding of fufu (a traditional meal) schooling, worship and burial are done on the lake. New born babies are baptized in the lake. The lake, it is said, averts possible disasters like outbreak of fire, 
+      killing of natives of the village on or around it. The sacred day of the lake is Thursday, a day set aside on which no activity is supposed to take place signifying a strict adherence to traditional norms and taboos. 
+      Nzulezu stilt settlement is a unique lacustrine habitation achieved by a harmony of forces of nature to meet man's needs resulting in a settlement of outstanding value.
+    </div>
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/Nzulezu Stilt Village.jpg' %}" alt="Nzulezu"> 
+    </div> 
+  </div>
+
+  <h1>Accra Cultural Centre</h1>
+  <div class="village-container reveal">
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/Accra Cultural Centre.jpg' %}" alt="Accra"> 
+    </div>
+    <div class="village-text">
+      Showcases traditional handicrafts from all over Ghana; the centre has workshops and art galleries. There are arts and crafts bazaars and a traditional textile market with souvenirs that have been crafted in clay, wood, leather and metal. There is also indoor market with stalls having footwear, tee shirts and other souvenirs.
+    </div>
+  </div>
+
+  <h1>Kwame Nkrumah Mausoleum</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+    The Kwame Nkrumah Mausoleum and memorial park is located in downtown Accra, the capital of Ghana.
+
+    It is dedicated to the prominent Ghanaian President Kwame Nkrumah. The memorial complex was dedicated in 1992, and is situated on the site of the former British colonial polo grounds in Accra.
+
+    The mausoleum, designed by Don Arthur, houses the bodies of Kwame Nkrumah and his wife Fathia Nkrumah.
+
+    The building is meant to represent an upside down sword, which in Akan culture is a symbol of peace. The mausoleum is clad from top to bottom with Italian marble, with a black star at its apex to symbolize unity. The interior boasts marble flooring and a mini mastaba looking marble grave marker, surrounded by river-washed rocks. A skylight at the top in the mausoleum illuminates the grave.
+
+    The mausoleum is surrounded by water, a symbol of life.
+    </div>
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/Kwame Nkrumah Mausoleum.jpg' %}" alt="Nkrumah"> 
+    </div>
+  </div>
+
+  <h1>Lake Volta</h1>
+  <div class="village-container reveal">
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/Lake Volta.jpg' %}" alt="Volta"> 
+    </div>
+    <div class="village-text">
+      Lake Volta, the largest artificial reservoir in the world based on surface area, is contained behind the Akosombo Dam which generates a substantial amount of Ghana's electricity. It is completely within the country of Ghana and has a surface area of 8,502 square kilometres (3,283 sq mi; 2,101,000 acres). It extends from Akosombo in the south to the northern part of the country
+    </div>
+  </div>
+
+  <h1>Cape Coast Castle</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+      A fortified castle located in Cape Coast, Ghana that was originally built by the Danish for the gold and timber trade. This must see heritage site was turned into an important hub of the Trans-Atlantic Slave Trade. Visitors often remark at the emotional reactions brought on by the Cape Coast Castle and its devastating history. The “Door of No Return” is only one of the reasons that Cape Coast Castle is truly a necessary stop for all visitors to Ghana.
+    </div>
+    <div class="village-image">
+      <img src=" {% static 'base/assets/images/Cape Coast Castle.jpg' %}" alt="castle"> 
+    </div>
+  </div>
+
+  <h1>Elmina Castle</h1>
+  <div class="village-container reveal">
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/elmina_castle.jpg' %}" alt="Elmina"> 
+    </div>
+    <div class="village-text">
+      Elmina Castle is well known for being the oldest European building below the Sahara. Initially established for trade it also became an essential part of the Trans-Atlantic Slave trade. This castle is recognized as a UNESCO World Heritage Site and many visitors consider it the highlight of their trip to Ghana.
+    </div>
+  </div>
+
+  
+  <h1>Mole National Park</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+      A visit to Mole National Park is a great opportunity to see elephants, baboons, warthogs, antelope and many other smaller animals up close and personal. Mole National Park is the largest national park in Ghana and is also the park most often visited by tourists. Visitors have the chance to go on a very rewarding walking safari with an armed ranger.
+    </div>
+    <div class="village-image">
+      <img src=" {% static 'base/assets/images/Mole-National-Park.jpg' %}" alt="Mole"> 
+    </div> 
+  </div>
+
+  <h1>Mosque At Larabanga</h1>
+  <div class="village-container reveal">
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/Larabanga_Mosque_Ghana.jpg' %}" alt="Larabanga"> 
+    </div>
+    <div class="village-text">
+      Larabanga, the gateway to Mole National Park, has the oldest and best-preserved example of a mud and stick mosque in Ghana. Visitors are currently not permitted inside the mosque but have the chance to take photos and learn about the local history surrounding the mosque.
+    </div>
+  </div>
+
+  <h1>Kakum National Park</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+      Kakum National Park is a must see attraction in the Central Region of Ghana. It is a unique opportunity to walk above the canopy on six exciting walkways that will take your breath away. Beyond the excellent view there are many interesting birds, butterflies and insects to be seen along the gorgeous guided forest trails.
+    </div>
+    <div class="village-image">
+      <img src=" {% static 'base/assets/images/kakum-park.jpg' %}" alt="kakum">
+    </div>
+  </div>
+
+  <h1>Paga Crocodile Pond</h1>
+  <div class="village-container reveal">
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/paga-pond.jpg' %}" alt="Paga"> 
+    </div>
+    <div class="village-text">
+      This sacred sanctuary for crocodiles, The Paga Crocodile Ponds, is truly a site to behold. Located approximately .5 miles from the Ghana and Burkina Faso border the crocodile ponds offer visitors the unique opportunity to view crocodiles in their natural habitat and even pose with the animals for pictures. It is a very invigorating experience to say the least!
+    </div>
+  </div>
+
+  <h1>Pikworo Slave Camp</h1>
+  <div class="village-container reveal">
+    <div class="village-text">
+      Pikworo Slave Camp located near the Burkina Faso border with Ghana is a heart wrenching tour that will bring the reality of the slave trade to the forefront. The tour of the slave camp includes a lot of valuable information on how slaves were treated by their captors, how slaves were traded and how they were punished for so-called offenses. While not a well-known tourist attraction it is certain to become much more important in the future.
+    </div>
+    <div class="village-image">
+      <img src="{% static 'base/assets/images/pikoro-slave-camp.jpg' %}" alt="Pikworo"> 
+    </div>
+  </div>
+
+
+  
+
+
+  <!-- Programmes background -->
+  <div class="programmes-cont reveal">
+   <div class="programme-content">
+    <h1>Wake up, Africa!</h1>
+    <div class="paragraph">
+
+      <p>We should not be jealous and envious when someone is becoming successful through his/her own enterprise. These negative qualities are the marks of men and women with infant brains. We must live longer and enjoy our God given lives to the full. Brainwashing has landed us in a strange culture, a strange land with strange behaviors. Foolishly, we can only manufacture the best designing coffin and showcase them along our city streets while our natural resources – gold, diamonds, timber and many other things adorn the streets and the buildings of foreign capitals.
+
+        We produce nothing good, positive, beautiful but only depressing coffins, our creations. We foolishly brag on the best kind of coffin to be buried in. The quality of coffin does not matter because our body is already out of use.
+        
+        We come together to do things that will not lift us up. We turn the funerals for our loved ones into merry-making, lasting till the next morning each occasion. Why do we mix our joy and misery together? Mourning for a loved one ought to be very solemn. Why don’t we celebrate achievement, an invention or a creation and stop the celebration of all that are negative? Why not spent time and money on things that will give meaning to our being here on earth? Why mix business with pleasure? Without business, there will be no pleasure. Let’s reassess our values, where are our intellectuals? They should help us in this realigning our values with the reality of our present.
+        
+        Other nations find solace in the achievement of their departed loved ones. Many draw consolation from their life’s works. They do not come together only at a time of funeral the way we do, to dance to disco music, provide the best video men in the city and put on our finest, most expensive clothes and jewelry, drink the best drinks and have a good time of hours. We must change, the time themselves have changed. Why waste precious working hours like this sitting around drinking, drumming and dancing? Why pour so much money into western economies like this over video and drinks?
+        
+        It is not too late to make inventions and innovations in life. We could invest to boast our industries. Our own country’s rich and abundant natural resources could be utilized to benefit us. ‘’In the midst of plenty, the fool is still hungry’’. Why should our president be travelling to other countries seeking for money? We can then stop criss – crossing the globe in search of jobs. The jobs are inside our minds. They are locked up in our conscious mind. Everything we imagine can be brought out into the real world. We sit on plenty but live in object poverty. Government and nationalists must think and correct these anomalies.
+        
+        We must produce what we eat, read what we write, trade in what we produce and create but not coffins. We must eat what we can and can what we can’t. We as individuals have not even worked for ourselves yet. Our government still owes and is repaying loans contracted fifty years ago. When are we going to finish paying these loans and when are we going to work for ourselves and for the future generation? Should our lives be filled only with misery, sorrow and lamentations? From year to year, from generation to generation? No! We must declare it right now, the cycle of economic servitude; poverty and indignity must be broken. The youths must hear this admonition into their minds. We must be useful to ourselves, our country and our race. Let us be together catalysts of change. This is our time.
+        
+        Let us work hard and work honestly as in the day, not in rioting, drunkenness, womanizing, not in slumber and not in strife and not in envy. For we are far behind all others. Why can’t the rich give scholarship to patriotic talented youths to study science and technology to close the ever widening gap between us and other nations? Why can’t the government energize and motivate the youths to work. We the youth must not carry our heads as pillows, sleeping, reading under the mango tree and orange trees at all time in the busy working hours of the day. Our fathers must not lie down on their office desks, our sisters besides their typewriters or in the classroom and slumber. Those responsible for teaching must teach, those responsible to be in the office must be in the office and work for the reasonable time. They must continuously work full day and beyond the night in the small hours of each day. Twenty-four hours for work is good for the body and the mind. For it is a good investment of time, energy and money for us and our generation to come.
+        
+        We have not care well enough for our mothers. Their tears must be readily turned into tears of joy. The men- husbands, sons and brothers have misused and neglected them. We sometimes give them negative names such as “Witch’’, if they were witch, why don’t they destroy us in our infancy. Where are the men? Do you deeply love our mother’s? If you love them, why do you beat them after the marriage? Our mothers have been suffering too much. You should strive to change our mother’s before the next generation comes. As we prepare to enter the next year, let us remember our mother’s, your wives and children. They are collectively the serene, sweet honey of our lives. A sweet mother is always there to care for us, even when we are wrong or in trouble.
+        
+        After we have work with determination and dedication, after all those beneficent things of hard work, then we can turn to the subject of festivity at which our traditional values would be trooped and displayed with pomp and dignity. Each one of us and our families dressed and adorned in our own manufactured cloths and jewellery will match in procession majestically, shining and dazzling, following our kings, chiefs and queens at durbars with beautiful bobbing multi-colored huge umbrellas as we celebrate our culture, eating our own food, singing our traditional songs and drumming. These would be the true culmination of hard work done around the clock. We would, with and dignity be celebrating a deserved joyful break. We would then be celebrating hope and aspiration that would propel us on throughout the journey of life. Also, we would be proudly dispensing among our joyful homes, well earned confidence, hopeful and meaningful assurance of being. But to be a chief for only one day, the day of your out-dooring or durbar, and then labored the rest of the year is not dignifying the chain that attaches us to corporate world of economic servitude.<span id="dots">...</span><span id="more">One person, one leader cannot do it all. We must not point accusing fingers at our leaders for not doing anything. We should not disrespect our leaders. Why should we point at them? If we do, the other four fingers on each hand would be pointing at ourselves as worse failures. What are you doing as your contribution to make life better? Are you doing something to help develop your country? The foes of our country do not want the country to be successful so that we can be happy, proud and joyful as men and women. They want us to be perpetual stoppers to the corporate want of the advanced world. It is not their interest to see us progress and her children enjoying life and longevity but they seek the destruction of us. If it were not so, why are they dumping chemicals secretly at night in our country? Is it because they want to make the soil or the sea of our country richer and healthier? If they are arrested in the process, they say it is a method of fishing.
+
+        They secretly kill all the fish or its habitant but stranger than fact, some of our own people are known to have contracted for the dumping of chemicals in the sea in exchange for a few thousands of dollars.
+        
+        Those foreigners who own companies and employ us, treat us like ‘’animals’’ in our own motherland. These people whom our men and women work for have no humanity, no concern, only money. They will die and leave it. They will be the richest persons in their graves. The pictures you see on the television set every evening these days of hungry children, the flies around them-the children. The hunger situation is terrible in other parts of the motherland. What a pitiful world we live in?
+        
+        What about the kings or leaders?
+        
+        Won’t they stop fighting and save their own people? It is all politics. Some countries are part of our problems. They won’t supply food, they only supply guns. Our scholar’s prefer to put on white shirts and ties and sit in comfortable offices. That’s why we are suffering, hunger and starvation. Mostly, our mothers and children are the one who suffer the most. Who is going to do it for us? The government depends mostly on other countries. These countries may try to do something but very little. They have and are still wanting for themselves.
+        
+        There is a particular one African country that did not trust anyone. When they were ex-terminated, they did not look to anyone. Many people died. These could have built a nation. Intellectuals were killed. To have life freedom and happiness, you must have a nation and develop that nation yourself. This is what we must do. Beautiful land endowed with resources, gold, diamonds and all minerals you can think of, rivers, lakes, streams and beaches all over the country. The country should be a paradise for our mothers and fathers. It shouldn’t be poor land at all. We believe we are poor. It is a pity. It is unacceptable. We are sitting on the wealth of the world but our minds have been polluted and we have been brain-washed and programmed to accept poverty, to think only of poverty, the negative, impossibilities. Because of the acceptance of these, we think very poorly so we remain poor. The poor condition we live in must stop. I know that, if we refused to accept the garbage being poured into our minds, we could surely dynamite mountains of woes and dejection into wealth. We can stop the retrogression. We can move into the future with joy and great farming. But if we fail to work hard with determination, twenty-four hours each day, without sleep, growing and eating enough nutritious foods, we could be destroyed as a nation. There is joy in hard work; we could cheer our farmers with words like “Ayeeko”.
+        
+        My brothers and sisters, do help somebody, teach somebody, and educate somebody. As a doctor, go to areas where they need you and help treat somebody with your education.
+        
+        People must pray for one another. They must pray for the betterment of the country. They must not pray for the destruction of a friend or a foe. They must love their country and be willing to preserve well everything that belongs to the country. They must avoid selling their country to outsiders. The natural resources of the motherland must not be stolen and taken out illegally to be given away cheaply. If one steals millions of cedis from the country, where is the government going to get money from to buy medicine for hospital, to build roads and schools?
+        
+        When the watchmen in any government corporation would spend sleepless nights on their feet, guarding property in the old way as you will always find in the public sector, the watchmen only guard against. "night robbers" whiles the civil servant themselves are "day robbers" secretly putting the stolen money into foreign bank accounts. Even if one of the watchmen were to be killed during a fight with robbers, nobody was now prepared to look after his family, unless he had belonged to their political group. Even then, the employers only helped if they thought some gain could be made out of it.
+        
+        One must know that foreign governments do not protect anyone who brings in millions of cedis into their country; it is only the money they protect. They do this because the huge amount will be used to create jobs for their nationals. The millions stay forever in the country where they are stored but not you who stole the millions.
+        
+        We must pray daily for our leader’s good health and strength. We must pray to God for change to the right direction if they are going in the wrong direction. We must not go to the fetish priest to perform destructive rites to doom progressive leaderships. We must direct our minds towards God and pray to Him in confidence and with confidence to overcome poverty, disease, misery and all the woes of our motherland. Why go to a fetish priest or priestess for rites to become rich and we gladly fly to other countries to purchase their goods? Why can’t these priests and priestesses perform rites for goods to be manufactured abundantly in our land? Why can’t they perform rites so that our high ways and by-ways all be filled with industries producing never-ending goods and services to benefit all of us in our land?
+        
+        Why the so called men of God asked their members to fast and pray so that they can travel outside to succeed? Why can’t they fast and pray for their members to succeed here if really they believe in their prayers? Why do these so called men of God colour outside as gold but they themselves stay here? They uphold or worship even anyone who has travelled through wrong means. What a shame?
+        
+        Every Ewe, Fante, Asante, Hausa, Ga, Fulani, all A to Z tribes must know that, their enemies are none of these tribes mentioned but their monstrous enemies are ignorance, tribalism, narrow nationalism, poverty and greedy. These are the enemies they must fight. Not Hausa people fighting Fulani, Ewe and Asante fighting against each other. Not Fanti and Ga killing one another, because they are not of the same tribe but the enemies of all the A to Z tribes must be identified as the one who will readily steal the natural resources of the motherland, or steal the money of the motherland and escape to other country with it.
+        
+        We must not be tribally blinded and ignorant to perceive that when an official takes the money of his country and runs away with it, it does well to the members of his or her tribe, men or women, boys or girls living in the tribal area. Instead, it benefits the country where he stacked the stolen money. Jobs will be created in that country. Money for new research becomes available to that recipient nation for new drug while the poor in his or her village cannot even afford medication for malaria and headache; these are maladies to be cured with money and not superstition of witches killing us. We must know that the enemy and the witch together are that person who speaks our own language, squanders and runs away with our money to other country.
+        
+        We must together fight greed. We must support whoever seeks our welfare, our betterment. Enemies would look for division and tribal bickering and use them against any region. They will allow us to fight one another so that they can get our wealth. Look at what is going on now, hunger.
+        
+        The world will not take us seriously enough. Already, much time is being wasted fighting over the principle of chieftaincy. Friends are becoming foes, directing their energy towards hating and hurting one another. These rivalries and bickering can be traced as some of the causes of our disunity and downward mobility as a nation. Chieftaincy disputes envelope the life of our forefathers and in every town and village in our motherland, there is some chieftaincy related disputes going on in some villages and because of our unchanging attitudes bonded by tradition, we are having disputes again. We are wasting the time and energy needed for important things to bring relief to our people.
+        
+        The government is now spending huge sums of money on drugs, food and clothing to these trouble spot areas. We all need to join hands together and build one strong nation. When unity comes, we will conjure all the woes of the motherland.
+        
+        A VILLAGE VISITED
+        
+        They know nothing else but drumming and dancing all their days- all the time, days and nights. When people die, they beat the drums and dance in the village. If ten people die, for ten days these drums keep sounding. If twenty people die, they play the drums and dance for twenty days and twenty nights. They prepare alcohol and drink unendingly. They stop all the work on the farm and just drink, dance and drum. They don’t know the time they have been wasting throughout the years?
+        
+        Children are not taught anything better than these unproductive negative lifestyles. Every young man or woman in this village has got different kind of funeral cloths. They cannot make anything, not even needles or buttons or thread. They cannot make shoes to wear to protect them against poisonous snakes. They eat good leather for shoe, bags, and belts. They don’t know their priorities. They put their priorities on negatives such as death-funerals. They worship the dead more than the living. They slaughter cows, goats for funerals but in real life they go round searching for mice and grass cutters and snails, and other games, shooting and killing their own people accidentally in the process. They close their eyes and mind on things that makes life more pleasing. They accept their suffering as their destiny.
+        
+        They can change their suffering into wealth if they know their priorities. Only then can they stop accusing one another of witchcraft which they think is at the basis of the deaths in their community. They spend more time, money and energy on funerals for the dead than what they spend on the living. If they think other people will make life better for them, then they will all be in the grave.
+        
+        Good things are not for only some people. They need decent housing, they need to stop mosquitoes from breeding and protect themselves against their bites. They need good drinking water. Parents need to send their children to schools so that change can come. The youth must change their life.
+        
+        Progressive nations of the world are working day and night, twenty-four hours, non-stop. How many hours do they work on the farm? The youths think and believe that the poor or uneducated people should farm. They set a special day for not going to the farm for spiritual reasons. They come together and beat the drums, dance and drink and die from it. Too many days, its only death and destruction. Some get intoxicated, go home and slide into their room and make babies and plan no future for their well-being.
+        
+        It is actions like these by some elders/leaders that have placed us in this uncomfortable suffering and struggling world of ours. We are yet to start enjoying our lives as humans. If you go to some factories or companies, you will still find elderly men or women aged about forty still working for somebody who is unappreciative of their work. Many in other countries at this age are president of multimillion – dollar corporations. Yet look at us, at the age of forty, fifty and over, we are still rushing and hurrying to work for other people perhaps of their co-equals in age.
+        
+        Is this not a shame? Is this not a humiliation? We the youth will grow up and find no models. The youth will find no work to do in the future despite their degree or certificate of education.
+        
+        All you hear is to become the next holder of a political office in the future. Here we are, helping our enemy, the devil to destroy our beautiful country, leading ourselves into extinction and destruction by being lazy and apathy. Full of hatred and jealousy because the power of evil has blinded our individual and collective perspective preventing us from seeking right and thinking rationally in order to triumph over death and destruction. Extinction and destruction of our culture shall occur unless we apply reasonableness, dedication and commitment to make our lives.
+        
+        How could we say the number of deaths occurring daily on our roads across the country is not symptomatic of destruction?
+        
+        The evil forces of other countries want to destroy each other. They are working twenty-four hours. They are developing powerful destructive weapons- chemicals, nuclear and even secretly biological. These are destructive weapons.
+        
+        What are we making? We are busy making coffins. We are busy designing coffins to be buried in. Who wants to die? Is it not stupid to take joy in being buried in beautiful coffins? These depressing products are display along our streets.
+        
+        Where are our trained doctors, educated and trained by the poor tax payers? They have all left the country to seek greener pasture. The tax payers and their children are the ones who suffer for all these.
+        
+        The universities don’t support any practical endeavors; students graduating are practically as ignorant as those who haven’t been to school at all. Everything studied in these institutions has no meaning as soon as one graduates, leaves the school and face real life outside. Their degree and diplomas only becomes leaving room decorations.
+        
+        Through Global Leaders Foundation, we hope to empower the youths of Ghana by organizing youth forums. You can help by making a donation not only money but ideas, encouragement, volunteering and above all, making a difference.</span></p>
+
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+    </div>
+
+
+
+  <footer >
+    <div class="left-section">
+      <div class="brand">Global Leaders Foundation</div>
+      <div class="lists">
+        <div>Home |</div>
+        <div> About |</div>
+        <div> Contact |</div>
+        <div></div>
+      </div>
+      <div class="copyright">Copyright &#169; 2022 GlobalLeadersFoundation <br> All rights reserved</div>
+    </div>
+    <div class="middle-section">
+      <div class="reach">
+        Get In Touch With Us
+      </div>
+      <div class="location">
+        <div><span class="fa fa-map-marker"></span></div>
+        <div>
+          P.O. Box CT 7883
+          Cantonments <br>Accra
+          Ghana, West Africa.</div>
+      </div>
+      <div class="call">
+        <div><span class="fa fa-phone"></span></div>
+        <div>+233 (0) 24 529 6586</div>
+      </div>
+      <div class="mail">
+        <div><span class="fa fa-envelope"></span></div>
+        <div>info@GlobalLeadersFoundation.org</div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="about-header">About Us</div>
+      <div class="about-text">
+        Global Leaders Foundation is a value-based Non-Governmental Organization (NGO). By this, we mean all our programs, activities, operational structure, and development are driven and determined by a set of core values. 
+        We operate with the values of cultural infusion, integrity, respect for all, and connectedness. We also recognize the need for networking and connectivity. We value healthy sustainable processes and structures.
+      </div>
+      <div class="social-icons">
+        <div>
+          <span class="fa fa-facebook fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-instagram fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-twitter fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-google fa-2x"></span>
+        </div>
+        <div>
+          <span class="fa fa-linkedin fa-2x"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'base/assets/scripts/programmes.js' %}"></script> 
+  <script src="{% static 'base/scripts.js' %}"></script> 
+
+
+
+</body>
+</html>
