@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" data-theme="light" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Webinning" name="author" />
+        
+            <!-- Theme CSS -->
+            <link rel="stylesheet" href="{% static 'manager/assets/css/theme.bundle.css' %} " id="stylesheetLTR" /> 
+            <link rel="stylesheet" href="{% static 'manager/assets/css/theme.rtl.bundle.css' %}" id="stylesheetRTL" /> 
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+        
+        <!-- no-JS fallback -->
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+        </noscript>
+  
+        
+    
+        
+        <!-- Page Title -->
+        <title>Thanks| Donor</title>
+    </head>
+    
+    <body class="d-flex align-items-center bg-light-green">
+
+            <!-- THEME CONFIGURATION -->
+ 
+        <!-- MAIN CONTENT -->
+        <main class="container-fluid">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 col-lg-6 col-xl-5 px-lg-4 px-xl-8 d-flex flex-column vh-100 py-6">
+
+                    <!-- Brand -->
+                    <a class="navbar-brand mb-auto" href="./index.html"> 
+                            <img src="{% static 'images/logo.jpg' %}" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="25">
+                    </a> 
+
+                    <div>
+                        <!-- Title -->
+                        <h1 class="mb-2">Thank you, Volunteer</h1>
+
+                        <!-- Heading -->
+                        <p class="text-secondary"> Our Director will respond using  <span  class="fw-semibold"> info@globalleadersfoundation.com </span> </p>
+
+                        <!-- Link -->
+                        <a href="{% url 'main' %} " class="btn btn-primary mt-3">Return to  Homepage</a>  
+                    </div>
+
+                    <div class="mt-auto">
+
+                        <!-- Link -->
+                        <!-- <small class="mb-0 text-muted">The page should be here. <a href="javascript: void(0);" class="fw-semibold">Contact Support</a></small> -->
+                    </div>    
+                </div>
+
+                <div class="col-md-5 col-lg-6 col-xl-7 d-none d-lg-block">
+                    
+               <!-- Image -->
+               <div class="bg-size-cover bg-position-center bg-repeat-no-repeat overlay overlay-dark overlay-50 vh-100 me-n4" style="background-image: url('');">
+                <img src="{% static 'images/vthanks.jpg' %} " height="100%" width="100%"></div>
+        </div>
+
+            </div> <!-- / .row -->
+        </main> <!-- / main -->
+
+        <!-- JAVASCRIPT-->
+        <!-- Theme JS -->
+        <script src=" {% static 'manager/assets/js/theme.bundle.js' %} "></script>    </body>
+</html>

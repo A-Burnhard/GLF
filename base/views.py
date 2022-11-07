@@ -26,6 +26,11 @@ class test(TemplateView):
 class Programmes(TemplateView):
     template_name = 'base/programmes.html'
 
+class VolSuccess(TemplateView):
+    template_name = 'base/success-v.html'
+
+class DonSuccess(TemplateView):
+    template_name = 'base/success-d.html'
 
 
 ############### MAKING ONLY ENTRIES #########################
@@ -35,14 +40,14 @@ class Programmes(TemplateView):
 class VolCreateView(CreateView):
     template_name = 'base/volunteer.html'
     form_class = VolunteerForm
-    success_url = 'main'
+    success_url = 'vs'
 
     def form_valid(self,form):
          
 
         if form.is_valid():
             form.save()
-            return redirect('main')
+            return redirect('vs')
         return super().form_valid(form)
 
 
@@ -52,14 +57,14 @@ class VolCreateView(CreateView):
 class DonCreateView(CreateView):
     template_name = 'base/donate.html'
     form_class = DonorForm
-    success_url = 'main'
+    success_url = 'ds'
 
     def form_valid(self,form):
          
 
         if form.is_valid():
             form.save()
-            return redirect('main')
+            return redirect('ds')
         return super().form_valid(form)
 
 

@@ -14,6 +14,10 @@ urlpatterns = [
     path('donor/', DonCreateView.as_view(), name="maindon"),
     path('tour/', TourCreateView.as_view(), name="maintour"),
     path('programmes/', Programmes.as_view(), name="prog"),
+    path('volunteer-success/', VolSuccess.as_view(), name="vs"),
+    path('donor-success/', DonSuccess.as_view(), name="ds"),
+
+
 
     path('test/', test.as_view(), name = "oh")
 ]
