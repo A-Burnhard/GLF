@@ -27,7 +27,7 @@
         <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
         <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
         <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
-        <li><a href="#"><span class="fa fa-calendar"></span> Programmes</a></li> 
+        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
         <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
         <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
         <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
@@ -48,16 +48,14 @@
     <div class="donate-cont">
       <div class="donate-header">DONATE</div>
       <p>SUPPORT OUR PROGRAMMES</p>
+      
     </div>
   </div>
 
-  <div class="col">
-    <div class="row">
-  <div class="member-cont">
-    <div class="member">
 <!--Form (Donate)-->
-<div class="registration-cont reveal ">
-  <div class="account-container reveal ">
+<div class="registration-cont reveal" style="  text-align: center;
+">
+  <div class="account-container reveal">
       <div class="fiber">Join Us</div>
       <div class="header">Become a volunteer today</div>
       <form class= "form" action="" method="POST">
@@ -79,15 +77,11 @@
         padding-inline: 1rem;
         font-weight: 500;
       " class="submit" >
-       
+        
        
       </form>
-     </div>
-    </div>      
   </div>
-</div>
-</div>
-</div>
+</div>      
 
 
 
