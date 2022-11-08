@@ -34,7 +34,7 @@ class VolunteerForm(forms.ModelForm):
 
         widgets = {
 
-              'username': forms.TextInput(attrs={'class': 'form-control', "type" : "text", "class" : "lastname-input", "placeholder" : " Full name"}),
+              'username': forms.TextInput(attrs={'class': 'form-control', "type" : "text", "class" : "firstname-input", "placeholder" : " Full name"}),
               'DateOfBirth': forms.DateInput(attrs={'class': 'form-control', 'type' : 'date' ,'class' : 'date-input', 'name' : 'DateOfBirth' }),
              'email': forms.EmailInput(attrs={'class': 'form-control',  'type' : "email", 'class': "email-input" ,'name' : "email", 'placeholder' : "emailus@sample.com"}),
               'phoneNumber': forms.NumberInput(attrs={'class': 'form-control', 'type' : "phone", 'class': "phone-input", 'name' :"phoneNumber", 'placeholder' :"Enter phone number"}),
@@ -63,13 +63,13 @@ class DonorForm(forms.ModelForm):
             "country" : "Country",
             "PhoneNumber" : "Phone Number",
             "MeansofGiving" : "Means Of Giving",
-            "FReqOfGiving" : "Frequency of Giving"
+            "FReqOfGiving" : "Frequency of Giving",
 
         }
 
         widgets = {
 
-        'Name': forms.TextInput(attrs={'class': 'form-control', "type" : "text", "class" : "firstname-input", "placeholder" : " Full name"}),
+         'Name': forms.TextInput(attrs={'class': 'form-control'}),
          'email' : forms.EmailInput(attrs={'class': 'form-control'}),
          'country' : forms.TextInput(attrs={'class': 'form-control'}),
           'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
