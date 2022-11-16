@@ -1,7 +1,7 @@
 from django import forms
 from django_countries import countries
 
-from .models import  Volunteer, Tour, Donor
+from .models import  Volunteer, Tour, Donor, Message
 
 COUNTRY_CHOICES = tuple(countries)
 
@@ -95,6 +95,23 @@ class TourForm(forms.ModelForm):
          'EmailAddress': forms.EmailInput(attrs={'class': 'form-control'}),
          'EmergContact': forms.NumberInput(attrs={'class': 'form-control'}),
          'NameOfInstOrOcc': forms.TextInput(attrs={'class': 'form-control'}),
+
+        }
+        
+class Message(forms.ModelForm):
+
+    class Meta:
+        model = Message
+        fields = '__all__'
+      
+
+
+        widgets = {
+
+              'name': forms.TextInput(attrs={'class': 'form-control', "type" : "text", "class" : "firstname-input", "placeholder" : " Full name"}),
+              'email': forms.DateInput(attrs={'class': 'form-control', 'type' : 'date' ,'class' : 'date-input', 'name' : 'DateOfBirth' }),
+             'email': forms.EmailInput(attrs={'class': 'form-control',  'type' : "email", 'class': "email-input" ,'name' : "email", 'placeholder' : "emailus@sample.com"}),
+              'text': forms.TextInput(attrs={'class': 'form-control','type':"address", 'class' :"address-input", 'name' :"address", 'placeholder': "Enter residential address"  }),
 
         }
         

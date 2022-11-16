@@ -26,12 +26,15 @@ class test(TemplateView):
 class Programmes(TemplateView):
     template_name = 'base/programmes.html'
 
+
 class VolSuccess(TemplateView):
     template_name = 'base/success-v.html'
 
 class DonSuccess(TemplateView):
     template_name = 'base/success-d.html'
 
+class Messuccess(TemplateView):
+    template_name = 'base/success-m.html'
 
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
@@ -80,4 +83,17 @@ class TourCreateView(CreateView):
         if form.is_valid():
             form.save()
             return redirect('mainvol')
+        return super().form_valid(form)
+
+class ConactView(CreateView):
+    template_name = 'base/contact.html'
+    form_class = Message
+    success_url = 'ms'
+
+    def form_valid(self,form):
+         
+
+        if form.is_valid():
+            form.save()
+            return redirect('ms')
         return super().form_valid(form)

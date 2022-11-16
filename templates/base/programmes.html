@@ -1,63 +1,143 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" href="{% static 'assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="  {% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;">
   <link rel="stylesheet" href="{% static 'base/assets/css/programmes.css' %}"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
-  <link rel="stylesheet" href=" {% static '/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <link rel="stylesheet"  href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %} "> 
+  <link rel="stylesheet" href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Our Programmes</title> 
-  <link rel="icon" href="{% static '/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
+  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
 </head>
 <body>
   <div class="first-section">
-    <img src="  {% static 'base/assets/images/logo.jpg' %}" alt="logo-image"> 
+    <img src="{% static 'base/assets/images/logo.jpg' %}" alt="logo-image">  
   </div>
   <nav class="navigation">
       <ul class="links">
-        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
+        <li><a href="/index.html"><span class="fa fa-home " style="font-size: 1.2rem;"></span> Home</a></li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team</a></li> -->
-        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
-        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
-        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
-        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
-        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
+        <li><a href="/assets/chapters/chapters.html"><span class="fa fa-bookmark"></span> Chapters</a></li>        
+        <li><a href="/assets/volunteerScreen/volunteer.html"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li>
+        <li><a href="/assets/programmes/programmes.html"><span class="fa fa-calendar"></span> Programmes</a></li>
+        <li><a href="/assets/donate/donate.html"><span class="fa fa-money"></span> Donate</a></li>
+        <li><a href="/assets/contact/contact.html"><samp class="fa fa-phone"></samp> Contact</a></li>
         <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
       </ul>
       <div class="mobile">
       <a href="#" class="toggle-switch-button">
         <span class="fa fa-navicon"></span>
       </a>
+           
       <div class="glf-header">
-        <img src="{% static 'base/assets/images/logo.jpg' %}" alt=""> 
+        <a href="/index.html"><img src="{% static 'base/assets/images/logo.jpg' %}" alt=""></a>
       </div>
       <!-- <a href="#" class="list-element-button">
         <span class="fa fa-ellipsis-v"></span>
       </a> -->
       </div>
   </nav>
+  <div class="vol"data-aos="fade-right"> <span>Volunteer</span> Placement</div>
+  <div class="why-volunteer" data-aos="fade-up">
+    <div>
+      <div class="vol-header">
+        Why <span>volunteer</span> with us?
+      </div>
+      <p>
+        With busy lives, it can be hard to find time to volunteer. However, the benefits of volunteering can be enormous. Volunteering offers vital help to people in need, worthwhile causes, and the community, but the benefits can be even greater for you, the volunteer.
+        We can help you to find friends, connect with the community, learn new skills, and even advance your career.
+      </p>
+      <p>
+        Giving to others can also help protect your mental and physical health. It can reduce stress, combat depression, keep you mentally stimulated, and provide a sense of purpose. While it’s true that the more you volunteer, the more benefits you’ll experience, volunteering doesn’t have to
+        involve a long-term commitment or take a huge amount of time out of your busy day. Giving in even simple ways can help those in need and improve your health and happiness.
+      </p>
+    </div>
+    <div>
+      <img src="{% static 'base/assets/images/why.jpg' %}"  alt="why-volunteer"> 
+  </div>
+  <div class="hiv" data-aos="fade-right"><span>HIV/AIDS</span> Advocacy</div>
+  <div class="hiv-grid" data-aos="fade-up">
+  
+    <div>
+      <div class="aids-head"><span>HIV/AIDS</span> Awareness</div>
+      <p>
+        When AIDS was first identified in 1981, health officials estimated that 5 to 10 percent, or more of those who had the virus would get the disease and die. But the virus proved to have a long incubation period. It may take five years or more for symptoms to become apparent. Now with the experience of the past eight years, 
+        some officials are estimating that 40-50 percent, or more of those carrying the AIDS virus will develop the disease and die.
+      </p>
+      <p>
+        What is needed is education that moves people to hate what is morally wrong, and regardless of today’s permissive views, sex outside of marriage is immoral, as is illicit drug use. These practices can lead to sickness and premature death.
+
+      Yes, accepting the Creator’s standards for human behavior is the best way to avoid AIDS.
+
+      "Oh, God help us control our urge and to be strong to say no to that devil of insatiable desire"
+
+      Why should people die if they have known the right thing or the natural way of culture? Africa must wake up and fight the disease or ways of educating the youth of Africa.
+
+      <span class="state">
+        Public health education is crucial. Through Global Leaders Foundation, we hope to raise awareness of HIV/AIDS in Africa, teaching people to prevent and control the spread of HIV/AIDS 
+        as well as promoting safe and healthy lifestyles. We are also looking for committed volunteers to help advocate.
+      </span> 
+      </p>
+    </div>
+    <div>
+      <img src="{% static 'base/assets/images/aids-world.jpg' %}" alt=""> 
+    </div>
+    </div>
+  </div>
+  <div class="exchange" data-aos="fade-right">International Exchange Programmes</div>
+  <div class="exchange-grid" data-aos="fade-up">
+    <div>
+      <div class="ex-head">Benefits of Cultural Exchange Programmes</div>
+      <p>
+        Exchange programs offer benefits to boost participants and host countries. For international students this is a great way to live and work in a country like Ghana.
+        Whilst for the host country they benefit in brief from gaining temporary staff who usually recommend the country to family/friends and also return in the future to travel which continues to boost the economy.
+        Check out the main benefits of joining a cultural exchange program in the Ghana below.
+      </p>
+      <ul>
+        <li>Learn More About US</li>
+        <li>Make New Friends</li>
+        <li>Boost Your Career</li>
+        <li>Personal Development</li>
+        <li>Tour</li>
+      </ul>
+    </div>
+    <div>
+      <img src="{% static 'base/assets/images/20944573.jpg' %}" alt="exchange">
+    </div>
+  </div>
+
+  <div class="tour" data-aos="flip-right">
+    <div class="tour-text" data-aos="fade-right">
+      Most cultural exchange programs provide free time to explore more of your new surroundings. 
+      You will get to visit places you have probably only ever seem dreamed about such as:
+    </div>
+  </div>
+
+
+
+
   <h1>Nzulezu Stilt Village</h1>
-  <div class="village-container reveal">
+  <div class="village-container">
     <div class="village-text">
       The spectacular scenery of stilt propped water settlement of Nzulezu built on lake Tadane located in the Jomoro District in the Western Region of Ghana stands out as a magnificent interplay between man and his environment. Nzulezu is an Nzema word meaning "surface of water." The inhabitants of the village are said to have migrated from Walata, a city in ancient Ghana Empire' the earliest of the Western Sudanese States. According to tradition, ancestors of the village were brought to their present place under the guide of a snail. The serene ambience of the surrounding landscape coupled with the general activities of life point to a dynamic relationship between man and nature. Traditional village life is adapted to the watery conditions to the amazement of the visitor. All activities pertaining to normal life chores such as pounding of fufu (a traditional meal) schooling, worship and burial are done on the lake. New born babies are baptized in the lake. The lake, it is said, averts possible disasters like outbreak of fire, 
       killing of natives of the village on or around it. The sacred day of the lake is Thursday, a day set aside on which no activity is supposed to take place signifying a strict adherence to traditional norms and taboos. 
       Nzulezu stilt settlement is a unique lacustrine habitation achieved by a harmony of forces of nature to meet man's needs resulting in a settlement of outstanding value.
     </div>
     <div class="village-image">
-      <img src="{% static 'base/assets/images/Nzulezu Stilt Village.jpg' %}" alt="Nzulezu"> 
-    </div> 
+      <img src="{% static 'base/assets/images/Nzulezu Stilt Village.jpg' %}" alt="Nzulezu">  
   </div>
 
   <h1>Accra Cultural Centre</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-image">
       <img src="{% static 'base/assets/images/Accra Cultural Centre.jpg' %}" alt="Accra"> 
     </div>
@@ -67,7 +147,7 @@
   </div>
 
   <h1>Kwame Nkrumah Mausoleum</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-text">
     The Kwame Nkrumah Mausoleum and memorial park is located in downtown Accra, the capital of Ghana.
 
@@ -85,7 +165,7 @@
   </div>
 
   <h1>Lake Volta</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" >
     <div class="village-image">
       <img src="{% static 'base/assets/images/Lake Volta.jpg' %}" alt="Volta"> 
     </div>
@@ -95,17 +175,17 @@
   </div>
 
   <h1>Cape Coast Castle</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-text">
       A fortified castle located in Cape Coast, Ghana that was originally built by the Danish for the gold and timber trade. This must see heritage site was turned into an important hub of the Trans-Atlantic Slave Trade. Visitors often remark at the emotional reactions brought on by the Cape Coast Castle and its devastating history. The “Door of No Return” is only one of the reasons that Cape Coast Castle is truly a necessary stop for all visitors to Ghana.
     </div>
     <div class="village-image">
-      <img src=" {% static 'base/assets/images/Cape Coast Castle.jpg' %}" alt="castle"> 
+      <img src="{% static 'base/assets/images/Cape Coast Castle.jpg' %}" alt="castle"> 
     </div>
   </div>
 
   <h1>Elmina Castle</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" >
     <div class="village-image">
       <img src="{% static 'base/assets/images/elmina_castle.jpg' %}" alt="Elmina"> 
     </div>
@@ -116,17 +196,17 @@
 
   
   <h1>Mole National Park</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" >
     <div class="village-text">
       A visit to Mole National Park is a great opportunity to see elephants, baboons, warthogs, antelope and many other smaller animals up close and personal. Mole National Park is the largest national park in Ghana and is also the park most often visited by tourists. Visitors have the chance to go on a very rewarding walking safari with an armed ranger.
     </div>
     <div class="village-image">
-      <img src=" {% static 'base/assets/images/Mole-National-Park.jpg' %}" alt="Mole"> 
-    </div> 
+      <img src="{% static 'base/assets/images/Mole-National-Park.jpg' %}" alt="Mole"> 
+    </div>
   </div>
 
   <h1>Mosque At Larabanga</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" >
     <div class="village-image">
       <img src="{% static 'base/assets/images/Larabanga_Mosque_Ghana.jpg' %}" alt="Larabanga"> 
     </div>
@@ -136,17 +216,17 @@
   </div>
 
   <h1>Kakum National Park</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-text">
       Kakum National Park is a must see attraction in the Central Region of Ghana. It is a unique opportunity to walk above the canopy on six exciting walkways that will take your breath away. Beyond the excellent view there are many interesting birds, butterflies and insects to be seen along the gorgeous guided forest trails.
     </div>
     <div class="village-image">
-      <img src=" {% static 'base/assets/images/kakum-park.jpg' %}" alt="kakum">
+      <img src="{% static 'base/assets/images/kakum-park.jpg' %}" alt="kakum"> 
     </div>
   </div>
 
   <h1>Paga Crocodile Pond</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-image">
       <img src="{% static 'base/assets/images/paga-pond.jpg' %}" alt="Paga"> 
     </div>
@@ -156,7 +236,7 @@
   </div>
 
   <h1>Pikworo Slave Camp</h1>
-  <div class="village-container reveal">
+  <div class="village-container "data-aos="fade-up" ">
     <div class="village-text">
       Pikworo Slave Camp located near the Burkina Faso border with Ghana is a heart wrenching tour that will bring the reality of the slave trade to the forefront. The tour of the slave camp includes a lot of valuable information on how slaves were treated by their captors, how slaves were traded and how they were punished for so-called offenses. While not a well-known tourist attraction it is certain to become much more important in the future.
     </div>
@@ -166,11 +246,11 @@
   </div>
 
 
-  
+  <div class="vol">Youth Empowerment</div>
 
 
   <!-- Programmes background -->
-  <div class="programmes-cont reveal">
+  <div class="programmes-cont "data-aos="fade-up" ">
    <div class="programme-content">
     <h1>Wake up, Africa!</h1>
     <div class="paragraph">
@@ -319,6 +399,10 @@
 
   <script src="{% static 'base/assets/scripts/programmes.js' %}"></script> 
   <script src="{% static 'base/scripts.js' %}"></script> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 
 

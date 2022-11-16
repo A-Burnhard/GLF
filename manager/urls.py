@@ -13,6 +13,8 @@ urlpatterns = [
     path('donor/', DonorList.as_view(), name= 'don'),
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
+    path('account/', Account.as_view(), name= 'account'),
+
     path('docs/', Documentation.as_view(), name= 'docs'),
     path('sample/', sample.as_view(), name= 'sample'),
     path('logout_user', views.logout_user, name='logout'),

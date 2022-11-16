@@ -55,6 +55,10 @@ class Calendar(TemplateView):
     template_name = "manager/calendar.html"
     permission_classes = [permissions.IsAuthenticated]
 
+class Account(TemplateView):
+    template_name = "manager/account.html"
+    permission_classes = [permissions.IsAuthenticated]
+
 
 class Primary(APIView):
   renderer_classes = [TemplateHTMLRenderer]

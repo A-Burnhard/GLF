@@ -16,6 +16,8 @@ urlpatterns = [
     path('programmes/', Programmes.as_view(), name="prog"),
     path('volunteer-success/', VolSuccess.as_view(), name="vs"),
     path('donor-success/', DonSuccess.as_view(), name="ds"),
+    path('message-success/', Messuccess.as_view(), name="ms"),
+
 
 
 

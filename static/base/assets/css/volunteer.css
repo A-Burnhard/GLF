@@ -31,7 +31,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
+  background: rgba(255, 255, 255, 0.2);
   background-color: #15A2D7;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   /* padding-inline: 5%; */
   display: flex;
   align-items: center;
@@ -54,7 +59,7 @@ body {
 }
 .links li a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   font-weight: 500;
   position: relative;
   
@@ -77,7 +82,7 @@ body {
 }
 .toggle-switch-button {
   position: absolute;
-  top: .5rem;
+  top: .6rem;
   right: 2rem;
   color: #15A2D7;
   font-size: 2rem;
@@ -93,7 +98,7 @@ body {
 } */
 .glf-header {
   position: absolute;
-  top: .8rem;
+  top: .4rem;
   left: 2rem;
   color: white;
 
@@ -103,6 +108,10 @@ body {
   width: 10rem;
   border-radius: 1rem;
   display: none;
+
+}
+.glf-header a:active {
+  color: currentColor;
 }
 
 
@@ -118,7 +127,10 @@ body {
   .navigation {
     padding-block: 1rem;
     flex-direction: column;
-    position:static;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
     background-color: #ffffff;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -164,6 +176,7 @@ body {
 .member-cont {
   background-image: url(/assets/images/cloud.png);
   background-position: center;
+
 }
 .member-cont-two {
 padding-block: 2rem;
@@ -200,6 +213,7 @@ background-color: #ffffff;
   display: grid;
   place-items: center;
   background-image: url(/assets/images/business-people-clapping-hands-together.jpg);
+  background-size: cover;
   background-position: center;
   padding-block: 3rem;
   
@@ -226,7 +240,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 }
-.firstname-input,.lastname-input, .email-input, .phone-input,.address-input, .city-input, .academics-input, .date-input, .comment-input, .text-input {
+.firstname-input,.lastname-input, .email-input, .phone-input,.address-input, .city-input, .academics-input, .date-input, .comment-input {
   width: 97%;
   height: 2.4rem;
   margin-top: .5rem;
@@ -342,10 +356,24 @@ footer {
   background-color: #262E33;
   color: white;
   font-weight: 500;
+
+  
+}
+.right-section{
+  text-align: justify; 
   
 }
 .lists, .location,.call,.mail, .social-icons {
   display: flex;
+}
+.lists a {
+  text-decoration: none;
+  color: white;
+  transition: 200ms ease-in;
+  transition-delay: 100ms;
+}
+.lists a:hover {
+  color: #15A2D7;
 }
 .location,.call,.mail, .social-icons  {
   justify-content: flex-start;
@@ -381,6 +409,8 @@ footer {
     justify-content: center;
     align-items: flex-start;
     padding-inline: 5%;
+
+  
   }
   .section-one {
     width: 70%;
@@ -398,6 +428,7 @@ footer {
     align-items: flex-start;
     padding-inline: 1rem;
     margin-bottom: 1rem;
+    margin-top: 3rem;
   }
   .member-cont-two {
     display: flex;
@@ -408,6 +439,10 @@ footer {
     margin-bottom: 1rem;
 
   }
+  .member h1, .header {
+    text-align: center;
+  }
+  
  
 }
 @media (max-width:600px) {
@@ -417,7 +452,11 @@ footer {
   .member-cont, .member-cont-two {
     grid-gap: 2rem;
   }
+  /* .registration-cont {
+    background-image: none;
+  } */
 }
+
 
 
 

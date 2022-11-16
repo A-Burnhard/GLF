@@ -5,6 +5,8 @@ from enum import auto
 from django.db import models
 from django.contrib.auth.models import User
  
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Volunteer(models.Model):
@@ -34,6 +36,11 @@ class Volunteer(models.Model):
     def _str_(self):
         return self.surname + '' + self.username
 
+def create_volunteer(sender, instance, created, **kwargs):
+    if created:
+        Volunteer.objects.create(username=instance)
+        print('New volunteer form submitted')
+
 class Donor(models.Model):
 
      id = models.AutoField(primary_key= True)
@@ -50,6 +57,12 @@ class Donor(models.Model):
 
      def _str_(self):
         return self.Name 
+
+def create_donor(sender, instance, created, **kwargs):
+    if created:
+        Donor.objects.create(username=instance)
+        print('New donor form submitted')
+
 
 
 class Tour(models.Model):
@@ -74,3 +87,15 @@ class Tour(models.Model):
       return self.name
 
 
+class Message(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(null = True)
+    text = models.CharField(max_length=300)
+    date = models.DateTimeField(auto_now_add=True, null=True)
+
+    class Meta:
+        ordering = ['-date']
+
+
+    def _str_(self):
+      return self.name

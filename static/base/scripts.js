@@ -1,8 +1,34 @@
+// navigation 
+    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function() {
+        scrollFunction()
+    };
+    let navbarOnScroll = document.getElementById("navigation")
+    let navbarLinksOnScroll = document.getElementsByClassName("anchor")
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+     
+      
+        
+        
+
+        
+        } else {
+         
+            document.getElementById("navigation").style.opacity = "1";
+        }
+    }
+
+
+
+
 const toggleButton = document.getElementsByClassName('toggle-switch-button')[0];
 const navbarLinks = document.getElementsByClassName('links')[0];
 
 toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active');
+
 })
 
 // section one
@@ -12,6 +38,8 @@ var typed = new Typed(".auto-type", {
   backSpeed:10,
   loop: true
 })
+
+
 
 // We need to keep track of faded in elements so we can apply fade out later in CSS
 document.addEventListener('animationstart', function (e) {

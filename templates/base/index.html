@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>        
+  <head> 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global Leaders Foundation</title> 
-  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;">  
-  <link rel="stylesheet" href="{% static 'base/style.css' %} ">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;">
+  <link rel="stylesheet" href="{% static 'base/style.css' %}"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %} "> 
-  <link rel="stylesheet" href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %} "> 
+  <link rel="stylesheet"  href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <div class="first-section">
+  <div class="first-section" data-aos="fade-down">
     <img src="{% static 'base/assets/images/logo.jpg' %}" alt="logo-image"> 
   </div>
   <nav class="navigation">
       <ul class="links">
-        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
+        <li><a href="/index.html" data-aos="zoom-in-down"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team</a></li> -->
-        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
-        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
-        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
-        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
-        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
+        <li><a href="/assets/chapters/chapters.html" data-aos="zoom-in-down"><span class="fa fa-bookmark"></span> Chapters</a></li>        
+        <li><a href="./assets/volunteerScreen/volunteer.html" data-aos="zoom-in-down"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li>
+        <li><a href="/assets/programmes/programmes.html" data-aos="zoom-in-down"><span class="fa fa-calendar"></span> Programmes</a></li>
+        <li><a href="/assets/donate/donate.html" data-aos="zoom-in-down"><span class="fa fa-money"></span> Donate</a></li>
+        <li><a href="/assets/contact/contact.html" data-aos="zoom-in-down"><samp class="fa fa-phone"></samp> Contact </a></li>
         <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
       </ul>
       <div class="mobile">
       <a href="#" class="toggle-switch-button">
         <span class="fa fa-navicon"></span>
       </a>
-      <div class="glf-header">
-        <img src=" {% static 'base/assets/images/logo.jpg' %}" alt=""> 
+      
+     <div class="glf-header">
+        <a href="/index.html"><img src="{% static 'base/assets/images/logo.jpg' %}" alt=""></a> 
       </div>
+
+   
       <!-- <a href="#" class="list-element-button">
         <span class="fa fa-ellipsis-v"></span>
       </a> -->
       </div>
   </nav>
-  <section class="one reveal">
-    <div class="text-section">
-      <div class="glf-header-text">
+  <section class="one">
+    <div class="text-section" data-aos="fade-up">
+      <div class="glf-header-text" data-aos="fade-right">
         <span class="type">
-          Our Mission is to be a force in <span class="auto-type"></span>
+          <span class="auto-type"></span>
         </span>
       </div>
       <div class="sample">
@@ -55,30 +59,34 @@
         <span>volunteering</span> and <span>internship placement programmes.</span> 
       </div>
       <!-- <div class="register-container">
-        <!-- <div class="join-us">
+        <div class="join-us">
           Join Us Today &#8594;
-        </div> -->
-        <!-- <div class="reg-button">
+        </div>
+        <div class="reg-button">
           <button><span class="fa fa-bullhorn"></span> Register</button>
-        </div> -->
-      <!-- </div> --> 
+        </div>
+      </div>  -->
       <div class="random-text">
         While touching lives, a volunteer discover him/herself, gain the confidence to meet new challenges and living the advantages of a life time.
         As a learning organization, we are open to new ideas in all aspects of our objectives. 
         For this reason, and coupled with plans to expand our services, we would deem it a privilege receiving any form of volunteering services throughout the year.  
       </div>
     </div>
-    <div class="slider-section">
+    <div class="slider-section" data-aos="fade-up">
       <div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active ">
             <img src="{% static 'base/assets/images/slider.jpg' %}" class="d-block w-100" alt="..."> 
           </div>
           <div class="carousel-item">
-            <img src=" {% static 'base/assets/images/group-happy-diverse-volunteers.jpg' %}" class="d-block w-100" alt="..."> 
-          <!-- <<div class="carousel-item">
-            <img src="./assets/images/volunteer.jpg" class="d-block w-100" alt="..."> -->
-          <!-- </div> -->
+            <img src="{% static 'base/assets/images/group-happy-diverse-volunteers.jpg' %}" class="d-block w-100" alt="..."> 
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'base/assets/images/aids.jpg' %}" class="d-block w-100" alt="..."> 
+          </div>
+          <!-- <div class="carousel-item">
+            <img src="./assets/images/close-up-african-kids-reading-together_1280x920.jpg" class="d-block w-100" alt="..."> 
+          </div> -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -91,16 +99,16 @@
       </div>
     </div>
   </section>
-  <div class="excerpts-header reveal">
+  <div class="excerpts-header "data-aos="fade-right" >
     EXCERPTS FROM BACKGROUND
   </div>
-  <section class="two reveal">
+  <section class="two "data-aos="fade-up" data-aos-duration="2000">
     <div class="leader-section">
       <img src="{% static 'base/assets/images/thanks.png' %}" alt="leader-image"> 
     </div>
     <div class="information-icon-text">
       <div class="info-icon-container">
-        <img src="{% static 'base/assets/icons/information icon logo.svg' %}" alt="information icon"> 
+        <img src="{% static 'base/assets/icons/information icon logo.svg' %}" alt="information icon">  
       </div>
       <div class="leader-text">
         Thanks to God and the International Community, the vicious cycle of self-destruction which engulfed the African continent for a long and dark period has ended with highly respected and trustworthy administrations in place.
@@ -110,10 +118,10 @@
     </div>
   </section>
   <!-- Objectives of the organization-->
-  <div class="obj reveal">OBJECTIVES</div>
-  <section class="objectives reveal">
+  <div class="obj "data-aos="fade-right">OBJECTIVES</div>
+  <section class="objectives "data-aos="fade-up" data-aos-duration="2000">
     <div class="obj-icon-container">
-      <img src="{% static 'base/assets/icons/objectives.svg' %}" alt="objectives"> 
+      <img src="{% static 'base/assets/icons/information icon logo.svg' %}" alt="objectives"> 
     </div>
     <div class="obj-intro">We hope to achieve the following objectives as an organization by your support</div>
     <div class="list">
@@ -123,21 +131,21 @@
       <p><span class="fa fa-check-circle-o"></span> International Cultural Exchange Programs</p>
     </div>
   </section>
-  <div class="team-header reveal">
+  <div class="team-header "data-aos="fade-right">
     MEET OUR TEAM
   </div>
   <section class="management-team ">
-    <div class="team-cards reveal">
+    <div class="team-cards "data-aos="fade-up" data-aos-duration="2000">
       <div class="user">
         <div class="card-image">
           <img src="{% static 'base/assets/images/Daniel Appiah Danquah.jpg' %}" alt=""> 
         </div>
         <div class="name">Daniel Appiah Danquah</div>
         <div class="title">Director</div>
-        <div class="brief-bio">
+        <!-- <div class="brief-bio">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
-        </div>
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -147,14 +155,14 @@
 
       <div class="user">
         <div class="card-image">
-          <img src=" {% static 'base/assets/images/GIFTY BOAHEMAA APPEA.jpg' %}" alt=""> 
+          <img src="./assets/images/GIFTY BOAHEMAA APPEA.jpg" alt="">
         </div>
         <div class="name">Gifty Boahemaa Appea</div>
         <div class="title">Secretary</div>
-        <div class="brief-bio">
+        <!-- <div class="brief-bio">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
-        </div>
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -165,14 +173,14 @@
 
       <div class="user">
         <div class="card-image">
-          <img src="{% static 'base/assets/images/Owusu Moses Achiaw.jpg' %}" alt="">
+          <img src="./assets/images/Owusu Moses Achiaw.jpg" alt="">
         </div>
         <div class="name">Owusu Moses Achiaw</div>
         <div class="title">Youth/Conference Director</div>
-        <div class="brief-bio">
+        <!-- <div class="brief-bio">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
-        </div>
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -182,14 +190,65 @@
 
       <div class="user">
         <div class="card-image">
-          <img src="{% static 'base/assets/images/Wasila Bansi.jpg' %}" alt=""> 
+          <img src="./assets/images/Gideon Nunoo.png" alt="Gideon">
         </div>
-        <div class="name"> Wasila Karim Bansi</div>
+        <div class="name">Gideon Nunoo</div>
+        <div class="title">Information Technology Officer</div>
+        <!-- <div class="brief-bio">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
+        </div> -->
+        <div class="handles">
+          <div class="fb"><span class="fa fa-facebook"></span></div>
+          <div class="fb"><span class="fa fa-twitter"></span></div>
+          <div class="fb"><span class="fa fa-instagram"></span></div>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="card-image">
+          <img src="./assets/images/IMG_4936.JPG" alt="Robert">
+        </div>
+        <div class="name">Robert Nunoo</div>
+        <div class="title">Information Technology Officer</div>
+        <!-- <div class="brief-bio">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
+        </div> -->
+        <div class="handles">
+          <div class="fb"><span class="fa fa-facebook"></span></div>
+          <div class="fb"><span class="fa fa-twitter"></span></div>
+          <div class="fb"><span class="fa fa-instagram"></span></div>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="card-image">
+          <img src="./assets/images/why.jpg" alt="Appiedu">
+        </div>
+        <div class="name">Bernard Appiedu</div>
+        <div class="title">Information Technology Officer</div>
+        <!-- <div class="brief-bio">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
+        </div> -->
+        <div class="handles">
+          <div class="fb"><span class="fa fa-facebook"></span></div>
+          <div class="fb"><span class="fa fa-twitter"></span></div>
+          <div class="fb"><span class="fa fa-instagram"></span></div>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="card-image">
+          <img src="./assets/images/Wasila Bansi.jpg" alt="">
+        </div>
+        <div class="name">Wasilla Bansi</div>
         <div class="title">Volunteer Placement Coordinator</div>
-        <div class="brief-bio">
+        <!-- <div class="brief-bio">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
-        </div>
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -199,31 +258,14 @@
 
       <div class="user">
         <div class="card-image">
-          <img src="{% static 'base/assets/images/ben.jpg' %}" alt="">
+          <img src="./assets/images/Francis Cornah.jpg" alt="">
         </div>
-        <div class="name">Appiedu Bernard</div>
-        <div class="title">IT Head</div>
-        <div class="brief-bio">
-          A backend developer and information security expert.
-          Technical advisor for startup IT companies and writer.
-        </div>
-        <div class="handles">
-          <div class="fb"><span class="fa fa-facebook"></span></div>
-          <!-- <div class="fb"><span class="fa fa-twitter"></span></div> https://twitter.com/kojoappiedu -->
-          <div class="fb"><span class="fa fa-instagram"></span></div>
-        </div>
-      </div>
-
-      <div class="user">
-        <div class="card-image">
-          <img src="{% static 'base/assets/images/ben.jpg' %}" alt="">
-        </div>
-        <div class="name">Gideon Okantey Nunoo </div>
-        <div class="title">IT Officer</div>
-        <div class="brief-bio">
-          A MERN stack developer with utmost skills in frontend technologies.
-          UI/UX designer with QA testing experience.
-        </div>
+        <div class="name">Francis Kofi Amankwah Cornah</div>
+        <div class="title">International Mission Coordinator</div>
+        <!-- <div class="brief-bio">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -233,14 +275,15 @@
 
       <div class="user">
         <div class="card-image">
-          <img src="{% static '/images/robert.JPG' %}" alt="">
+          <img src="./assets/images/Rev.jpg" alt="">
         </div>
-        <div class="name">Robert Okaitey</div>
-        <div class="title">IT Officer</div>
-        <div class="brief-bio">
-          A professional graphics designer and digital arts fanatic.
-          Digital art researcher with experience in print media.
-        </div>
+        <div class="name">Clement Achim Gyimah (Rev),
+          The Church of Pentecost</div>
+        <div class="title">Special Advisor</div>
+        <!-- <div class="brief-bio">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -252,12 +295,12 @@
         <div class="card-image">
           <img src="./assets/images/Owusuah.jpg" alt="">
         </div>
-        <div class="name"> Another name</div>
-        <div class="title">position</div>
-        <div class="brief-bio">
+        <div class="name">Annabella Owusua Agyemang</div>
+        <div class="title">HIV/AIDS <br> Coordinator</div>
+        <!-- <div class="brief-bio">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Sed consequuntur culpa ut autem officiis illo doloremque mollitia veritatis error unde!
-        </div>
+        </div> -->
         <div class="handles">
           <div class="fb"><span class="fa fa-facebook"></span></div>
           <div class="fb"><span class="fa fa-twitter"></span></div>
@@ -266,6 +309,12 @@
       </div>
     </div>
   </section>
+  <div class="partners-header" data-aos="fade-right">OUR PARTNERS</div>
+  <div class="partner-grid" >
+    <div data-aos="fade-up" data-aos-duration="2000"><img src="{% static 'base/assets/images/unaids.jpg' %}" alt="unaids"></div> 
+    <div data-aos="fade-up" data-aos-duration="2000"><img src="{% static 'base/assets/images/aids-com.jpg' %}" alt="aids-com"></div> 
+    <div data-aos="fade-up" data-aos-duration="2000"><img src="{% static 'base/assets/images/spearhead-logo.png' %}" alt="spearhead-logo"></div> 
+  </div>
   
   <footer>
     <div class="left-section">
@@ -328,8 +377,11 @@
   
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src=" {% static 'base/assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.min.js' %}" ></script> 
-  <script src=" {% static 'base/assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.js' %}"></script> 
-  <script src=" {% static 'base/scripts.js' %}" ></script> 
-
+  <script src="{% static 'base/assets/bootstrap-5.2.0-dist/js/bootstrap.bundle.js' %}"></script> 
+  <script src=" {% static 'base/scripts.js' %}" ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

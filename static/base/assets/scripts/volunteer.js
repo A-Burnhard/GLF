@@ -13,5 +13,6 @@ function reveal() {
     }
   }
 }
+// initialize animation
 
 window.addEventListener("scroll", reveal);
