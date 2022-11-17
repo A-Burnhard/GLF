@@ -14,7 +14,7 @@ urlpatterns = [
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
     path('account/', Account.as_view(), name= 'account'),
-
+    path('messages/', MessageList.as_view(), name = 'message'),
     path('docs/', Documentation.as_view(), name= 'docs'),
     path('sample/', sample.as_view(), name= 'sample'),
     path('logout_user', views.logout_user, name='logout'),

@@ -14,7 +14,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from base import models
-from base.models import Volunteer, Donor, Tour, User
+from base.models import Volunteer, Donor, Tour, User, Message
 from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
 
 
@@ -58,6 +58,7 @@ class Calendar(TemplateView):
 class Account(TemplateView):
     template_name = "manager/account.html"
     permission_classes = [permissions.IsAuthenticated]
+
 
 
 class Primary(APIView):
@@ -130,6 +131,17 @@ class DonorList(APIView):
     def get(self, request):
         queryset = Donor.objects.all()
         return Response({'don': queryset})    
+
+class MessageList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'manager/messages.html'
+    permission_classes = [permissions.IsAuthenticated]
+
+
+    def get(self, request):
+        queryset = Message.objects.all()
+        return Response({'message': queryset}) 
+
 
 ############### VIEWING ALL ENTRIES #########################
  #ENDPOINT to read-only all Tour Volunteer collection
