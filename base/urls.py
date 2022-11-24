@@ -17,6 +17,8 @@ urlpatterns = [
     path('volunteer-success/', VolSuccess.as_view(), name="vs"),
     path('donor-success/', DonSuccess.as_view(), name="ds"),
     path('message-success/', Messuccess.as_view(), name="ms"),
+    path('maintenance/', Maintenance.as_view(), name="maintain"),
+
 
 
 

@@ -36,6 +36,9 @@ class DonSuccess(TemplateView):
 class Messuccess(TemplateView):
     template_name = 'base/success-m.html'
 
+class Maintenance(TemplateView):
+    template_name = 'base/maintenance.html'
+
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
 

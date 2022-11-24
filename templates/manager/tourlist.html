@@ -198,7 +198,13 @@
                             </ul>
                         </div>
                     </li>
-                   
+                    <li class="nav-item">
+                        <a class="nav-link  " href="{% url 'message' %}" >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>envelope</title><rect class="a" x="0.75" y="4.5" width="22.5" height="15" rx="1.5" ry="1.5"/><line class="a" x1="15.687" y1="9.975" x2="19.5" y2="13.5"/><line class="a" x1="8.313" y1="9.975" x2="4.5" y2="13.5"/><path class="a" d="M22.88,5.014l-9.513,6.56a2.406,2.406,0,0,1-2.734,0L1.12,5.014"/></svg>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href=" {% url 'cal' %} ">
@@ -274,7 +280,7 @@
                     <h6>Admin panel for<br> <span class="emphasize">Global Leaders Foundation</span> website</h6>
 
                     <!-- Button -->
-                    <a class="btn w-100 btn-sm btn-primary" href="javascript: void(0);">Click to main site</a>
+                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'main' %}">Click to main site</a>
                 </div>
             </div>
             <!-- End of Collapse -->
@@ -758,7 +764,7 @@
                         </div>
                         <!-- End Dropdown -->
 
-                        <a class="dropdown-item" href="javascript: void(0);">Profile & account</a>
+                        <a class="dropdown-item" href="{% url 'account' %}">Profile & account</a>
                         <a class="dropdown-item" href="javascript: void(0);">Settings</a>
 
                         <hr class="dropdown-divider">
@@ -776,15 +782,12 @@
                 Tourists
             </h1>
                 
-            </div>
-        </div>
+        
     </div>
 
 
     <!-- Main body-->
-    <div class="row">
-        <div class="col">
-
+ 
             <!-- Card -->
             <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="tour">
                 <div class="card-header border-0 card-header-space-between">
@@ -851,8 +854,12 @@
                             <div class="col-12 ">
                                 {% for tor in tour %}
                             <tr>
-                                                           
-                                <td class="name"> {{ tor.name }} </td>
+                                <td> 
+                                    <div class="avatar avatar-circle avatar-xs me-2">
+                                        <span class="avatar-title text-bg-success-soft">{{ tor.name|slice:":1" }}</span>
+                                    </div>
+                                    <span class="name fw-bold"> {{ tor.name }}</span>
+                                </td>                          
                                 <td class="email"> {{ tor.EmailAddress }} </td>
                                 <td class="number"> {{ tor.EmergContact }}</td>
                                 <td class="country" > {{ tor.CountryOfBirth }}</td>

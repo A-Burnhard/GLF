@@ -107,10 +107,11 @@ class VolunteerList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/vollist.html'
     permission_classes = [permissions.IsAuthenticated]
-
+    
     def get(self, request):
         queryset = Volunteer.objects.all()
-        return Response({'vol': queryset})
+                
+        return Response({'vol': queryset},)
 
 class TourList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
