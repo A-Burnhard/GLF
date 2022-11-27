@@ -208,17 +208,19 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="{% url 'cal' %} ">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
-                                <span>Calendar</span>
-                            </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link  " href="{% url 'message' %}" >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>envelope</title><rect class="a" x="0.75" y="4.5" width="22.5" height="15" rx="1.5" ry="1.5"/><line class="a" x1="15.687" y1="9.975" x2="19.5" y2="13.5"/><line class="a" x1="8.313" y1="9.975" x2="4.5" y2="13.5"/><path class="a" d="M22.88,5.014l-9.513,6.56a2.406,2.406,0,0,1-2.734,0L1.12,5.014"/></svg>
                             <span>Messages</span>
                         </a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'cal' %} ">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>calendar</title><rect class="a" x="0.752" y="3.75" width="22.5" height="19.5" rx="1.5" ry="1.5"/><line class="a" x1="0.752" y1="9.75" x2="23.252" y2="9.75"/><line class="a" x1="6.752" y1="6" x2="6.752" y2="0.75"/><line class="a" x1="17.252" y1="6" x2="17.252" y2="0.75"/></svg>
+                                <span>Calendar</span>
+                            </a>
+                    </li>
+               
               <!--        <li class="nav-item">
                         <a class="nav-link " href="./chat.html">
                                 <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M11.25,18.75a1.5,1.5,0,0,1-1.5-1.5V9.75a1.5,1.5,0,0,1,1.5-1.5h10.5a1.5,1.5,0,0,1,1.5,1.5v7.5a1.5,1.5,0,0,1-1.5,1.5h-1.5v4.5l-4.5-4.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.75,12.75l-3,3v-4.5H2.25a1.5,1.5,0,0,1-1.5-1.5V2.25A1.5,1.5,0,0,1,2.25.75h10.5a1.5,1.5,0,0,1,1.5,1.5v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
@@ -465,13 +467,13 @@
 
                                     <div class="d-flex flex-column flex-grow-1">
                                         <div class="d-flex w-100 justify-content-between">
-                                            <h5 class="mb-1">Daniel</h5>
+                                            <h5 class="mb-1"> {{ user.first_name }}</h5>
                                             <small class="text-muted">10 minutes ago</small>
                                         </div>
 
                                         <div class="d-flex flex-column">
-                                            <p class="mb-1">RE: Email pre-population from external source</p>
-                                            <small class="text-secondary">Lorem ipsum dolor sit amet. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </small>
+                                            <p class="mb-1">Welcome: New admin</p>
+                                            <small class="text-secondary"> You just logged in into GLF Admin using username {{ user.username }}.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -891,7 +893,7 @@
                         <div class="card-footer text-center">
 
                             <!-- Button -->
-                            <a href="./user.html" class="btn btn-secondary">View Public Profile</a>
+                            <!-- <a href="./user.html" class="btn btn-secondary">View Public Profile</a> -->
                         </div>
                     </div>
                 </div>
@@ -987,16 +989,7 @@
                                 </div>
                                 <!-- / .row -->
 
-                                <div class="row mb-4">
-                                    <div class="col-lg-3">
-                                        <label for="zipCode" class="col-form-label">Zip code</label>
-                                    </div>
 
-                                    <div class="col-lg">
-                                        <input type="text" class="form-control" id="zipCode" value="77032">
-                                        <div class="invalid-feedback">Please add a zip code</div>
-                                    </div>
-                                </div>
                                 <!-- / .row -->
 
                                 <div class="row mb-4">
@@ -1005,7 +998,7 @@
                                     </div>
 
                                     <div class="col-lg">
-                                        <textarea class="form-control" id="overview" rows="4">Gamer. Certified entrepreneur. Introvert. Zombie geek. Friendly coffee guru. Vegan.</textarea>
+                                        <textarea class="form-control" id="overview" rows="4"></textarea>
                                         <div class="invalid-feedback">Please tell something about yourself</div>
                                     </div>
                                 </div>

@@ -18,6 +18,8 @@ urlpatterns = [
     path('donor-success/', DonSuccess.as_view(), name="ds"),
     path('message-success/', Messuccess.as_view(), name="ms"),
     path('maintenance/', Maintenance.as_view(), name="maintain"),
+    path('privacy/', Privacy.as_view(), name="privacy"),
+
 
 
 

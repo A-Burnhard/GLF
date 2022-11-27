@@ -6,7 +6,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import TemplateHTMLRenderer
-
+from notifications.signals import notify
+from django.db.models.signals import post_save
+from notifications.signals import notify
 
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
@@ -16,7 +18,8 @@ from django.contrib.auth import authenticate, login, logout
 from base import models
 from base.models import Volunteer, Donor, Tour, User, Message
 from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
-
+# from manager import models
+# from manager.models import Notification
 
 from django.views.generic import View
 
@@ -112,6 +115,15 @@ class VolunteerList(APIView):
         queryset = Volunteer.objects.all()
                 
         return Response({'vol': queryset},)
+
+# def my_handler(sender, instance, created, **kwargs):
+#     sender = User.request
+#     instance = Volunteer.objects.create
+#     notify.send(instance, verb='was saved')
+
+# post_save.connect(my_handler, sender=User.request)
+
+
 
 class TourList(APIView):
     renderer_classes = [TemplateHTMLRenderer]

@@ -13,7 +13,9 @@ class Volunteer(models.Model):
     #id = models.BigAutoField(primary_key = True)
   #  user=models.ForeignKey(
     #    User, on_delete=models.CASCADE, null= True, blank = True
-  
+    placement = (
+     (1, 'okay'),
+     (2, 'something') )
     
     id = models.AutoField(primary_key= True)
     username = models.CharField(max_length=250, null= True)
@@ -21,7 +23,7 @@ class Volunteer(models.Model):
     email = models.EmailField(null =True)
     phoneNumber = models.TextField(null = True)
     address= models.CharField(max_length=200, null=True)
-    city = models.CharField(max_length=100, null=True)
+    city = models.TextChoices(Choices = placement)
     country = models.CharField(max_length=50, null=True)
     academicBg = models.CharField(max_length=200)
     skills = models.TextField(max_length=250)

@@ -39,6 +39,10 @@ class Messuccess(TemplateView):
 class Maintenance(TemplateView):
     template_name = 'base/maintenance.html'
 
+class Privacy(TemplateView):
+    template_name = 'base/privacy-policy.html'
+
+
 ############### MAKING ONLY ENTRIES #########################
  #ENDPOINT to post Volunteer model collection
 

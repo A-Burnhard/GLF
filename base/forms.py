@@ -4,9 +4,16 @@ from django_countries import countries
 from .models import  Volunteer, Tour, Donor, Message
 
 COUNTRY_CHOICES = tuple(countries)
+placement = (
+(1, 'okay'),
+(2, 'something')
 
+
+
+)
 
 class VolunteerForm(forms.ModelForm):
+
 
     class Meta:
         model = Volunteer

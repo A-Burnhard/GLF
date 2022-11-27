@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 #Third party packages/apps
     'corsheaders',
     'rest_framework',
-
+    'notifications',
+    'crispy_forms',
     
 ]
 
@@ -154,3 +155,5 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated"
     ]
 }
+
+CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
