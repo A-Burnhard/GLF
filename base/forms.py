@@ -64,7 +64,7 @@ class DonorForm(forms.ModelForm):
         model = Donor
         fields = '__all__'
 
-        label = {
+        labels = {
             "Name" : "Full name",
             "email" : "Email",
             "country" : "Country",
@@ -76,10 +76,10 @@ class DonorForm(forms.ModelForm):
 
         widgets = {
 
-         'Name': forms.TextInput(attrs={'class': 'form-control'}),
-         'email' : forms.EmailInput(attrs={'class': 'form-control'}),
-         'country' : forms.TextInput(attrs={'class': 'form-control'}),
-          'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control'}),
+         'Name': forms.TextInput(attrs={'class': 'form-control', "type" : "text",  "placeholder" : " Full name", }),
+         'email' : forms.EmailInput(attrs={'class': 'form-control',  "type" : "text",  "placeholder" : " Full name"}),
+         'country' : forms.TextInput(attrs={'class': 'form-control',  "type" : "text",  "placeholder" : " Full name"}),
+          'PhoneNumber': forms.NumberInput(attrs={'class': 'form-control', "type" : "text",  "placeholder" : " Full name"}),
            'MeansofGiving': forms.TextInput(attrs={'class': 'form-control'}),
              'FReqOfGiving': forms.TextInput(attrs={'class': 'form-control'}),
 

@@ -814,21 +814,26 @@
                                 <tr>
                                    
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);"  >
                                             Full name
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);"  >
                                             Email
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);"  >
                                             Message
                                         </a>
                                     </th>
                                     
+                                    <th>
+                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                            Date
+                                        </a>
+                                    </th>
                                     
                                 </tr>
                             </thead>
@@ -847,6 +852,7 @@
                                     </td>
                                     <td class="email">{{ mes.email }}</td>
                                     <td class="id">{{ mes.text }}</td>
+                                    <td class="id">{{ mes.date }}</td>
                                 </tr>
                                 {% endfor %}                                                                                  
                                 

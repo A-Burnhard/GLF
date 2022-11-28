@@ -23,7 +23,7 @@ class Volunteer(models.Model):
     email = models.EmailField(null =True)
     phoneNumber = models.TextField(null = True)
     address= models.CharField(max_length=200, null=True)
-    city = models.TextChoices(Choices = placement)
+    city = models.CharField(max_length=100, null=True, choices=placement)
     country = models.CharField(max_length=50, null=True)
     academicBg = models.CharField(max_length=200)
     skills = models.TextField(max_length=250)
