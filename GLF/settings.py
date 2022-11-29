@@ -164,4 +164,4 @@ REST_FRAMEWORK = {
 }
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
-CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/']
+# CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/']
