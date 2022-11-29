@@ -24,8 +24,9 @@ SECRET_KEY = 'django-insecure-0@9n6uex-46l+w#(87-yd##p@zn$n4+0!#n2ln)(y^ha1ll^%x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if not DEBUG:
+    ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -164,4 +165,4 @@ REST_FRAMEWORK = {
 }
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
-CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/','https://glf-test.up.railway.app/manager']
