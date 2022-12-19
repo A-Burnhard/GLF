@@ -72,12 +72,12 @@ class Primary(APIView):
 
   def get(self, request):
         dcount = Donor.objects.all().count()
-        tcount = Tour.objects.all().count()
+        mcount = Message.objects.all().count()
         vcount = Volunteer.objects.all().count()
-        total = dcount+tcount+vcount
+        total = dcount+mcount+vcount
         
         return render(request,'manager/primary.html' ,{ "dc" : dcount ,
-        "tc" : tcount,
+        "mc" : mcount,
         "vc" : vcount,
         "all_total": total  })
 
@@ -94,12 +94,12 @@ class Dashboard(APIView):
   
     def get(self, request):
         dcount = Donor.objects.all().count()
-        tcount = Tour.objects.all().count()
+        mcount = Message.objects.all().count()
         vcount = Volunteer.objects.all().count()
-        total = dcount+tcount+vcount
+        total = dcount+mcount+vcount
 
         return render(request,'manager/index.html' ,{ "dc" : dcount ,
-        "tc" : tcount,
+        "mc" : mcount,
         "vc" : vcount,
         "all_total": total  })
 

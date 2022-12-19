@@ -183,11 +183,11 @@
                                             Volunteers
                                         </a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a href="{% url 'tour' %}" class="nav-link ">
                                             Tourists
                                         </a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -198,13 +198,14 @@
                             </ul>
                         </div>
                     </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link  " href="{% url 'message' %}" >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>envelope</title><rect class="a" x="0.75" y="4.5" width="22.5" height="15" rx="1.5" ry="1.5"/><line class="a" x1="15.687" y1="9.975" x2="19.5" y2="13.5"/><line class="a" x1="8.313" y1="9.975" x2="4.5" y2="13.5"/><path class="a" d="M22.88,5.014l-9.513,6.56a2.406,2.406,0,0,1-2.734,0L1.12,5.014"/></svg>
                             <span>Messages</span>
                         </a>
                     </li>
-
+                    
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="{% url 'cal' %} ">
@@ -212,6 +213,8 @@
                                 <span>Calendar</span>
                             </a>
                     </li>
+
+                  
               <!--        <li class="nav-item">
                         <a class="nav-link " href="./chat.html">
                                 <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M11.25,18.75a1.5,1.5,0,0,1-1.5-1.5V9.75a1.5,1.5,0,0,1,1.5-1.5h10.5a1.5,1.5,0,0,1,1.5,1.5v7.5a1.5,1.5,0,0,1-1.5,1.5h-1.5v4.5l-4.5-4.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M6.75,12.75l-3,3v-4.5H2.25a1.5,1.5,0,0,1-1.5-1.5V2.25A1.5,1.5,0,0,1,2.25.75h10.5a1.5,1.5,0,0,1,1.5,1.5v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
@@ -571,6 +574,7 @@
                             </div>
         
                             <div class="col-md-6">
+                                
                                 <!-- Card -->
                                 <div class="card border-0">
                                     <div class="card-body">
@@ -581,12 +585,12 @@
                                                     <!-- Title -->
                                                     <h5 class="d-flex align-items-center text-uppercase text-muted fw-semibold mb-2">
                                                         <span class="legend-circle-sm bg-success"></span>
-                                                        Number of Tourists
+                                                        Number of Volunteers
                                                     </h5>
         
                                                     <!-- Subtitle -->
                                                     <h2 class="mb-0">
-                                                        {{ tc }}
+                                                        {{ vc }}
                                                     </h2>
         
                                                     <!-- Comment -->
@@ -619,12 +623,13 @@
                                                     <!-- Title -->
                                                     <h5 class="d-flex align-items-center text-uppercase text-muted fw-semibold mb-2">
                                                         <span class="legend-circle-sm bg-success"></span>
-                                                        Number of Volunteers
+                                                        Number of Messages
                                                     </h5>
         
                                                     <!-- Subtitle -->
+
                                                     <h2 class="mb-0">
-                                                        {{ vc }}
+                                                        {{ mc }}
                                                     </h2>
         
                                                     <!-- Comment -->
@@ -654,7 +659,7 @@
                                                     Total
         
                                                     <!-- Icon -->
-                                                    <a href="javascript: void(0);" class="ms-2 text-secondary" data-bs-toggle="tooltip" title=" This a metric showing the total number of entries or forms filled on the GLF website by guests (Donors, Tourists, Volunteers)" >
+                                                    <a href="javascript: void(0);" class="ms-2 text-secondary" data-bs-toggle="tooltip" title=" This a metric showing the total number of entries or forms filled on the GLF website by Donors, Volunteers and Messages" >
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="14" width="14"><path d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,0,1,0,2Z" style="fill: currentColor"/></svg>
                                                     </a>
                                                 </h5>
@@ -714,17 +719,17 @@
                                 <tr>
                                    
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);" class="text-muted list-sort">
                                             Full name
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);" class="text-muted list-sort">
                                             Email
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
+                                        <a href="javascript: void(0);" class="text-muted list-sort">
                                             Position
                                         </a>
                                     </th>
@@ -764,7 +769,6 @@
                                         <div class="avatar avatar-circle avatar-xs me-2">
                                             <span class="avatar-title text-bg-primary-soft">OA</span>
 
-                                            <!-- <img src="{% static '/images/' %}" alt="..." class="avatar-img" width="80" height="50"> -->
                                         </div>
                                         <span class="name fw-bold">Owusu Moses Achiaw</span>
                                     </td>
@@ -807,7 +811,8 @@
                                     <td class="email">nunoogideon19@gmail.com</td>
                                     <td class="id">IT</td>
                                 </tr>
-                        
+                            
+                                
                                 
                                
                                 
