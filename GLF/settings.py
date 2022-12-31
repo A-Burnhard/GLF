@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0@9n6uex-46l+w#(87-yd##p@zn$n4+0!#n2ln)(y^ha1ll^%x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://glf-test.up.railway.app/', "chrome-extension://theIDofYourExtension"]
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -153,7 +153,7 @@ STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
 Login_url = 'login'
 Logout_url = 'logout'
 
@@ -165,4 +165,4 @@ REST_FRAMEWORK = {
 }
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
-CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/','https://glf-test.up.railway.app/manager']
+# CSRF_TRUSTED_ORIGINS = ['*']
