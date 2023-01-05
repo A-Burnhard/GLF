@@ -1,0 +1,289 @@
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background: #000000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disappear {
+  animation: vanish 1s forwards;
+}
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.team {
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 3rem; */
+  letter-spacing: 0.2rem;
+  background-image: url(/assets/images/managment.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  position: relative;
+}
+.team > * {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.5rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.team::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* team section */
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-inline: 5%;
+  gap: 3rem;
+  padding-block: 1rem;
+}
+.team-cards > * {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+}
+.card-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 0.3rem;
+  object-fit: cover;
+  object-position: top;
+  /* mix-blend-mode: color-burn; */
+}
+
+.name {
+  color: #262e33;
+  font-weight: 600;
+  font-size: 1rem;
+  padding-block: 0.5rem;
+  text-align: center;
+}
+.title {
+  color: #15a2d7;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.handles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #15a2d7;
+  gap: 2rem;
+  padding-block: 1rem;
+  transition: 200ms ease-in;
+}
+.handles > * {
+  border: 1px solid #15a2d7;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transition: 100ms ease-in-out;
+}
+
+/* patrick and clement profile */
+#patrick,
+#clement {
+  text-align: center;
+  cursor: pointer;
+  color: magenta;
+  transition: 0.5s ease;
+}
+
+#patrick:hover,
+#clement:hover {
+  text-decoration: underline;
+  color: magenta;
+}
+
+.additional-info-p {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 4rem;
+  left: 30%;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+  background: #fcfbfc;
+  box-shadow: inset 20px 20px 60px #e8e7e8, inset -20px -20px 60px #ffffff;
+  animation: modal 1s ease-in;
+  text-align: left;
+}
+.additional-info-b {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 4rem;
+  left: 25%;
+  width: 50%;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+  background: #fcfbfc;
+  box-shadow: inset 20px 20px 60px #e8e7e8, inset -20px -20px 60px #ffffff;
+  animation: modal 1s ease-in;
+  text-align: center;
+}
+.additional-info-p span,
+.additional-info-b i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  font-weight: 700;
+  background-color: #15a2d7;
+  color: white;
+  cursor: pointer;
+}
+.photo {
+  text-align: center;
+}
+.additional-info-p img,
+.additional-info-b img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+.additional-info-p table,
+.additional-info-p table td {
+  border: 1px solid black;
+}
+.additional-info-p table td {
+  padding: 0.5rem;
+}
+
+@keyframes modal {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 4rem;
+    opacity: 1;
+  }
+}
+
+/* media query for mobile */
+@media (max-width: 1200px) {
+  .team-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+}
+@media (max-width: 930px) {
+  .team-cards {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+  .additional-info-p {
+    width: 90%;
+    font-size: 0.9rem;
+    left: 5%;
+    display: none;
+  }
+  /* .org,
+  .pos {
+    grid-auto-rows: 4rem;
+  } */
+  .additional-info-p h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .additional-info-b {
+    left: 5%;
+    width: 90%;
+  }
+
+  .team > * {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .team-cards {
+    padding-inline: 15%;
+  }
+  footer {
+    padding-inline-start: 12%;
+  }
+  .two,
+  .objectives {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .team-cards {
+    padding-inline: 20%;
+  }
+  footer {
+    padding-inline-start: 12%;
+  }
+  .two,
+  .objectives {
+    width: 75%;
+  }
+}

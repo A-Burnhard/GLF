@@ -1,272 +1,102 @@
-::before, ::after {
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
 }
 * {
-  font-family: 'Epilogue', sans-serif;
-
+  font-family: "Poppins", sans-serif;
 }
-
-
 body {
   margin: 0;
-}
-.first-section { 
-  text-align: center;
-  padding-block: 1rem;
-
-
-
-}
-.first-section img {
-  width: 18%;
-
-
-  
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-/* Navigation */
-.navigation {
-  position: sticky;
+.loader {
+  position: fixed;
+  z-index: 9999;
   top: 0;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.2);
-  background-color: #15A2D7;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  /* padding-inline: 5%; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  
-  
-}
-.links{
-  display: flex;
-  /* padding-top: 1rem; */
-  gap: 3rem;
-  
-  
-}
-
-.links li {
-  list-style: none;
- 
-}
-.links li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  position: relative;
-  
-}
-.links li a::after {
-  content: "";
-  position: absolute;
-  left:0;
-  bottom: -.5rem;
+  left: 0;
+  background: #000000;
+  height: 100%;
   width: 100%;
-  height: .2rem;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 250ms ease-in;
-
-}
-.links li a:hover::after {
-  transform: scaleX(1);
-}
-.toggle-switch-button {
-  position: absolute;
-  top: .6rem;
-  right: 2rem;
-  color: #15A2D7;
-  font-size: 2rem;
-  display: none;
-}
-/* .list-element-button {
-  position: absolute;
-  top: 0;
-  right: 1rem;
-  color: white;
-  font-size: 1.5rem;
-  display: none;
-} */
-.glf-header {
-  position: absolute;
-  top: .4rem;
-  left: 2rem;
-  color: white;
-
-
-}
-.glf-header img {
-  width: 10rem;
-  border-radius: 1rem;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-@media(max-width:1100px) {
-  .first-section {
-    display: none;
-  }
-
-  .toggle-switch-button , .glf-header img {
-    display: inline-block;
-
-  }
-  .navigation {
-    padding-block: 1rem;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-  }
-  
-  .links li {
-    width: 100%;
-  }
-  .links {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    width: 100%;
-    text-align: center;
-    display: none;
-
-  }
-  .links li a {
-    color: #15A2D7;
-  }
-  .mobile {
-    margin-bottom: 1.5rem;
-  }
-  .links.active {
-    display: flex;
-  }
-
+.disappear {
+  animation: vanish 1s forwards;
 }
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 /* chapters */
 .chapters-grid {
- background-image: url(/assets/images/chapters.jpg);
- background-position: center;
- background-size: contain;
- padding-block: 15rem;
- background-color: whitesmoke;
- background-blend-mode: multiply;
+  background-image: url(/assets/images/about-upsa.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: slide 10s infinite;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.2rem;
 }
 
-
-@media (max-width:600px) {
-  .chapters-grid {
-    background-repeat: no-repeat;
-  }
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.chapters-grid > * {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.5rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.chapters-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+#demo {
+  color: #15a2d7;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
 /* footer of webpage */
-footer {
-  padding-block: 1rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  padding-inline: 5%;
-  gap: 5rem;
-  background-color: #262E33;
-  color: white;
-  font-weight: 500;
 
-  
-}
-.right-section{
-  text-align: justify; 
-  
-}
-.lists, .location,.call,.mail, .social-icons {
-  display: flex;
-}
-.location,.call,.mail, .social-icons  {
-  justify-content: flex-start;
-  align-items: center;
-  gap: .5rem;
-}
-.social-icons {
-  gap: 1rem;
-  color: #15A2D7;
-  /* width: 100%; */
-}
-.left-section > *, .middle-section > *, .right-section > * {
-  margin-block: .5rem;
-}
-.brand ,.about-header, .reach {
-  font-size: 1.5rem;
-  
-}
-
-.brand,.about-header, .reach{
-  color: #15A2D7;
-}
-@media (max-width:1100px) {
-  footer {
-    display: flex;
-    flex-direction:column;
-    padding-inline: 5%;
-    gap: 2rem;
+@media (max-width: 600px) {
+  .chapters-grid {
+    background-repeat: repeat;
   }
-  footer > * {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-inline: 5%;
-  
+  .chapters-grid > * {
+    font-size: 2rem;
   }
+  #demo {
+    font-size: 1.5rem;
+  }
+}
 
-
-  
-
+@keyframes slide {
+  0% {
+    background-image: url(/assets/images/about-upsa.jpg);
+    background-position: left;
+  }
+  55% {
+    background-image: url(/assets/images/legon.jpg);
+    background-position: bottom;
+  }
 }

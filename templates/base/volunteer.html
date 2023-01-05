@@ -1,196 +1,737 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
-  <link rel="stylesheet" href="{% static 'base/assets/css/volunteer.css' %}"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
-  <link rel="stylesheet" href=" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
-  <title>Become a volunteer</title> 
-  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
-</head>
-<body>
-  <div class="first-section">
-    <img src="{% static 'base/assets/images/logo.jpg' %} " alt="logo-image"> 
-  <nav class="navigation">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"  
+      type="image/icon type"
+      style="border-radius: 100%"
+    />
+    <link rel="stylesheet" href="/assets/css/volunteer.css" /> {% static 'base' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}" 
+    />
+    <link
+      rel="stylesheet"
+      href="" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}
+    />
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" /> 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Become a volunteer</title>
+    <link
+      rel="icon"
+      href="{% static 'base/assets/images/logo-one.jpg' %}"  
+      type="image/icon type"
+      style="border-radius: 100%"
+    />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" /> 
+    </div>
+
+    <div class="first-section">
+      <img src=" {% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image" />
+    </div>
+    <nav class="navigation">
       <ul class="links">
-        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
-        <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
-        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
-        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
-        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
-        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
-        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
-        <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
+        <li>
+          <a href="{% url 'main' %}"   
+            ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
+          >
+        </li>
+        <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
+        <li>
+          <a href="{% static 'base/assets/about/about.html' %}" 
+            ><span class="fa fa-address-card-o"></span> About Us</a
+          >
+        </li>
+        <li>
+          <a href="{% static 'base/assets/management/management.html' %}" 
+            ><span class="fa fa-briefcase"></span> Management Team</a
+          >
+        </li>
+        <li>
+          <a href="{% static 'base/assets/programmes/programmes.html' %}" 
+            ><span class="fa fa-calendar"></span> Programmes</a
+          >
+        </li>
+        <li>
+          <a href="{% static 'base/assets/volunteerScreen/volunteer.html' %}" 
+            ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
+            Volunteer With Us</a
+          >
+        </li>
+        <li>
+          <a href="{% static 'base/assets/chapters/chapters.html' %}" 
+            ><span class="fa fa-bookmark"></span> Chapters</a
+          >
+        </li>
+        <li>
+          <a href="{% static 'base/assets/donate/donate.html' %}" 
+            ><span class="fa fa-money"></span> Donate</a
+          >
+        </li>
+        <li>
+          <a href="" {% static 'base/assets/contact/contact.html' %}
+            ><span class="fa fa-phone"></span> Contact
+          </a>
+        </li>
       </ul>
       <div class="mobile">
-      <a href="#" class="toggle-switch-button">
-        <span class="fa fa-navicon"></span>
-      </a>
-      <div class="glf-header">
-        <img src="{% static 'base/assets/images/logo.jpg' %}" alt=""> 
+        <a href="#" class="toggle-switch-button">
+          <span class="fa fa-navicon"></span>
+        </a>
+        <div class="glf-header">
+          <a href="{% url 'main' %}" {% static 'base' %}
+            ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt=""  
+          /></a>
+        </div>
+        <!-- <a href="#" class="list-element-button">
+          <span class="fa fa-ellipsis-v"></span>
+        </a> -->
       </div>
-      <!-- <a href="#" class="list-element-button">
-        <span class="fa fa-ellipsis-v"></span>
-      </a> -->
-      </div>
-  </nav>
+    </nav>
 
-      <div class="member-cont">
+    <div class="member-cont" data-aos="fade-right">
+      <div class="member">
+        <h1>Become a <span>VOLUNTEER</span> Today</h1>
+        <div class="notice">
+          Global Leaders Foundation is looking for people with the following
+          skills and attributes
+        </div>
+        <div class="text-items">
+          <p>
+            <span class="fa fa-check-circle"></span>Passionate about making a
+            difference in the world
+          </p>
+          <p>
+            <span class="fa fa-check-circle"></span>Ability to adapt to
+            different environment
+          </p>
+          <p>
+            <span class="fa fa-check-circle"></span>Ability to take initiative
+            and direction
+          </p>
+          <p><span class="fa fa-check-circle"></span>Well-organized</p>
+          <p>
+            <span class="fa fa-check-circle"></span>Flexible and open-minded
+          </p>
+          <p>
+            <span class="fa fa-check-circle"></span>Ability to interact
+            respectfully with people from diverse racial, cultural, and economic
+            backgrounds
+          </p>
+          <p><span class="fa fa-check-circle"></span>Team player</p>
+          <p><span class="fa fa-check-circle"></span>Innovative/Creative</p>
+        </div>
+      </div>
+      <div class="member-image">
         <div class="member">
-          <h1>
-            Become a <span>VOLUNTEER</span> Today
-          </h1>
-          <div class="notice reveal">
-            Global Leaders Foundation is looking for people with the following skills and attributes
+          <div class="notice">Volunteer Placement Procedures include:</div>
+          <div class="starter">
+            <p>
+              1. Selection of programme type, duration, and project portfolio of
+              interest. You provide details on skills, interests, academic
+              background, and professional experiences.
+            </p>
+            <p>
+              2. Application evaluation and project preferences by programme
+              director to assign applicant to the most appropriate project
+            </p>
+            <p>
+              3. Depending upon your length of stay, the programme Director will
+              send you the cost for the following
+            </p>
           </div>
-          <div class="text-items reveal">
-            <p><span class="fa fa-check"></span>Passion about making a difference in the world</p>
-            <p><span class="fa fa-check"></span>Ability to adopt to different environment</p>
-            <p><span class="fa fa-check"></span>Ability to take initiative and direction</p>
-            <p><span class="fa fa-check"></span>Well-organized</p>
-            <p><span class="fa fa-check"></span>Flexible and open-minded</p>
-            <p><span class="fa fa-check"></span>Ability to interact respectfully with people from diverse racial, cultural, and economic backgrounds</p>
-            <p><span class="fa fa-check"></span>Team player</p>
-            <p><span class="fa fa-check"></span>Innovative/Creative</p>
+          <div class="text-items">
+            <p><span class="fa fa-check-circle"></span>Airport Pick-up</p>
+            <p>
+              <span class="fa fa-check-circle"></span>Accommodation (private
+              room in a comfortable home-stay setting)
+            </p>
+            <p><span class="fa fa-check-circle"></span>Three meals daily</p>
+            <p>
+              <span class="fa fa-check-circle"></span>24/7 In-country support
+            </p>
+            <p>
+              <span class="fa fa-check-circle"></span>Accra city tour upon
+              arrival
+            </p>
+            <p>
+              <span class="fa fa-check-circle"></span>Volunteer placement
+              arrangements and follow-up
+            </p>
+            <p><span class="fa fa-check-circle"></span>Personalized Souvenir</p>
+            <p>
+              <span class="fa fa-check-circle"></span>Visitation to a partner
+              orphanage home
+            </p>
+            <p><span class="fa fa-check-circle"></span>Airport Drop-off</p>
           </div>
-             
-        </div>
-        <div class="member-image reveal">
-          <img src="{% static 'base/assets/images/j.jpg' %}" alt=""> 
         </div>
       </div>
+    </div>
 
-      <div class="member-cont-two reveal">
-        <div class="member-image">
-          <img src="{% static 'base/assets/images/become.jpg' %}" alt="join-us"> 
-        </div>
-        <div class="member">
-          <div class="notice">
-            Volunteer Placement Procedures are:
+    <div class="other">
+      <div>
+        <p>
+          Volunteers who are staying for longer periods of time and have higher
+          levels of project related experience or language skills are more
+          likely to receive their first project preference.
+        </p>
+        <p>
+          Responsibilities include: Helping to coordinate projects and events,
+          preparing materials, research, assisting staff with event production,
+          answering phone calls, maintaining database, event production and
+          visitation to placement sites.
+        </p>
+        <p>
+          Benefits include a chance to help make a difference, be part of a
+          progressive community and exposure to relevant issues.
+        </p>
+      </div>
+      <div>
+        <h2>Select Interested Placement</h2>
+        <p>1. HIV/AIDS education</p>
+        <p>2. Women empowerment</p>
+        <p>3. Clinical work (hospital and clinics)</p>
+        <p>4. Public Health Education and Research Work</p>
+        <p>5. Rural Outreach and Field Clinics</p>
+        <p>6. Conservation and Environmental Protection</p>
+        <p>7. Community development</p>
+        <p>8. Literacy Programmes for adults</p>
+        <p>9. Education</p>
+        <p>10. Any other placement of your choice to be approved</p>
+      </div>
+    </div>
+
+    <!-- <div class="member-cont-two "data-aos="fade-up" ">
+          <div class="member-image">
+            <img src="/assets/images/become.jpg" alt="join-us">
           </div>
-            <div class="starter">
-              <!-- <p>You select the programme type, duration, and project portfolio of interest. You provide details on skills, interests, academic background, and professional experiences.</p>
-              <p>Programme Director evaluate your application and project preferences to best match you with a project maximizing benefit to the community.</p> -->
-              <p>Depending upon your length of stay, the programme Director will send you the cost for the following</p>
+          <div class="member">
+            <div class="notice">
+              Volunteer Placement Procedures are:
             </div>
-            <div class="text-items reveal">
-              <p><span class="fa fa-check"></span>Airport Pick-up</p>
-              <p><span class="fa fa-check"></span>Accommodation (private room in a comfortable home-stay setting)</p>
-              <p><span class="fa fa-check"></span>Three meals daily</p>
-              <p><span class="fa fa-check"></span>24/7 In-country support</p>
-              <p><span class="fa fa-check"></span>Accra city tour upon arrival</p>
-              <p><span class="fa fa-check"></span>Volunteer placement arrangements and follow-up</p>
-              <p><span class="fa fa-check"></span>Personalized Souvenir</p>
-              <p><span class="fa fa-check"></span>Visitation to a partner orphanage home</p>
-              <p><span class="fa fa-check"></span>Airport Drop-off</p>
+              <div class="starter">
+                <!-- <p>You select the programme type, duration, and project portfolio of interest. You provide details on skills, interests, academic background, and professional experiences.</p>
+                <p>Programme Director evaluate your application and project preferences to best match you with a project maximizing benefit to the community.</p> -->
+    <!-- <p>Depending upon your length of stay, the programme Director will send you the cost for the following</p>
+              </div>
+              <div class="text-items">
+                <p><span class="fa fa-check-circle"></span>Airport Pick-up</p>
+                <p><span class="fa fa-check-circle"></span>Accommodation (private room in a comfortable home-stay setting)</p>
+                <p><span class="fa fa-check-circle"></span>Three meals daily</p>
+                <p><span class="fa fa-check-circle"></span>24/7 In-country support</p>
+                <p><span class="fa fa-check-circle"></span>Accra city tour upon arrival</p>
+                <p><span class="fa fa-check-circle"></span>Volunteer placement arrangements and follow-up</p>
+                <p><span class="fa fa-check-circle"></span>Personalized Souvenir</p>
+                <p><span class="fa fa-check-circle"></span>Visitation to a partner orphanage home</p>
+                <p><span class="fa fa-check-circle"></span>Airport Drop-off</p>
+              </div>
+          </div>
+        </div> -->
+    <div class="registration-cont" style="background-color: whitesmoke">
+      <div
+        class="account-container"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div class="fiber">Join Us</div>
+        <div class="header">Become a volunteer today</div>
+        <form action="">
+          <label for="firstname" class="f-name">First name</label>
+          <input
+            type="text"
+            class="firstname-input"
+            placeholder="Enter first name"
+            required
+          />
+          <label for="lastname" class="l-name">Last name</label>
+          <input
+            type="text"
+            class="lastname-input"
+            placeholder="Enter last name"
+            required
+          />
+          <label for="email" class="email">E-mail</label>
+          <input
+            type="email"
+            class="email-input"
+            placeholder="okantey@example.com"
+            required
+          />
+          <label for="dob" class="dob">Date of birth</label>
+          <input type="date" class="date-input" required />
+          <label for="telephone" class="phone">Phone number</label>
+          <input
+            type="phone"
+            class="phone-input"
+            placeholder="Enter phone number"
+            required
+          />
+          <label for="address" class="address">Address</label>
+          <input
+            type="address"
+            class="address-input"
+            placeholder="Enter residential address"
+            required
+          />
+          <label for="city" class="city">City</label>
+          <input
+            type="city"
+            class="city-input"
+            placeholder="Enter city name"
+            required
+          />
+          <label for="academic-background">Academic background</label>
+          <input
+            type="text"
+            class="academics-input"
+            placeholder="Academic background"
+            required
+          />
+          <label for="country">Country</label
+          ><span style="display: inline; float: none"></span>
+
+          <select id="country" name="country" class="form-control" required>
+            <option value="Select your country">
+              -----Select Your Country-----
+            </option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Åland Islands">Åland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Anguilla">Anguilla</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Aruba">Aruba</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Barbados">Barbados</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Belize">Belize</option>
+            <option value="Benin">Benin</option>
+            <option value="Bermuda">Bermuda</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Bosnia and Herzegovina">
+              Bosnia and Herzegovina
+            </option>
+            <option value="Botswana">Botswana</option>
+            <option value="Bouvet Island">Bouvet Island</option>
+            <option value="Brazil">Brazil</option>
+            <option value="British Indian Ocean Territory">
+              British Indian Ocean Territory
+            </option>
+            <option value="Brunei Darussalam">Brunei Darussalam</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Cape Verde">Cape Verde</option>
+            <option value="Cayman Islands">Cayman Islands</option>
+            <option value="Central African Republic">
+              Central African Republic
+            </option>
+            <option value="Chad">Chad</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Christmas Island">Christmas Island</option>
+            <option value="Cocos (Keeling) Islands">
+              Cocos (Keeling) Islands
+            </option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Congo">Congo</option>
+            <option value="Congo, The Democratic Republic of The">
+              Congo, The Democratic Republic of The
+            </option>
+            <option value="Cook Islands">Cook Islands</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Cote D'ivoire">Cote D'ivoire</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Dominica">Dominica</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Falkland Islands (Malvinas)">
+              Falkland Islands (Malvinas)
+            </option>
+            <option value="Faroe Islands">Faroe Islands</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="French Guiana">French Guiana</option>
+            <option value="French Polynesia">French Polynesia</option>
+            <option value="French Southern Territories">
+              French Southern Territories
+            </option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Gibraltar">Gibraltar</option>
+            <option value="Greece">Greece</option>
+            <option value="Greenland">Greenland</option>
+            <option value="Grenada">Grenada</option>
+            <option value="Guadeloupe">Guadeloupe</option>
+            <option value="Guam">Guam</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guernsey">Guernsey</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea-bissau">Guinea-bissau</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Heard Island and Mcdonald Islands">
+              Heard Island and Mcdonald Islands
+            </option>
+            <option value="Holy See (Vatican City State)">
+              Holy See (Vatican City State)
+            </option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iran, Islamic Republic of">
+              Iran, Islamic Republic of
+            </option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Isle of Man">Isle of Man</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Jersey">Jersey</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Korea, Democratic People's Republic of">
+              Korea, Democratic People's Republic of
+            </option>
+            <option value="Korea, Republic of">Korea, Republic of</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Lao People's Democratic Republic">
+              Lao People's Democratic Republic
+            </option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Libyan Arab Jamahiriya">
+              Libyan Arab Jamahiriya
+            </option>
+            <option value="Liechtenstein">Liechtenstein</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Macao">Macao</option>
+            <option value="Macedonia, The Former Yugoslav Republic of">
+              Macedonia, The Former Yugoslav Republic of
+            </option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Mali">Mali</option>
+            <option value="Malta">Malta</option>
+            <option value="Marshall Islands">Marshall Islands</option>
+            <option value="Martinique">Martinique</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Mayotte">Mayotte</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Micronesia, Federated States of">
+              Micronesia, Federated States of
+            </option>
+            <option value="Moldova, Republic of">Moldova, Republic of</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Nauru">Nauru</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Netherlands Antilles">Netherlands Antilles</option>
+            <option value="New Caledonia">New Caledonia</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Niue">Niue</option>
+            <option value="Norfolk Island">Norfolk Island</option>
+            <option value="Northern Mariana Islands">
+              Northern Mariana Islands
+            </option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palau">Palau</option>
+            <option value="Palestinian Territory, Occupied">
+              Palestinian Territory, Occupied
+            </option>
+            <option value="Panama">Panama</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Pitcairn">Pitcairn</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Reunion">Reunion</option>
+            <option value="Romania">Romania</option>
+            <option value="Russian Federation">Russian Federation</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Saint Helena">Saint Helena</option>
+            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+            <option value="Saint Lucia">Saint Lucia</option>
+            <option value="Saint Pierre and Miquelon">
+              Saint Pierre and Miquelon
+            </option>
+            <option value="Saint Vincent and The Grenadines">
+              Saint Vincent and The Grenadines
+            </option>
+            <option value="Samoa">Samoa</option>
+            <option value="San Marino">San Marino</option>
+            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Georgia and The South Sandwich Islands">
+              South Georgia and The South Sandwich Islands
+            </option>
+            <option value="Spain">Spain</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Svalbard and Jan Mayen">
+              Svalbard and Jan Mayen
+            </option>
+            <option value="Swaziland">Swaziland</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Tajikistan">Tajikistan</option>
+            <option value="Tanzania, United Republic of">
+              Tanzania, United Republic of
+            </option>
+            <option value="Thailand">Thailand</option>
+            <option value="Timor-leste">Timor-leste</option>
+            <option value="Togo">Togo</option>
+            <option value="Tokelau">Tokelau</option>
+            <option value="Tonga">Tonga</option>
+            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Turks and Caicos Islands">
+              Turks and Caicos Islands
+            </option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="United States Minor Outlying Islands">
+              United States Minor Outlying Islands
+            </option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Viet Nam">Viet Nam</option>
+            <option value="Virgin Islands, British">
+              Virgin Islands, British
+            </option>
+            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+            <option value="Wallis and Futuna">Wallis and Futuna</option>
+            <option value="Western Sahara">Western Sahara</option>
+            <option value="Yemen">Yemen</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+          </select>
+          <label for="area" class="area">Interested area of placement</label>
+          <select name="placement" id="placement" required>
+            <option value="Select area of placement">
+              -----Select area of placement-----
+            </option>
+            <option value="HIV/AIDS education">HIV/AIDS education</option>
+            <option value="Women empowerment">Women empowerment</option>
+            <option value="Clinical work(hospital and clinics)">
+              Clinical work(hospital and clinics)
+            </option>
+            <option value="Public Health Education and Research Work">
+              Public Health Education and Research Work
+            </option>
+            <option value="Rural Outreach and Field Clinics">
+              Rural Outreach and Field Clinics
+            </option>
+            <option value="Conservation and Environmental Protection">
+              Conservation and Environmental Protection
+            </option>
+            <option value="Community Development">Community Development</option>
+            <option value="Literacy Programmes for adults">
+              Literacy Programmes for adults
+            </option>
+            <option value="Education">Education</option>
+            <option value="Any other placement of your choice to be approved">
+              Any other placement of your choice to be approved
+            </option>
+          </select>
+          <label for="duration" class="duration">Duration of placement</label>
+          <select name="duration" id="duration" required>
+            <option value="Select duration">-----Select duration-----</option>
+            <option value="month or less">Month or less</option>
+            <option value="1-3 months">1-3 Month(s)</option>
+            <option value="4-6 months">4-6 Months</option>
+            <option value="more than 6 months">More than 6 Months</option>
+          </select>
+          <label for="comment" class="comment">Additional information</label>
+          <textarea
+            name="comments"
+            id="comments"
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <div class="proceed">
+            <input type="checkbox" name="" id="" />
+            <div>
+              By becoming a volunteer, you agree to the
+              <span>Terms & Conditions</span> above.
             </div>
-        </div>
-      </div>
-      <div class="registration-cont reveal">
-        <div class="account-container reveal">
-            <div class="fiber">Join Us</div>
-            <div class="header">Become a volunteer today</div>
-            <form class= "form" action="" method="POST">
-              {% csrf_token %}
-
-              {{ form.non_field_errors }}
-              
-              <tr>
-                <th>{{ form.name.label_tag }}</th>
-                <td>
-                  {{ form.name.errors }}
-                  {{ form.username }}
-                </td>
-              </tr>
-              
-              <input  type = "submit" value = "submit"  
-              style="color:white;
-               background-color: #15A2D7 ;
-              border: none;
-              border-radius: .3rem;  
-              border: 1px solid #15A2D7;
-              transition: color 0.15s, background-color 0.15s;
-              font-family: 'Epilogue', sans-serif;
-              text-transform: uppercase;
-              padding-block: .4rem;
-              padding-inline: 1rem;
-              font-weight: 500;
-            " class="submit" >
-              
-             
-            </form>
-        </div>
-      </div>      
-  <footer>
-    <div class="left-section">
-      <div class="brand">Global Leaders Foundation</div>
-      <div class="lists">
-        <div>Home |</div>
-        <div> About |</div>
-        <div> Contact |</div>
-        <div></div>
-      </div>
-      <div class="copyright">Copyright &#169; 2022 GlobalLeadersFoundation <br> All rights reserved</div>
-    </div>
-    <div class="middle-section">
-      <div class="reach">
-        Get In Touch With Us
-      </div>
-      <div class="location">
-        <div><span class="fa fa-map-marker"></span></div>
-        <div>
-          P.O. Box CT 7883
-          Cantonments <br>Accra
-          Ghana, West Africa.</div>
-      </div>
-      <div class="call">
-        <div><span class="fa fa-phone"></span></div>
-        <div>+233 (0) 24 529 6586</div>
-      </div>
-      <div class="mail">
-        <div><span class="fa fa-envelope"></span></div>
-        <div>info@GlobalLeadersFoundation.org</div>
+          </div>
+          <div class="create">
+            <button>REGISTER</button>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="right-section">
-      <div class="about-header">About Us</div>
-      <div class="about-text">
-        Global Leaders Foundation is a value-based Non-Governmental Organization (NGO). By this, we mean all our programs, activities, operational structure, and development are driven and determined by a set of core values. 
-        We operate with the values of cultural infusion, integrity, respect for all, and connectedness. We also recognize the need for networking and connectivity. We value healthy sustainable processes and structures.
-      </div>
-      <div class="social-icons">
-        <div>
-          <span class="fa fa-facebook fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-instagram fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-twitter fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-google fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-linkedin fa-2x"></span>
+    <button
+      onclick="topFunction()"
+      class="fa fa-arrow-circle-o-up"
+      id="myBtn"
+      title="Go to top"
+    ></button>
+
+    <footer>
+      <div class="left-section">
+        <div class="brand">Global Leaders Foundation</div>
+        <div class="lists">
+          <a href="{% static 'base/index.html' %}">Home <span>|</span></a> 
+          <a href="{% static 'base/assets/about/about.html' %}">About<span> |</span></a> 
+          <a href="{% static 'base/assets/contact/contact.html' %}">Contact</a> 
+          <div></div>
         </div>
       </div>
+      <div class="middle-section">
+        <div class="reach">Get In Touch With Us</div>
+        <div class="location">
+          <div><span class="fa fa-map-marker"></span></div>
+          <div>
+            P.O. Box KA 16164 Kotoka International Airport Accra Ghana, West
+            Africa.
+          </div>
+        </div>
+        <div class="call">
+          <div><span class="fa fa-phone"></span></div>
+          <div>+233 (0) 24 529 6586</div>
+        </div>
+        <div class="mail">
+          <div><span class="fa fa-envelope"></span></div>
+          <div>info@globalleadersfoundation.org</div>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="about-header">Follow US</div>
+        <div class="about-text">Follow us on our social media platform</div>
+        <div class="social-icons">
+          <div>
+            <a
+              href="https://web.facebook.com/Global-Leaders-Foundation-300719476695019/"
+              target="_blank"
+            >
+              <span class="fa fa-facebook"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">
+      Copyright &#169; 2011 -
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <a href="{% url 'main' %}" style="color: #15a2d7; text-decoration: none"
+        >Global Leaders Foundation</a
+      >. All rights reserved.
     </div>
-  </footer>
 
-
-  
- <script src="{% static 'base/assets/scripts/volunteer.js' %}"></script> 
- <script src="{% static 'base/scripts.js' %}"></script> 
-</body>
+    <script src="{% static 'base/assets/scripts/volunteer.js' %}"></script> 
+    <script src=" {% static 'base/scripts.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
-
-
