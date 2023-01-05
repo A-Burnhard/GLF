@@ -5,33 +5,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;">{% static 'base' %}
-  <link rel="stylesheet" href="/assets/css/contact.css"> {% static 'base' %}
+  <link rel="icon" href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}" type="image/icon type" style="border-radius: 100%;"> 
+  <link rel="stylesheet" href="{% static 'base/assets/css/contact.css' %}"> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href="./assets/bootstrap-5.2.0-dist/css/bootstrap.min.css"> {% static 'base' %}
-  <link rel="stylesheet" href="./assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css"> {% static 'base' %}
+  <link rel="stylesheet"  href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'base/style.css' %}"/> 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Get in touch with us</title> 
-  <link rel="icon" href="/assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;"> {% static 'base' %}
+  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
 </head>
 <body>
+  <div class="loader">
+    <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt=""> 
+  </div>
+
+
+
   <div class="first-section">
-    <img src="/assets/images/logo.jpg" alt="logo-image"> {% static 'base' %}
+    <img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image"> 
   </div>
   <nav class="navigation" id="navigation">
       <ul class="links">
-        <li><a href="{% url  'main' %}"><span class="fa fa-home " style="font-size: 1.2rem;"></span> Home</a></li> 
+        <li><a href="{% url 'main' %}span class="fa fa-home " style="font-size: 1.2rem;"></span> Home</a></li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
-        <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
-        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
-        <li><a href="/assets/volunteerScreen/volunteer.html"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li>
+        <li><a href="/assets/about/about.html"><span class="fa fa-address-card-o"></span> About Us</a></li>
+        <li><a href="/assets/management/management.html"><span class="fa fa-briefcase"></span> Management Team</a></li>
         <li><a href="/assets/programmes/programmes.html"><span class="fa fa-calendar"></span> Programmes</a></li>
+        <li><a href="/assets/volunteerScreen/volunteer.html"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li>
+        <li><a href="/assets/chapters/chapters.html"><span class="fa fa-bookmark"></span> Chapters</a></li>        
         <li><a href="/assets/donate/donate.html"><span class="fa fa-money"></span> Donate</a></li>
         <li><a href="/assets/contact/contact.html"><span class="fa fa-phone"></span> Contact </a></li>
-        <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
+
       </ul>
       <div class="mobile">
       <a href="#" class="toggle-switch-button">
@@ -39,27 +47,31 @@
       </a>
            
       <div class="glf-header">
-        <a href="{% url  'main' %}"><img src="{% static  'base/assets/images/logo.jpg' %}" alt=""></a>  
+        <a href="{% url 'main' %}"><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt=""></a> 
       </div> 
    
   </nav>
-  <div class="contact-bg" data-aos="fade-right">
+  <div class="contact-us">
+    <h1 data-aos="fade-down" data-aos-duration="3000">Contact Us</h1>
+  </div>
+
+  <!-- <div class="contact-bg" data-aos="fade-right">
       <div class="contact-text">
         YOUR <span>CONNECTION</span> TO GLOBAL LEADERS FOUNDATION
       </div>
       <div class="contact-hero">
-        <img src="/assets/images/contactt.jpg" alt="contact"> {% static  'base/' %}
-      </div> 
-  </div>
+        <img src="/assets/images/contactt.jpg" alt="contact">
+      </div>
+  </div> -->
 
-  <div class="in-touch" data-aos="fade-in-out">
+  <!-- <div class="in-touch" data-aos="fade-in-out">
     <h1>Please get in touch with us and our expert support team will answer all your questions</h1>
-  </div>
+  </div> -->
 
-  <div class="wrapper" data-aos="fade-down">
+  <div class="wrapper">
     <div class="contact-form-cont">
       <div class="fill-in">
-        <h1>Reach out to us!</h1>
+        <h4>Reach out to us!</h4>
         <p>Got a question about global leaders foundation? Are you interested 
           in partnering with us? Have some suggestions or just want to say hi? Contact us:
         </p>
@@ -67,36 +79,17 @@
           <input type="text" id="firstname" placeholder="First name">
           <input type="text" id="lastname" placeholder="Last name">
           <input type="email" id="email" placeholder="Your Email Address">
-          <!-- <input type="phone" id="phone" placeholder="Phone Number"> -->
-          <input type="text" id="message" placeholder="Message">
+          <input type="phone" id="phone" placeholder="Phone Number">
+          <textarea rows="5" cols="33" placeholder="Leave a message" minlength="10"></textarea>
           <input type="submit" value="SUBMIT" id="submit-msg">
         </form>
       </div>
       <div class="service-p" data-aos="fade-up">
-        <h1>Make that conversation happen</h1>
+        <h4>Make that conversation happen</h4>
         <p>Not sure where to start? Need that little bit of help?
-          Visit our office or get in touch with us:
+          Visit our office to get in touch with us:
         </p>
-        <div class="service-personnnel">
-          <div class="photo">
-            <img src="{% static 'base/assets/images/Daniel Appiah Danquah.jpg' %}" alt=" Director"> 
-          </div>
-          <div class="profile">
-            <h3>Daniel Appiah Danquah</h3>
-            <h4>Director</h6>
-            <h4>+233 (0) 24 529 6586</h4>
-          </div>
-        </div>
-        <div class="service-personnnel">
-          <div class="photo">
-            <img src="{% static 'base/assets/images/GIFTY BOAHEMAA APPEA.jpg' %}" alt=""> 
-          </div>
-          <div class="profile">
-            <h3>Gifty Boahemaa Appea</h3>
-            <h4>Secretary</h4>
-            <h4>+233 (0) 54 682 3821</h4>
-          </div>
-        </div>
+        <iframe class="map" data-aos="flip-left" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7350705830295!2d-0.17031218523385022!3d5.606095495935775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b1fff72b87d%3A0xff2fe8ba5dfa0561!2sKotoka%20International%20Airport!5e0!3m2!1sen!2sgh!4v1669799873221!5m2!1sen!2sgh"  allowfullscreen="" loading="lazy"></iframe>
         <!-- <h1>Other ways to connect</h1> -->
       </div>
     </div>
@@ -104,27 +97,25 @@
   </div>
 
 
+    
   <footer>
     <div class="left-section">
       <div class="brand">Global Leaders Foundation</div>
       <div class="lists">
-        <div>Home |</div>
-        <div> About |</div>
-        <div> Contact |</div>
+        <a href="{% url 'main' %}">Home <span>|</span></a>
+        <a href="/assets/about/about.html">About<span> |</span></a>
+        <a href="/assets/contact/contact.html">Contact</a>
         <div></div>
       </div>
-      <div class="copyright">Copyright &#169; 2022 GlobalLeadersFoundation <br> All rights reserved</div>
     </div>
     <div class="middle-section">
-      <div class="reach">
-        Get In Touch With Us
-      </div>
+      <div class="reach">Get In Touch With Us</div>
       <div class="location">
         <div><span class="fa fa-map-marker"></span></div>
         <div>
-          P.O. Box CT 7883
-          Cantonments <br>Accra
-          Ghana, West Africa.</div>
+          P.O. Box KA 16164 Kotoka International Airport Accra Ghana, West
+          Africa.
+        </div>
       </div>
       <div class="call">
         <div><span class="fa fa-phone"></span></div>
@@ -132,36 +123,38 @@
       </div>
       <div class="mail">
         <div><span class="fa fa-envelope"></span></div>
-        <div>info@GlobalLeadersFoundation.org</div>
+        <div>info@globalleadersfoundation.org</div>
       </div>
     </div>
     <div class="right-section">
-      <div class="about-header">About Us</div>
-      <div class="about-text">
-        Global Leaders Foundation is a value-based Non-Governmental Organization (NGO). By this, we mean all our programs, activities, operational structure, and development are driven and determined by a set of core values. 
-        We operate with the values of cultural infusion, integrity, respect for all, and connectedness. We also recognize the need for networking and connectivity. We value healthy sustainable processes and structures.
-      </div>
+      <div class="about-header">Follow US</div>
+      <div class="about-text">Follow us on our social media platform</div>
       <div class="social-icons">
         <div>
-          <span class="fa fa-facebook fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-instagram fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-twitter fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-google fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-linkedin fa-2x"></span>
+          <a
+            href="https://web.facebook.com/Global-Leaders-Foundation-300719476695019/"
+            target="_blank"
+          >
+            <span class="fa fa-facebook"></span>
+          </a>
         </div>
       </div>
     </div>
   </footer>
-  <script src="{% static  'base/scripts.js' %}"></script> 
-  <script src="{% static  'base/assets/scripts/volunteer.js' %}"></script> 
+  <div class="copyright">
+    Copyright &#169; 2011 -
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    <a href="{% url 'main' %}" style="color: #15a2d7; text-decoration: none"
+      >Global Leaders Foundation</a
+    >. All rights reserved.
+  </div>
+
+
+  <script src="{% static 'base/assets/scripts/contact.js' %}"></script> 
+  <script src="{% static 'base/scripts.js' %}"></script> 
+  <script src="{% static 'base/assets/scripts/volunteer.js' %}"></script> 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
