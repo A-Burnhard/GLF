@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;">
-  <link rel="stylesheet" href="/assets/css/contact.css">
+  <link rel="icon" href="./assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;">{% static 'base' %}
+  <link rel="stylesheet" href="/assets/css/contact.css"> {% static 'base' %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href="./assets/bootstrap-5.2.0-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet"  href="./assets/bootstrap-5.2.0-dist/css/bootstrap.min.css"> {% static 'base' %}
+  <link rel="stylesheet" href="./assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css"> {% static 'base' %}
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Get in touch with us</title> 
-  <link rel="icon" href="/assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;">
+  <link rel="icon" href="/assets/images/logo-one.jpg" type="image/icon type" style="border-radius: 100%;"> {% static 'base' %}
 </head>
 <body>
   <div class="first-section">
-    <img src="/assets/images/logo.jpg" alt="logo-image">
+    <img src="/assets/images/logo.jpg" alt="logo-image"> {% static 'base' %}
   </div>
   <nav class="navigation" id="navigation">
       <ul class="links">
-        <li><a href="/index.html"><span class="fa fa-home " style="font-size: 1.2rem;"></span> Home</a></li>
+        <li><a href="{% url  'main' %}"><span class="fa fa-home " style="font-size: 1.2rem;"></span> Home</a></li> 
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
         <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
@@ -38,7 +39,7 @@
       </a>
            
       <div class="glf-header">
-        <a href="/index.html"><img src="/assets/images/logo.jpg" alt=""></a>
+        <a href="{% url  'main' %}"><img src="{% static  'base/assets/images/logo.jpg' %}" alt=""></a>  
       </div> 
    
   </nav>
@@ -47,8 +48,8 @@
         YOUR <span>CONNECTION</span> TO GLOBAL LEADERS FOUNDATION
       </div>
       <div class="contact-hero">
-        <img src="/assets/images/contactt.jpg" alt="contact">
-      </div>
+        <img src="/assets/images/contactt.jpg" alt="contact"> {% static  'base/' %}
+      </div> 
   </div>
 
   <div class="in-touch" data-aos="fade-in-out">
@@ -78,7 +79,7 @@
         </p>
         <div class="service-personnnel">
           <div class="photo">
-            <img src="/assets/images/Daniel Appiah Danquah.jpg" alt="">
+            <img src="{% static 'base/assets/images/Daniel Appiah Danquah.jpg' %}" alt=" Director"> 
           </div>
           <div class="profile">
             <h3>Daniel Appiah Danquah</h3>
@@ -88,7 +89,7 @@
         </div>
         <div class="service-personnnel">
           <div class="photo">
-            <img src="/assets/images/GIFTY BOAHEMAA APPEA.jpg" alt="">
+            <img src="{% static 'base/assets/images/GIFTY BOAHEMAA APPEA.jpg' %}" alt=""> 
           </div>
           <div class="profile">
             <h3>Gifty Boahemaa Appea</h3>
@@ -159,8 +160,8 @@
       </div>
     </div>
   </footer>
-  <script src="/scripts.js"></script>
-  <script src="/assets/scripts/volunteer.js"></script>
+  <script src="{% static  'base/scripts.js' %}"></script> 
+  <script src="{% static  'base/assets/scripts/volunteer.js' %}"></script> 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();

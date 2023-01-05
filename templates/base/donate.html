@@ -1,153 +1,220 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
-  <link rel="stylesheet" href="{% static 'base/assets/css/donate.css' %}"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"  href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}"> 
-  <link rel="stylesheet" href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}"> 
-  <title>Donate</title> 
-  <link rel="icon" href="{% static 'base/assets/images/logo-one.jpg' %}" type="image/icon type" style="border-radius: 100%;"> 
-</head>
-<body>
-  <div class="first-section">
-    <img src="{% static 'base/assets/images/logo.jpg' %}" alt="logo-image"> 
-  </div>
-  <nav class="navigation">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}" 
+      type="image/icon type"
+      style="border-radius: 100%"
+    />
+    <link rel="stylesheet" href="{% static 'base/assets/css/donate.css' %}" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap.min.css' %}" 
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}" 
+    />
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" /> 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Donate</title>
+    <link
+      rel="icon"
+      href="{% static 'base/assets/images/logo-one.jpg' %}" 
+      type="image/icon type"
+      style="border-radius: 100%"
+    />
+  </head>
+  <body>
+    <div class="loader">
+      <img src=" {% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" /> 
+    </div>
+
+    <div class="first-section">
+      <img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image" /> 
+    </div>
+    <nav class="navigation" id="navigation">
       <ul class="links">
-        <li><a href="{% url 'main' %}"><span class="fa fa-home" style="font-size: 1.2rem;"></span> Home</a></li> 
+        <li>
+          <a href="{% url 'main' %}" 
+            ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
+          >
+        </li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
-        <!-- <li><a href="#"><span class="fa fa-briefcase"></span> Management Team -->
-        <li><a href="#"><span class="fa fa-bookmark"></span> Chapters</a></li>        
-        <li><a href="{% url 'mainvol' %}"><span class="fa fa-comments" style="font-size: 1.2rem;" ></span> Volunteer With Us</a></li> 
-        <li><a href="{% url 'prog' %}" ><span class="fa fa-calendar"></span> Programmes</a></li>
-        <li><a href="{% url 'maindon' %}"><span class="fa fa-money"></span> Donate</a></li> 
-        <li><a href="#"><samp class="fa fa-newspaper-o"></samp> About Us</a></li>
-        <!-- <li><a href="#"><span class="fa fa-address-card-o"></span> Contact</a></li> -->
+        <li>
+          <a href="/assets/about/about.html" {% static 'base' %}
+            ><span class="fa fa-address-card-o"></span> About Us</a
+          >
+        </li>
+        <li>
+          <a href="/assets/management/management.html" {% static 'base' %}
+            ><span class="fa fa-briefcase"></span> Management Team</a
+          >
+        </li>
+        <li>
+          <a href="/assets/programmes/programmes.html" {% static 'base' %}
+            ><span class="fa fa-calendar"></span> Programmes</a
+          >
+        </li>
+        <li>
+          <a href="/assets/volunteerScreen/volunteer.html" {% static 'base' %}
+            ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
+            Volunteer With Us</a
+          >
+        </li>
+        <li>
+          <a href="/assets/chapters/chapters.html" {% static 'base' %}
+            ><span class="fa fa-bookmark"></span> Chapters</a
+          >
+        </li>
+        <li>
+          <a href="/assets/donate/donate.html" {% static 'base' %}
+            ><span class="fa fa-money"></span> Donate</a
+          >
+        </li>
+        <li>
+          <a href="/assets/contact/contact.html" {% static 'base' %}
+            ><span class="fa fa-phone"></span> Contact
+          </a>
+        </li>
       </ul>
       <div class="mobile">
-      <a href="#" class="toggle-switch-button">
-        <span class="fa fa-navicon"></span>
-      </a>
-      <div class="glf-header">
-        <img src="{% static 'base/assets/images/logo.jpg' %}" alt=""> 
+        <a href="#" class="toggle-switch-button">
+          <span class="fa fa-navicon"></span>
+        </a>
+
+        <div class="glf-header">
+          <a href="{% static 'base/index.html' %}" 
+            ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="" 
+          /></a>
+        </div>
+        <!-- <a href="#" class="list-element-button">
+          <span class="fa fa-ellipsis-v"></span>
+        </a> -->
       </div>
-      <!-- <a href="#" class="list-element-button">
-        <span class="fa fa-ellipsis-v"></span>
-      </a> -->
-      </div>
-  </nav>
-  <div class="donate-bg">
-    <div class="donate-cont">
-      <div class="donate-header">DONATE</div>
-      <p>SUPPORT OUR PROGRAMMES</p>
-      
-    </div>
-  </div>
-
-<!--Form (Donate)-->
-<div class="container text-center">
-<div class="row justify-content-center">
-<div class="card" style="width: 24rem;">
-  <div class="card-body">
-    <form class= "form" action="" method="POST">
-      {% csrf_token %}
-
-      {{ form.as_p  }}
-      
-      
-      <input  type = "submit" value = "submit"  
-      style="color:white;
-       background-color: #15A2D7 ;
-      border: none;
-      border-radius: .3rem;  
-      border: 1px solid #15A2D7;
-      transition: color 0.15s, background-color 0.15s;
-      font-family: 'Epilogue', sans-serif;
-      text-transform: uppercase;
-      padding-block: .4rem;
-      padding-inline: 1rem;
-      font-weight: 500;
-    " class="submit" >
-      
-     
-    </form>
-
-
-
-  </div>
-</div>
-</div>
-</div>
-
-
-
-
-
-  <footer>
-    <div class="left-section">
-      <div class="brand">Global Leaders Foundation</div>
-      <div class="lists">
-        <div>Home |</div>
-        <div> About |</div>
-        <div> Contact |</div>
-        <div></div>
-      </div>
-      <div class="copyright">Copyright &#169; 2022 GlobalLeadersFoundation <br> All rights reserved</div>
-    </div>
-    <div class="middle-section">
-      <div class="reach">
-        Get In Touch With Us
-      </div>
-      <div class="location">
-        <div><span class="fa fa-map-marker"></span></div>
-        <div>
-          P.O. Box CT 7883
-          Cantonments <br>Accra
-          Ghana, West Africa.</div>
-      </div>
-      <div class="call">
-        <div><span class="fa fa-phone"></span></div>
-        <div>+233 (0) 24 529 6586</div>
-      </div>
-      <div class="mail">
-        <div><span class="fa fa-envelope"></span></div>
-        <div>info@GlobalLeadersFoundation.org</div>
+    </nav>
+    <div class="donate-bg">
+      <div class="donate-cont" data-aos="fade-down" data-aos-duration="3000">
+        <!-- <div class="donate-header">DONATE</div> -->
+        <p>Donate</p>
+        <!-- <span>"Winston Churchill"</span> -->
       </div>
     </div>
-    <div class="right-section">
-      <div class="about-header">About Us</div>
-      <div class="about-text">
-        Global Leaders Foundation is a value-based Non-Governmental Organization (NGO). By this, we mean all our programs, activities, operational structure, and development are driven and determined by a set of core values. 
-        We operate with the values of cultural infusion, integrity, respect for all, and connectedness. We also recognize the need for networking and connectivity. We value healthy sustainable processes and structures.
-      </div>
-      <div class="social-icons">
-        <div>
-          <span class="fa fa-facebook fa-2x"></span>
+    <div class="donate-wrap">
+      <div class="donate-form-container" data-aos="fade-up">
+        <div class="contact-details">
+          <!-- <img src="/assets/images/donor.jpg" alt="donate"> -->
         </div>
-        <div>
-          <span class="fa fa-instagram fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-twitter fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-google fa-2x"></span>
-        </div>
-        <div>
-          <span class="fa fa-linkedin fa-2x"></span>
+        <div class="contact-form">
+          <form action="donate-form">
+            <label for="fullname">Full Name</label>
+            <div>
+              <input
+                type="text"
+                id="fullname"
+                placeholder="Enter your full name"
+              />
+            </div>
+            <label for="email">Email Address</label>
+            <div>
+              <input
+                type="email"
+                id="email-address"
+                placeholder="Enter email address"
+              />
+            </div>
+            <label for="message">Message</label>
+            <div>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="5"
+                placeholder="Leave a message concerning your donation and we will get back to you."
+              ></textarea>
+            </div>
+            <div class="submit-box">
+              <input type="submit" value="SEND MESSAGE" id="send-btn" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </footer>
 
-  <script src=" {% static 'base/scripts.js' %}"></script>
-</body>
+    <footer>
+      <div class="left-section">
+        <div class="brand">Global Leaders Foundation</div>
+        <div class="lists">
+          <a href="{% static 'base/index.html' %}">Home <span>|</span></a> 
+          <a href="{% static 'base/assets/about/about.html' %}">About<span> |</span></a> 
+          <a href="{% static 'base/assets/contact/contact.html' %}">Contact</a> 
+          <div></div>
+        </div>
+      </div>
+      <div class="middle-section">
+        <div class="reach">Get In Touch With Us</div>
+        <div class="location">
+          <div><span class="fa fa-map-marker"></span></div>
+          <div>
+            P.O. Box KA 16164 Kotoka International Airport Accra Ghana, West
+            Africa.
+          </div>
+        </div>
+        <div class="call">
+          <div><span class="fa fa-phone"></span></div>
+          <div>+233 (0) 24 529 6586</div>
+        </div>
+        <div class="mail">
+          <div><span class="fa fa-envelope"></span></div>
+          <div>info@globalleadersfoundation.org</div>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="about-header">Follow US</div>
+        <div class="about-text">Follow us on our social media platform</div>
+        <div class="social-icons">
+          <div>
+            <a
+              href="https://web.facebook.com/Global-Leaders-Foundation-300719476695019/"
+              target="_blank"
+            >
+              <span class="fa fa-facebook"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">
+      Copyright &#169; 2011 -
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <a href="{% url 'main' %}" style="color: #15a2d7; text-decoration: none" 
+        >Global Leaders Foundation</a
+      >. All rights reserved.
+    </div>
+
+    <script src="{% static 'base/assets/scripts/donate.js' %}"></script> 
+    <script src="{% static 'base/scripts.js' %}"></script>   
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
