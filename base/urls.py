@@ -13,6 +13,7 @@ urlpatterns = [
     path('volunteer/', VolCreateView.as_view(), name="mainvol"),
     path('donor/', DonCreateView.as_view(), name="maindon"),
     path('contact/', ConactView.as_view(), name="mainmessage"),
+    path('management/', Management.as_view(), name="management"),
     # path('tour/', TourCreateView.as_view(), name="maintour"),
     path('programmes/', Programmes.as_view(), name="prog"),
     path('volunteer-success/', VolSuccess.as_view(), name="vs"),

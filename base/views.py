@@ -20,6 +20,10 @@ from manager.serializers import VolunteerSerializer, DonorSerializer, TourSerial
 class HomePage(TemplateView):
     template_name = 'base/index.html'
 
+class Management(TemplateView):
+    template_name = 'base/management.html'
+
+
 class test(TemplateView):
     template_name = 'base/donate.html'
 
