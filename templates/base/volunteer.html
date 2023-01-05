@@ -12,7 +12,7 @@
       type="image/icon type"
       style="border-radius: 100%"
     />
-    <link rel="stylesheet" href="/assets/css/volunteer.css" /> {% static 'base' %}
+    <link rel="stylesheet" href="{% static 'base/assets/css/volunteer.css' %}" /> 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +29,7 @@
     />
     <link
       rel="stylesheet"
-      href="" {% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}
+      href="{% static 'base/assets/bootstrap-5.2.0-dist/css/bootstrap-grid.min.css' %}" 
     />
     <link rel="stylesheet" href="{% static 'base/style.css' %}" /> 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -89,7 +89,7 @@
           >
         </li>
         <li>
-          <a href="" {% static 'base/assets/contact/contact.html' %}
+          <a href="{% static 'base/assets/contact/contact.html' %}" 
             ><span class="fa fa-phone"></span> Contact
           </a>
         </li>
@@ -99,7 +99,7 @@
           <span class="fa fa-navicon"></span>
         </a>
         <div class="glf-header">
-          <a href="{% url 'main' %}" {% static 'base' %}
+          <a href="{% url 'main' %}" 
             ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt=""  
           /></a>
         </div>
@@ -256,7 +256,8 @@
       >
         <div class="fiber">Join Us</div>
         <div class="header">Become a volunteer today</div>
-        <form action="">
+        <form action="/mainvol/" method="post">
+          {% csrf_token %}
           <label for="firstname" class="f-name">First name</label>
           <input
             type="text"
