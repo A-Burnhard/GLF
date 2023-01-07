@@ -31,6 +31,11 @@ class test(TemplateView):
 class Programmes(TemplateView):
     template_name = 'base/programmes.html'
 
+class About(TemplateView):
+    template_name = 'base/about.html'
+
+class Chapters(TemplateView):
+    template_name = 'base/chapters.html'
 
 class VolSuccess(TemplateView):
     template_name = 'base/success-v.html'

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en"> {% static 'base' %}
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,11 +8,11 @@
     <title>Global Leaders Foundation</title>
     <link
       rel="icon"
-      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"  {% static 'base' %}
+      href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"yyy
       type="image/icon type"
       style="border-radius: 100%"
     />
-    <link rel="stylesheet" href="{% static 'base/style.css' %}" />  {% static 'base' %}
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -55,38 +55,38 @@
         </li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <li>
-          <a href="/assets/about/about.html" {% static 'base' %}
+          <a href="{% url 'glf:about' %}" 
             ><span class="fa fa-address-card-o"></span> About Us</a
           >
         </li>
         <li>
-          <a href="/assets/management/management.html" {% static 'base' %}
+          <a href="{% url 'glf:management' %}" 
             ><span class="fa fa-briefcase"></span> Management Team</a
           >
         </li>
         <li>
-          <a href="/assets/programmes/programmes.html" {% static 'base' %}
+          <a href=" {% url 'glf:prog' %}"
             ><span class="fa fa-calendar"></span> Programmes</a
           >
         </li>
         <li>
-          <a href="./assets/volunteerScreen/volunteer.html" {% static 'base' %}
+          <a href=" {% url 'glf:mainvol' %}"
             ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
             Volunteer With Us</a
           >
         </li>
         <li>
-          <a href="/assets/chapters/chapters.html" {% static 'base' %}
+          <a href=" {% url 'glf:chapters' %}"
             ><span class="fa fa-bookmark"></span> Chapters</a
           >
         </li>
         <li>
-          <a href="/assets/donate/donate.html" {% static 'base' %}
+          <a href="{% url 'glf:maindon' %}" 
             ><span class="fa fa-money"></span> Donate</a
           >
         </li>
         <li>
-          <a href="/assets/contact/contact.html" {% static 'base' %}
+          <a href=" {% url 'glf:mainmessage' %}"
             ><samp class="fa fa-phone"></samp> Contact</a
           >
         </li>
@@ -95,18 +95,19 @@
         <a href="#" class="toggle-switch-button">
           <span class="fa fa-navicon"></span>
         </a>
-
+  
         <div class="glf-header">
           <a href="{% url 'glf:main' %}" 
             ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="" 
           /></a> 
         </div>
-
+  
         <!-- <a href="#" class="list-element-button">
         <span class="fa fa-ellipsis-v"></span>
       </a> -->
       </div>
     </nav>
+
     <div class="glf-header-text">
       <span class="type">
         <span class="auto-type"></span>
@@ -260,7 +261,7 @@
       </div>
       <div data-aos="flip-left">
         <img
-           src="{% static 'baseassets/images/spearhead-logo.png' %} " 
+           src="{% static 'base/assets/images/spearhead-logo.png' %} " 
           alt="spearhead-logo"
           loading="lazy"
         />
