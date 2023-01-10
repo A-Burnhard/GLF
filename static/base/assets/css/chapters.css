@@ -36,7 +36,7 @@ body {
 
 /* chapters */
 .chapters-grid {
-  background-image: url(/assets/images/about-upsa.jpg);
+  background-image: url("/static/base/assets/images/about-upsa.jpg"); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -92,11 +92,11 @@ body {
 
 @keyframes slide {
   0% {
-    background-image: url(/assets/images/about-upsa.jpg);
+    background-image: url("/static/base/assets/images/about-upsa.jpg");
     background-position: left;
   }
   55% {
-    background-image: url(/assets/images/legon.jpg);
+    background-image: url("/static/base/assets/images/legon.jpg");
     background-position: bottom;
   }
 }
