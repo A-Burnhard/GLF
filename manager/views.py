@@ -33,7 +33,7 @@ def login_user(request):
 			login(request, user)
 			return redirect('home')
 		else:
-			messages.success(request, ("There Was An Error Logging In, Try Again..."))	
+			messages.success(request, ("Password or Username Invalid"))	
 			return redirect('login')	
 
 
