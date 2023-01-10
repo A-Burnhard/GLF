@@ -1,0 +1,62 @@
+{% load static %}
+<nav class="navigation">
+    <ul class="links">
+      <li>
+        <a href="{% url 'glf:main' %}" 
+          ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
+        >
+      </li>
+      <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
+      <li>
+        <a href="{% url 'glf:about' %}" 
+          ><span class="fa fa-address-card-o"></span> About Us</a
+        >
+      </li>
+      <li>
+        <a href="{% url 'glf:management' %}" 
+          ><span class="fa fa-briefcase"></span> Management Team</a
+        >
+      </li>
+      <li>
+        <a href=" {% static 'glf:prog' %}"
+          ><span class="fa fa-calendar"></span> Programmes</a
+        >
+      </li>
+      <li>
+        <a href=" {% url 'glf:mainvol' %}"
+          ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
+          Volunteer With Us</a
+        >
+      </li>
+      <li>
+        <a href=" {% url 'glf:chapters' %}"
+          ><span class="fa fa-bookmark"></span> Chapters</a
+        >
+      </li>
+      <li>
+        <a href="{% url 'glf:maindon' %}" 
+          ><span class="fa fa-money"></span> Donate</a
+        >
+      </li>
+      <li>
+        <a href=" {% url 'glf:mainmessage' %}"
+          ><samp class="fa fa-phone"></samp> Contact</a
+        >
+      </li>
+    </ul>
+    <div class="mobile">
+      <a href="#" class="toggle-switch-button">
+        <span class="fa fa-navicon"></span>
+      </a>
+
+      <div class="glf-header">
+        <a href="{% url 'glf:main' %}" 
+          ><img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="" 
+        /></a> 
+      </div>
+
+      <!-- <a href="#" class="list-element-button">
+      <span class="fa fa-ellipsis-v"></span>
+    </a> -->
+    </div>
+  </nav>

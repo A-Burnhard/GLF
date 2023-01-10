@@ -183,11 +183,7 @@
                                             Volunteers
                                         </a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="{% url 'tour' %}" class="nav-link ">
-                                            Tourists
-                                        </a>
-                                </li> -->
+                        
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -281,7 +277,7 @@
                     <h6>Admin panel for<br> <span class="emphasize">Global Leaders Foundation</span> website</h6>
 
                     <!-- Button -->
-                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'main' %}">Click to main site</a>
+                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'glf:main' %}">Click to main site</a>
                 </div>
             </div>
             <!-- End of Collapse -->
@@ -487,29 +483,16 @@
                                 </th>
                                 <th>
                                     <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Phone number
+                                        Message
                                     </a>
                                 </th>
-                                <th>
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Country
-                                    </a>
-                                </th>
+                         
                                 <th class="w-150px min-w-150px">
                                     <a href="javascript: void(0);" class="text-muted list-sort">
                                         Date
                                     </a>
                                 </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Means of Giving 
-                                    </a>
-                                </th>
-                                <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
-                                        Frequency of Givng
-                                    </a>
-                                </th>
+                           
                                
                             </tr>
                         </thead>
@@ -520,17 +503,14 @@
                             <tr>
                                 <td> 
                                     <div class="avatar avatar-circle avatar-xs me-2">
-                                        <span class="avatar-title text-bg-primary-soft">{{ dor.Name|slice:":1" }}</span>
+                                        <span class="avatar-title text-bg-primary-soft">{{ dor.name|slice:":1" }}</span>
                                     </div>
-                                    <span class="name fw-bold"> {{ dor.Name }}</span>
+                                    <span class="name fw-bold"> {{ dor.name }}</span>
                                 </td>                        
-                                <td class="name"> {{ dor.Name }} </td>
                                 <td class="email"> {{ dor.email }} </td>
-                                <td class="number"> {{ dor.PhoneNumber }}</td>
-                                <td class="country" > {{ dor.country }}</td>
-                                <td class="number" > {{ dor.date }}</td>
-                                <td class="name" > {{ dor.MeansofGiving }}</td>
-                                <td class="name" > {{ dor.FReqOfGiving }}</td>
+                                <td class="number"> {{ dor.message }}</td>
+                                <td class="country" > {{ dor.date }}</td>
+
 
                             </tr>
                           

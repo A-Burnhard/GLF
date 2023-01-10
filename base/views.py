@@ -11,12 +11,12 @@ from rest_framework.renderers import TemplateHTMLRenderer
 
 from django.shortcuts import get_list_or_404,redirect
 
-from .models import Volunteer, Donor, Tour
+from .models import Volunteer, Donor
 from api.mixins import IsSuperAdminPermissionMixin, IsSuperStaffPermissionMixin, IsStaffPermissionMixin
 
 from base.forms import *
 
-from manager.serializers import VolunteerSerializer, DonorSerializer, TourSerializer
+from manager.serializers import VolunteerSerializer, DonorSerializer
 
 class HomePage(TemplateView):
     template_name = 'base/index.html'
@@ -101,19 +101,7 @@ class DonCreateView(CreateView):
         return super().form_valid(form)
 
 
- #ENDPOINT to post Tour model collection
-class TourCreateView(CreateView):
-    template_name = 'base/tour.html'
-    form_class = DonorForm
-    success_url = 'mainvol'
 
-    def form_valid(self,form):
-         
-
-        if form.is_valid():
-            form.save()
-            return redirect('mainvol')
-        return super().form_valid(form)
 
 class ConactView(CreateView):
     template_name = 'base/contact.html'

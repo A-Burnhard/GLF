@@ -16,8 +16,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from base import models
-from base.models import Volunteer, Donor, Tour, User, Message
-from manager.serializers import VolunteerSerializer,DonorSerializer, TourSerializer
+from base.models import Volunteer, Donor, User, Message
+from manager.serializers import VolunteerSerializer,DonorSerializer
 # from manager import models
 # from manager.models import Notification
 
@@ -167,10 +167,6 @@ class DonorListAPIView(generics.ListAPIView):
     queryset = Donor.objects.all()
     serializer_class = DonorSerializer
 
- #ENDPOINT to read-only all Tour model collection
-class TourListAPIView(generics.ListAPIView):
-    queryset = Tour.objects.all()
-    serializer_class = TourSerializer
 
 
 
@@ -188,10 +184,6 @@ class DonorDetailAPIView( generics.RetrieveAPIView):
     lookup_field = 'pk' 
 
  #ENDPOINT to read-only Tour model instance
-class TourDetailAPIView( generics.RetrieveAPIView):
-    queryset = Tour.objects.all()
-    serializer_class = TourSerializer
-    lookup_field = 'pk'
 
 
 ############### LISTING AND ENTERING ENTRIES #########################
@@ -208,10 +200,6 @@ class DonorListCreateAPIView(generics.ListCreateAPIView):
     lookup_field = 'pk'
 
  #ENDPOINT to make entries into Tour model instance
-class TourListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Tour.objects.all()
-    serializer_class = TourSerializer
-    lookup_field = 'pk'
 
 
 

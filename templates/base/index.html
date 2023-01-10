@@ -35,9 +35,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class="loader">
-      <!-- <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" />  -->
-    </div>
+    <!-- <div class="loader">
+      <img src="{% static 'base/assets/icons/twirl-preloader.gif' %}" alt="" />  
+    </div> -->
 
     <div class="first-section">
       <img
@@ -278,9 +278,9 @@
       <div class="left-section">
         <div class="brand">Global Leaders Foundation</div>
         <div class="lists">
-          <a href="/index.html">Home <span>|</span></a> 
-          <a href="/assets/about/about.html">About<span> |</span></a> 
-          <a href="/assets/contact/contact.html">Contact</a> 
+          <a href="{% url 'glf:main' %}">Home <span>|</span></a>
+          <a href="{% url 'glf:about' %}">About<span> |</span></a>
+          <a href="{% url 'glf:mainmessage' %}">Contact</a>
           <div></div>
         </div>
       </div>

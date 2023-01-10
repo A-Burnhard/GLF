@@ -183,11 +183,7 @@
                                             Volunteers
                                         </a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="{% url 'tour' %}" class="nav-link ">
-                                            Tourists
-                                        </a>
-                                </li> -->
+                          
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -281,7 +277,7 @@
                     <h6>Admin panel for<br> <span class="emphasize">Global Leaders Foundation</span> website</h6>
 
                     <!-- Button -->
-                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'main' %}">Click to main site</a>
+                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'glf:main' %}">Click to main site</a>
                 </div>
             </div>
             <!-- End of Collapse -->
@@ -426,7 +422,7 @@
                                     <img src="{% static '/images/profile.gif' %}" alt="..." class="avatar-img" width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h4 class="mb-0">{{ user.first_name }} {{ user.last_name }}</h4>
+                                    <h4 class="mb-0">{{ user.first_name }} </h4>
                                     <p class="card-text"> {{ user.email }}</p>
                                 </div>
                             </div>
@@ -527,16 +523,16 @@
                             </td> -->
                             <td> 
                                 <div class="avatar avatar-circle avatar-xs me-2">
-                                    <span class="avatar-title text-bg-success-soft">{{ volunteer.username|slice:":1" }}</span>
+                                    <span class="avatar-title text-bg-success-soft">{{ volunteer.fullName|slice:":1" }}</span>
                                 </div>
-                                <span class="name fw-bold"> {{ volunteer.username }}</span>
+                                <span class="name fw-bold"> {{ volunteer.fullName }} </span>
                             </td>
                                 <td class="email"> {{ volunteer.email }} </td>
                                 <td class="number"> {{ volunteer.phoneNumber }}</td>
                                 <td class="country" > {{ volunteer.country }}</td>
                                 <td class="number" > {{ volunteer.date }}</td>
-                                <td class="name" > {{ volunteer.IntAreaOfPlacement }}</td>
-                                <td class="number" > {{ volunteer.DurOfPLacement }}</td>
+                                <td class="name" > {{ volunteer.intAreaOfPlacement }}</td>
+                                <td class="number" > {{ volunteer.durOfPlacement }}</td>
 
                             </tr>
                           

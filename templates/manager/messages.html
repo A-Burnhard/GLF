@@ -181,11 +181,7 @@
                                             Volunteers
                                         </a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="{% url 'tour' %}" class="nav-link ">
-                                            Tourists
-                                        </a>
-                                </li> -->
+                               
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -279,7 +275,7 @@
                     <h6>Admin panel for<br> <span class="emphasize">Global Leaders Foundation</span> website</h6>
 
                     <!-- Button -->
-                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'main' %}">Click to main site</a>
+                    <a class="btn w-100 btn-sm btn-primary" href="{% url 'glf:main' %}">Click to main site</a>
                 </div>
             </div>
             <!-- End of Collapse -->
@@ -478,13 +474,20 @@
                                             Full name
                                         </a>
                                     </th>
+                
                                     <th>
                                         <a href="javascript: void(0);"  >
                                             Email
                                         </a>
                                     </th>
+                                    
                                     <th>
                                         <a href="javascript: void(0);"  >
+                                            Phone Number
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript: void(0);" class="text-muted list-sort" >
                                             Message
                                         </a>
                                     </th>
@@ -494,7 +497,6 @@
                                             Date
                                         </a>
                                     </th>
-                                    
                                 </tr>
                             </thead>
 
@@ -504,14 +506,17 @@
                                    
                                     <td>
                                         <div class="avatar avatar-circle avatar-xs me-2">
-                                            <span class="avatar-title text-bg-primary-soft"> {{ mes.name|slice:":1" }}</span>
+                                            <span class="avatar-title text-bg-primary-soft"> {{ mes.firstName|slice:":1" }}</span>
 
                                             <!-- <img src="{% static '/images/' %}" alt="..." class="avatar-img" width="80" height="50"> -->
                                         </div>
-                                        <span class="name fw-bold">{{ mes.name }}</span>
+                                        <span class="name fw-bold">{{ mes.firstName }}</span>
+                                        <span class="name fw-bold">{{ mes.lastName }}</span>
+
                                     </td>
                                     <td class="email">{{ mes.email }}</td>
-                                    <td class="id">{{ mes.text }}</td>
+                                    <td class="id">{{ mes.phoneNumber }}</td>
+                                    <td class="id">{{ mes.message }}</td>
                                     <td class="id">{{ mes.date }}</td>
                                 </tr>
                                 {% endfor %}                                                                                  

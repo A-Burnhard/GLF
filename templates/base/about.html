@@ -32,7 +32,9 @@
     />
     <link rel="stylesheet" href="{% static 'base/style.css' %}" />   
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>About Us</title>
+
+    
+    <title style="background-image:  >About Us</title>
   </head>
   <body>
     <div class="loader">
@@ -40,7 +42,7 @@
     </div>
 
     <div class="first-section">
-      <img src="" alt="logo-image" />  {% static 'base/assets/images/logo-removebg-preview.png' %}
+      <img src="{% static 'base/assets/images/logo-removebg-preview.png' %}" alt="logo-image" />  
     </div>
     <nav class="navigation">
       <ul class="links">
@@ -212,7 +214,7 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      <a href="/index.html" style="color: #15a2d7; text-decoration: none"
+      <a href="{% url 'glf:main' %}" style="color: #15a2d7; text-decoration: none"
         >Global Leaders Foundation</a
       >. All rights reserved.
     </div>

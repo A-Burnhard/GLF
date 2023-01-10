@@ -45,7 +45,7 @@ body {
   align-items: center;
   margin-bottom: 3rem;
   letter-spacing: 0.2rem;
-  background-image: url(/assets/images/about-bg.jpg);
+  background-image:   url("/static/base/assets/images/about-bg.jpg"); 
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
