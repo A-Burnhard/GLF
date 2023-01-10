@@ -15,8 +15,8 @@ class Volunteer(models.Model):
     email = models.EmailField(null =True,)
     dateOfBirth = models.DateField(null=True)
     phoneNumber = models.CharField(max_length= 30, null = True)
-    address= models.CharField(max_length=15, null=True)
-    city = models.CharField(max_length=100, null=True)
+    address= models.CharField(max_length=100, null=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=50, null=True)
     academicBg = models.CharField(max_length=200, null=True)
     intAreaOfPlacement = models.CharField(max_length=100, null=True) 
@@ -37,9 +37,9 @@ def create_volunteer(sender, instance, created, **kwargs):
 
 class Donor(models.Model):
 
-    name = models.CharField(max_length=200)
-    email = models.EmailField(null = True)
-    message = models.TextField(null = True)
+    name = models.CharField(max_length=200, blank=True)
+    email = models.EmailField(null = True, blank= True)
+    message = models.TextField(null = True, blank=True)
     date = models.DateTimeField(auto_now_add = True, null = True, blank=True)
 
     class Meta:
@@ -60,7 +60,7 @@ class Message(models.Model):
     firstName = models.CharField(max_length=200, null= True)
     lastName = models.CharField(max_length=200, null= True)
     email = models.EmailField(null = True)
-    phoneNumber = models.CharField(max_length=12, null = True)
+    phoneNumber = models.CharField(max_length=16, null = True)
     date = models.DateTimeField(auto_now_add=True, null=True)
     message = models.TextField(null = True)
 

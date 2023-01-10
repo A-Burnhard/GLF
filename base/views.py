@@ -1,6 +1,4 @@
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import FormView, CreateView
-# from django.views.generic import View
 from django.views import View
 from django.shortcuts import render
 
@@ -75,43 +73,41 @@ class VolCreateView(View):
         return redirect('glf:main')
 
 
-    # def form_valid(self,form):
-         
 
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect('vs')
-    #     return super().form_valid(form)
-
-
-      
-   
- #ENDPOINT to post Donor model collection
-class DonCreateView(CreateView):
+class DonCreateView(View):
     template_name = 'base/donate.html'
-    form_class = DonorForm
-    success_url = 'ds'
 
-    def form_valid(self,form):
-         
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = DonorForm(request.POST)
 
         if form.is_valid():
             form.save()
-            return redirect('ds')
-        return super().form_valid(form)
+            return redirect('glf:ds')
+
+        print(form.errors)
+        return redirect('glf:main')
+  
+   
+ 
 
 
-
-
-class ConactView(CreateView):
+class ContactView(View):
     template_name = 'base/contact.html'
-    form_class = Message
-    success_url = 'ms'
+  
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, self.template_name, context)
 
-    def form_valid(self,form):
-         
+    def post(self,request, *args, **kwargs):
+        form = Message(request.POST)
 
         if form.is_valid():
             form.save()
-            return redirect('ms')
-        return super().form_valid(form)
+            return redirect('glf:ms')
+
+        print(form.errors) 
+        return redirect('glf:main')

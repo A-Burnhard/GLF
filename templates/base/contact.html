@@ -115,12 +115,13 @@
         <p>Got a question about global leaders foundation? Are you interested 
           in partnering with us? Have some suggestions or just want to say hi? Contact us:
         </p>
-        <form action="contact">
-          <input type="text" id="firstname" placeholder="First name">
-          <input type="text" id="lastname" placeholder="Last name">
-          <input type="email" id="email" placeholder="Your Email Address">
-          <input type="phone" id="phone" placeholder="Phone Number">
-          <textarea rows="5" cols="33" placeholder="Leave a message" minlength="10"></textarea>
+        <form action="{% url 'glf:mainmessage' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" id="firstname" placeholder="First name" name="firstName">
+          <input type="text" id="lastname" placeholder="Last name" name="lastName">
+          <input type="email" id="email" placeholder="Your Email Address" name="email">
+          <input type="phone" id="phone" placeholder="Phone Number" name="phoneNumber">
+          <textarea rows="5" cols="33" placeholder="Leave a message" minlength="7" name="message"></textarea>
           <input type="submit" value="SUBMIT" id="submit-msg">
         </form>
       </div>

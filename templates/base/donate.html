@@ -124,13 +124,16 @@
           <!-- <img src="/assets/images/donor.jpg" alt="donate"> -->
         </div>
         <div class="contact-form">
-          <form action="donate-form">
+
+          <form action=" {% url 'glf:maindon' %}" method="POST">
+            {% csrf_token %}
             <label for="fullname">Full Name</label>
             <div>
               <input
                 type="text"
                 id="fullname"
                 placeholder="Enter your full name"
+                name="name"
               />
             </div>
             <label for="email">Email Address</label>
@@ -139,6 +142,7 @@
                 type="email"
                 id="email-address"
                 placeholder="Enter email address"
+                name="email"
               />
             </div>
             <label for="message">Message</label>

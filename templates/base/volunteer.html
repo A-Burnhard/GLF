@@ -52,46 +52,46 @@
     <nav class="navigation">
       <ul class="links">
         <li>
-          <a href="{% url 'glf:main' %}"   
+          <a href="{% url 'glf:main' %}" 
             ><span class="fa fa-home" style="font-size: 1.2rem"></span> Home</a
           >
         </li>
         <!-- <li><a href="#"><span class="fa fa-bank"></span>Partners</a></li> -->
         <li>
-          <a href="{% static 'base/assets/about/about.html' %}" 
+          <a href="{% url 'glf:about' %}" 
             ><span class="fa fa-address-card-o"></span> About Us</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/management/management.html' %}" 
+          <a href="{% url 'glf:management' %}" 
             ><span class="fa fa-briefcase"></span> Management Team</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/programmes/programmes.html' %}" 
+          <a href=" {% url 'glf:prog' %}"
             ><span class="fa fa-calendar"></span> Programmes</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/volunteerScreen/volunteer.html' %}" 
+          <a href=" {% url 'glf:mainvol' %}"
             ><span class="fa fa-comments" style="font-size: 1.2rem"></span>
             Volunteer With Us</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/chapters/chapters.html' %}" 
+          <a href=" {% url 'glf:chapters' %}"
             ><span class="fa fa-bookmark"></span> Chapters</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/donate/donate.html' %}" 
+          <a href="{% url 'glf:maindon' %}" 
             ><span class="fa fa-money"></span> Donate</a
           >
         </li>
         <li>
-          <a href="{% static 'base/assets/contact/contact.html' %}" 
-            ><span class="fa fa-phone"></span> Contact
-          </a>
+          <a href=" {% url 'glf:mainmessage' %}"
+            ><samp class="fa fa-phone"></samp> Contact</a
+          >
         </li>
       </ul>
       <div class="mobile">
@@ -299,7 +299,7 @@
           <input
             type="city"
             class="city-input"
-            name="address"
+            name="city"
             placeholder="Enter city name"
             required
           />
