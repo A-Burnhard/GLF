@@ -36,7 +36,7 @@ body {
 
 /* donate background */
 .donate-bg {
-  background-image: url(base/assets/images/donate-bg.jpg);
+  background-image: url("/static/base/assets/images/donate-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
