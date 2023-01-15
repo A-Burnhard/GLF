@@ -14,6 +14,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.views.decorators.csrf import csrf_exempt
+
 
 from base import models
 from base.models import Volunteer, Donor, User, Message
@@ -23,7 +25,7 @@ from manager.serializers import VolunteerSerializer,DonorSerializer
 
 from django.views.generic import View
 
-
+@csrf_exempt
 def login_user(request):
 	if request.method == "POST":
 		username = request.POST['username']
