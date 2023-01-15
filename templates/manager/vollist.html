@@ -90,12 +90,16 @@
         }
     </script>
     <!-- Favicon -->
-    <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any" />
-
+    <link
+    rel="icon"
+    href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"yyy
+    type="image/icon type"
+    style="border-radius: 100%"
+  />
    
 
     <!-- Page Title -->
-    <title>Admin | Volunteers</title>
+    <title>Admin | Donors</title>
 </head>
 
 <body>
@@ -116,7 +120,7 @@
                     });
                 }
             }
-        }
+        }a
     </script>
     <!-- NAVIGATION -->
     <nav id="mainNavbar" class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark">
@@ -139,12 +143,11 @@
         <div class="container-fluid">
 
             <!-- Brand -->
-            <a class="navbar-brand" href="{%  url 'home' %}">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static '/images/glfadmin.jpeg' %}" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="43">
     
                 <img src="{% static '/images/glfadmin.jpeg' %}" class="navbar-brand-img logo-dark logo-large" alt="..." width="125" height="43">
             </a>
-
             <!-- Navbar toggler -->
             <a href="javascript: void(0);" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -152,6 +155,7 @@
 
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="sidenavCollapse">
+
 
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-lg-7">
@@ -183,7 +187,7 @@
                                             Volunteers
                                         </a>
                                 </li>
-                          
+                        
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -342,7 +346,7 @@
                 
           
 
-                <!-- Dropdown -->
+  <!-- Dropdown -->
                 <div class="dropdown">
                     <a href="javascript: void(0);" class="dropdown-toggle no-arrow d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm mx-1 mx-lg-2 w-40px h-40px link-secondary" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         data-bs-offset="0,10">
@@ -422,7 +426,7 @@
                                     <img src="{% static '/images/profile.gif' %}" alt="..." class="avatar-img" width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h4 class="mb-0">{{ user.first_name }} </h4>
+                                    <h4 class="mb-0">{{ user.first_name }} {{ user.last_name }}</h4>
                                     <p class="card-text"> {{ user.email }}</p>
                                 </div>
                             </div>
@@ -440,7 +444,7 @@
             
              <!-- Heading -->
              <h1 class="h2">
-                Volunteers
+                Donors
             </h1>
                 
             </div>
@@ -453,7 +457,7 @@
         <div class="col">
 
             <!-- Card -->
-            <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="users">
+            <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="tour">
                 <div class="card-header border-0 card-header-space-between">
 
                     <!-- Title -->
@@ -462,54 +466,55 @@
                     </h2>
 
                  
-
-     
                 </div>
+
                 <!-- Table -->
+                <div class="row">  
+                    <div class="col">
                 <div class="table-responsive">
                     <table class="table align-middle table-edge table-hover table-nowrap mb-0">
                         <thead class="thead-light">
                             <tr>
                                 
                                 <th>
-                                    <a href="javascript: void(0);" class="text-muted list-sort">
+                                    <a href="javascript: void(0);" >
                                         Full name
                                     </a>
                                 </th>
                                 <th>
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);"  >
                                         Email
                                     </a>
                                 </th>
                                 <th>
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);"  >
                                         Phone number
                                     </a>
                                 </th>
                                 <th>
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);"  >
                                         Country
                                     </a>
                                 </th>
                                 <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);"  >
                                         Date
                                     </a>
                                 </th>
                                 <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);" >
                                         Interested Area of placement
                                     </a>
                                 </th>
                                 <th class="w-150px min-w-150px">
-                                    <a href="javascript: void(0);" class="text-muted list-sort" >
+                                    <a href="javascript: void(0);" >
                                         Duration of Placement
                                     </a>
                                 </th>
                             </tr>
-                        </thead>
-
-                        <tbody class="list">
+                          </thead>
+                          
+                          <tbody class="list">
                             <div class="col-12 ">
                                 {% for volunteer in vol %}
                             <tr>
@@ -533,17 +538,18 @@
                                 <td class="number" > {{ volunteer.date }}</td>
                                 <td class="name" > {{ volunteer.intAreaOfPlacement }}</td>
                                 <td class="number" > {{ volunteer.durOfPlacement }}</td>
-
+                          
                             </tr>
                           
-                        </div>
-                        {% endfor %}
+                          </div>
+                          {% endfor %}
                         
                           
                         </tbody>
                     </table>
                 </div> <!-- / .table-responsive -->
 
+                
                 <div class="card-footer">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="me-5 text-secondary small">
@@ -554,14 +560,16 @@
                         <ul class="pagination list-pagination mb-0"></ul>
                     </div>
                 </div>
-        </div>
-</div> <!-- / .row -->
-
+           
+    </div>
+    </div> <!-- / .row -->
     <footer class="mt-auto">
         <div class="container-fluid mt-4 mb-6 text-muted">
             <div class="row justify-content-between">
                 <div class="col">
-                    © GLF. 2022 
+                    © GLF.  <script>
+                        document.write(new Date().getFullYear());
+                      </script> 
                 </div>
     
                 <div class="col-auto">
@@ -571,7 +579,6 @@
         </div>
     </footer>
 </div> <!-- / .container-fluid -->
-
 
 
 

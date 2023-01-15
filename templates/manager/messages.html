@@ -4,12 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Messages" name="author" />
+        <meta content="Webinning" name="author" />
         
             <!-- Theme CSS --> 
 
             <link rel="stylesheet" href="{% static 'manager/assets/css/theme.bundle.css' %}" id="stylesheetLTR" /> 
-            <link r el="stylesheet" href=" {% static 'manager/assets/css/theme.rtl.bundle.css' %}" id="stylesheetRTL" />            
+            <link rel="stylesheet" href=" {% static 'manager/assets/css/theme.rtl.bundle.css' %}" id="stylesheetRTL" />            
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
@@ -89,11 +89,17 @@
             });
         }
     </script>
-   
+    <!-- Favicon -->
+    <link
+    rel="icon"
+    href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"yyy
+    type="image/icon type"
+    style="border-radius: 100%"
+  />
    
 
     <!-- Page Title -->
-    <title>Admin | Messages</title>
+    <title>Admin | Donors</title>
 </head>
 
 <body>
@@ -114,7 +120,7 @@
                     });
                 }
             }
-        }
+        }a
     </script>
     <!-- NAVIGATION -->
     <nav id="mainNavbar" class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark">
@@ -142,7 +148,6 @@
     
                 <img src="{% static '/images/glfadmin.jpeg' %}" class="navbar-brand-img logo-dark logo-large" alt="..." width="125" height="43">
             </a>
-
             <!-- Navbar toggler -->
             <a href="javascript: void(0);" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -151,17 +156,18 @@
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="sidenavCollapse">
 
+
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-lg-7">
                     <li class="nav-item dropdown">
-                        <a class="nav-link  " href="#dashboardsCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="dashboardsCollapse">
+                        <a class="nav-link " href="#dashboardsCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="dashboardsCollapse">
                                 <svg viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3.753,13.944v8.25h6v-6a1.5,1.5,0,0,1,1.5-1.5h1.5a1.5,1.5,0,0,1,1.5,1.5v6h6v-8.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M.753,12.444,10.942,2.255a1.5,1.5,0,0,1,2.122,0L23.253,12.444" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
                                 <span>Dashboards</span>
                             </a>
                         <div class="collapse " id="dashboardsCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a href="{% url 'prim' %}" class="nav-link ">
+                                    <a href="{% url 'home' %}" class="nav-link ">
                                             Primary
                                         </a>
                                 </li>
@@ -170,7 +176,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link " href="#pagesCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pagesCollapse">
+                        <a class="nav-link active " href="#pagesCollapse" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pagesCollapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>common-file-double-1</title><path class="a" d="M17.25,23.25H3.75a1.5,1.5,0,0,1-1.5-1.5V5.25"/><rect class="a" x="5.25" y="0.75" width="16.5" height="19.5" rx="1" ry="1"/></svg>
                                 <span>Guests</span>
                             </a>
@@ -181,7 +187,7 @@
                                             Volunteers
                                         </a>
                                 </li>
-                               
+                        
                                 <li class="nav-item">
                                     <a href="{% url 'don' %}" class="nav-link ">
                                             Donors
@@ -193,7 +199,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active  " href="{% url 'message' %}" >
+                        <a class="nav-link  " href="{% url 'message' %}" >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav-link-icon" height="18" width="18"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>envelope</title><rect class="a" x="0.75" y="4.5" width="22.5" height="15" rx="1.5" ry="1.5"/><line class="a" x1="15.687" y1="9.975" x2="19.5" y2="13.5"/><line class="a" x1="8.313" y1="9.975" x2="4.5" y2="13.5"/><path class="a" d="M22.88,5.014l-9.513,6.56a2.406,2.406,0,0,1-2.734,0L1.12,5.014"/></svg>
                             <span>Messages</span>
                         </a>
@@ -285,8 +291,6 @@
     <main>
 
         <!-- HEADER -->
-        <!-- Search -->
-    
         <!-- Greeting -->
 
         <header class="container-fluid d-flex py-6 mb-4">
@@ -342,8 +346,7 @@
                 
           
 
-   
-                <!-- Dropdown -->
+  <!-- Dropdown -->
                 <div class="dropdown">
                     <a href="javascript: void(0);" class="dropdown-toggle no-arrow d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm mx-1 mx-lg-2 w-40px h-40px link-secondary" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         data-bs-offset="0,10">
@@ -439,106 +442,118 @@
         <div class="container-fluid d-flex flex-column flex-grow-1">
 
             
-                           
-            <!-- Dashboard objects-->
-
-            <div class="container-fluid">
-
-
-
-        <!--Card for Messages-->
-        <div class="row">
-            <div class="col">
-
-                <!-- Card -->
-                <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="users">
-                    <div class="card-header border-0 card-header-space-between">
-
-                        <!-- Title -->
-                        <h2 class="card-header-title h4 text-uppercase">
-                            Messages
-                        </h2>
-
-                        <!-- Dropdown -->
-                        
-                    </div>
-
-                    <!-- Table -->
-                    <div class="table-responsive">
-                        <table class="table align-middle table-edge table-hover table-nowrap mb-0">
-                            <thead class="thead-light">
-                                <tr>
-                                   
-                                    <th>
-                                        <a href="javascript: void(0);"  >
-                                            Full name
-                                        </a>
-                                    </th>
+             <!-- Heading -->
+             <h1 class="h2">
+                Donors
+            </h1>
                 
-                                    <th>
-                                        <a href="javascript: void(0);"  >
-                                            Email
-                                        </a>
-                                    </th>
-                                    
-                                    <th>
-                                        <a href="javascript: void(0);"  >
-                                            Phone Number
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
-                                            Message
-                                        </a>
-                                    </th>
-                                    
-                                    <th>
-                                        <a href="javascript: void(0);" class="text-muted list-sort" >
-                                            Date
-                                        </a>
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="list">
-                               {% for mes in message %}
-                                <tr>
-                                   
-                                    <td>
-                                        <div class="avatar avatar-circle avatar-xs me-2">
-                                            <span class="avatar-title text-bg-primary-soft"> {{ mes.firstName|slice:":1" }}</span>
-
-                                            <!-- <img src="{% static '/images/' %}" alt="..." class="avatar-img" width="80" height="50"> -->
-                                        </div>
-                                        <span class="name fw-bold">{{ mes.firstName }}</span>
-                                        <span class="name fw-bold">{{ mes.lastName }}</span>
-
-                                    </td>
-                                    <td class="email">{{ mes.email }}</td>
-                                    <td class="id">{{ mes.phoneNumber }}</td>
-                                    <td class="id">{{ mes.message }}</td>
-                                    <td class="id">{{ mes.date }}</td>
-                                </tr>
-                                {% endfor %}                                                                                  
-                                
-                            </tbody>
-                        </table>
-                    </div> <!-- / .table-responsive -->
-
-                    
-                    
-                </div>
             </div>
-        </div> <!-- / .row -->
-    </div> <!-- / .container-fluid -->
+        </div>
+    </div>
 
-    <!-- Footer-->
-    <!-- Footer -->
+
+    <!-- Main body-->
+    <div class="row">
+        <div class="col">
+
+            <!-- Card -->
+            <div class="card border-0 flex-fill w-100" data-list='{"valueNames": ["name", "email", "id", "date", {"name": "date", "attr": "data-signed"}, "status"], "page": 8}' id="tour">
+                <div class="card-header border-0 card-header-space-between">
+
+                    <!-- Title -->
+                    <h2 class="card-header-title h4 text-uppercase">
+                        List of entries
+                    </h2>
+
+                 
+                </div>
+
+                <!-- Table -->
+                <div class="row">  
+                    <div class="col">
+                <div class="table-responsive">
+                    <table class="table align-middle table-edge table-hover table-nowrap mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                               
+                                <th>
+                                    <a href="javascript: void(0);"  >
+                                        Full name
+                                    </a>
+                                </th>
+                          
+                                <th>
+                                    <a href="javascript: void(0);"  >
+                                        Email
+                                    </a>
+                                </th>
+                                
+                                <th>
+                                    <a href="javascript: void(0);"  >
+                                        Phone Number
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="javascript: void(0);" >
+                                        Message
+                                    </a>
+                                </th>
+                                
+                                <th>
+                                    <a href="javascript: void(0);"  >
+                                        Date
+                                    </a>
+                                </th>
+                            </tr>
+                          </thead>
+                          
+                          <tbody class="list">
+                           {% for mes in message %}
+                            <tr>
+                               
+                                <td>
+                                    <div class="avatar avatar-circle avatar-xs me-2">
+                                        <span class="avatar-title text-bg-primary-soft"> {{ mes.firstName|slice:":1" }}</span>
+                          
+                                        <!-- <img src="{% static '/images/' %}" alt="..." class="avatar-img" width="80" height="50"> -->
+                                    </div>
+                                    <span class="name fw-bold">{{ mes.firstName }}</span>
+                                    <span class="name fw-bold">{{ mes.lastName }}</span>
+                          
+                                </td>
+                                <td class="email">{{ mes.email }}</td>
+                                <td class="id">{{ mes.phoneNumber }}</td>
+                                <td class="id">{{ mes.message }}</td>
+                                <td class="id">{{ mes.date }}</td>
+                            </tr>
+                            {% endfor %}  
+                        
+                          
+                        </tbody>
+                    </table>
+                </div> <!-- / .table-responsive -->
+
+                
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="me-5 text-secondary small">
+                            Showing: <span class="list-pagination-page-first"></span> - <span class="list-pagination-page-last"></span> of <span class="list-pagination-pages"></span>
+                        </div>
+
+                        <!-- Pagination -->
+                        <ul class="pagination list-pagination mb-0"></ul>
+                    </div>
+                </div>
+           
+    </div>
+    </div> <!-- / .row -->
     <footer class="mt-auto">
         <div class="container-fluid mt-4 mb-6 text-muted">
             <div class="row justify-content-between">
                 <div class="col">
-                    © GLF. 2022 
+                    © GLF.  <script>
+                        document.write(new Date().getFullYear());
+                      </script> 
                 </div>
     
                 <div class="col-auto">
@@ -547,9 +562,9 @@
             </div> <!-- / .row -->
         </div>
     </footer>
-    </div>
+</div> <!-- / .container-fluid -->
 
-   
+
 
 
 

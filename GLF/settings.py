@@ -164,4 +164,4 @@ REST_FRAMEWORK = {
     ]
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/manager']
+# CSRF_TRUSTED_ORIGINS = ['https://glf-test.up.railway.app/manager']

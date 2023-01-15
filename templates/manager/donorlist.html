@@ -90,8 +90,12 @@
         }
     </script>
     <!-- Favicon -->
-    <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any" />
-
+    <link
+    rel="icon"
+    href="{% static 'base/assets/images/logo-one-removebg-preview.png' %}"yyy
+    type="image/icon type"
+    style="border-radius: 100%"
+  />
    
 
     <!-- Page Title -->
@@ -522,6 +526,7 @@
                     </table>
                 </div> <!-- / .table-responsive -->
 
+                
                 <div class="card-footer">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="me-5 text-secondary small">
@@ -539,7 +544,9 @@
         <div class="container-fluid mt-4 mb-6 text-muted">
             <div class="row justify-content-between">
                 <div class="col">
-                    © GLF. 2022 
+                    © GLF.  <script>
+                        document.write(new Date().getFullYear());
+                      </script> 
                 </div>
     
                 <div class="col-auto">
