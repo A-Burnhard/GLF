@@ -496,9 +496,27 @@
                                         Country
                                     </a>
                                 </th>
+                                
                                 <th class="w-150px min-w-150px">
                                     <a href="javascript: void(0);"  >
                                         Date
+                                    </a>
+                                </th>
+
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);"  >
+                                        Address
+                                    </a>
+                                </th>
+
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);"  >
+                                        City
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);"  >
+                                        Academic Background
                                     </a>
                                 </th>
                                 <th class="w-150px min-w-150px">
@@ -509,6 +527,11 @@
                                 <th class="w-150px min-w-150px">
                                     <a href="javascript: void(0);" >
                                         Duration of Placement
+                                    </a>
+                                </th>
+                                <th class="w-150px min-w-150px">
+                                    <a href="javascript: void(0);"  >
+                                        Comments
                                     </a>
                                 </th>
                             </tr>
@@ -536,9 +559,13 @@
                                 <td class="number"> {{ volunteer.phoneNumber }}</td>
                                 <td class="country" > {{ volunteer.country }}</td>
                                 <td class="number" > {{ volunteer.date }}</td>
+                                <td class="name" > {{ volunteer.address }}</td>
+                                <td class="name" > {{ volunteer.city }}</td>
+                                <td class="name" > {{ volunteer.academicBg }}</td>
                                 <td class="name" > {{ volunteer.intAreaOfPlacement }}</td>
                                 <td class="number" > {{ volunteer.durOfPlacement }}</td>
-                          
+                                <td class="number" > {{ volunteer.addInfo }}</td>
+
                             </tr>
                           
                           </div>
