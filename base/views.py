@@ -1,21 +1,18 @@
-from django.views.generic.base import TemplateView
+from api.mixins import (IsStaffPermissionMixin, IsSuperAdminPermissionMixin,
+                        IsSuperStaffPermissionMixin)
+from django.shortcuts import get_list_or_404, redirect, render
 from django.views import View
-from django.shortcuts import render
-
-
+from django.views.generic.base import TemplateView
+from manager.serializers import DonorSerializer, VolunteerSerializer
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer
-
-from django.shortcuts import get_list_or_404,redirect
-
-from .models import Volunteer, Donor
-from api.mixins import IsSuperAdminPermissionMixin, IsSuperStaffPermissionMixin, IsStaffPermissionMixin
+from rest_framework.response import Response
 
 from base.forms import *
 
-from manager.serializers import VolunteerSerializer, DonorSerializer
+from .models import Donor, Volunteer
+
 
 class HomePage(TemplateView):
     template_name = 'base/index.html'
@@ -112,3 +109,9 @@ class ContactView(View):
 
         print(form.errors) 
         return redirect('glf:main')
+
+
+
+def error(request, reason=""):
+    ctx = {'message': 'some custom messages'}
+    return render('base/maintenance.html', ctx)

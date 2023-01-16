@@ -25,6 +25,7 @@ urlpatterns = [
     path('maintenance/', Maintenance.as_view(), name="maintain"),
     path('privacy/', Privacy.as_view(), name="privacy"),
 
+    path('error/', views.error, name="error"),
 
 
 
