@@ -165,4 +165,3 @@ REST_FRAMEWORK = {
 }
 
 CSRF_TRUSTED_ORIGINS = ['https://*.glf-test.up.railway.app/','https://glf-test.up.railway.app/admin']
-CSRF_FAILURE_VIEW = 'glf.views.error'
