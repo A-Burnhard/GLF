@@ -16,7 +16,6 @@ def count_page_hit(sender, **kwargs):
     count.count += 1
     count.save()
 
-
 class Volunteer(models.Model):
     
     
