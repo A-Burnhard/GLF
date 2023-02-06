@@ -1,11 +1,19 @@
 
 from datetime import datetime
-
 from django.db import models
 from django.contrib.auth.models import User
- 
-from django.db.models.signals import post_save
+from django.shortcuts import get_object_or_404
+from django.db.models.signals import post_save, pre_save, request_finished
 from django.dispatch import receiver
+
+class PageHit(models.Model):
+    count = models.IntegerField(default=0)
+
+@receiver(request_finished)
+def count_page_hit(sender, **kwargs):
+    count, created = PageHit.objects.get_or_create(pk=1)
+    count.count += 1
+    count.save()
 
 
 class Volunteer(models.Model):
@@ -30,10 +38,19 @@ class Volunteer(models.Model):
     def _str_(self):
         return self.firstName + '' + self.lastName
 
-def create_volunteer(sender, instance, created, **kwargs):
+class VolunteerCount(models.Model):
+    count = models.IntegerField(default=0)
+
+@receiver(post_save, sender=Volunteer)
+def save_volunteer(sender, instance, created, **kwargs):
     if created:
-        Volunteer.objects.create(username=instance)
-        print('New volunteer form submitted')
+        count, created = VolunteerCount.objects.get_or_create(pk=1)
+        count.count += 1
+        count.save()
+        print('New volunteer form submitted', count.count)
+
+
+
 
 class Donor(models.Model):
 

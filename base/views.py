@@ -1,8 +1,8 @@
 from api.mixins import (IsStaffPermissionMixin, IsSuperAdminPermissionMixin,
                         IsSuperStaffPermissionMixin)
 from django.shortcuts import get_list_or_404, redirect, render
-from django.views import View
 from django.views.generic.base import TemplateView
+from django.views.generic import View
 from manager.serializers import DonorSerializer, VolunteerSerializer
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
@@ -11,11 +11,9 @@ from rest_framework.response import Response
 
 from base.forms import *
 
-from .models import Donor, Volunteer
+from .models import Donor, Volunteer, PageHit
 
 
-class HomePage(TemplateView):
-    template_name = 'base/index.html'
 
 class Management(TemplateView):
     template_name = 'base/management.html'
@@ -47,6 +45,18 @@ class Maintenance(TemplateView):
 
 class Privacy(TemplateView):
     template_name = 'base/privacy-policy.html'
+
+class HomePage(View):
+    template_name = 'base/index.html'
+
+    def get(self, request, *args, **kwargs):
+        count = PageHit.objects.first().count
+        context = {'count':count}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        pass
+
 
 
 ############### MAKING ONLY ENTRIES #########################
