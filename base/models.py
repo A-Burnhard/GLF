@@ -54,9 +54,10 @@ def save_volunteer(sender, instance, created, **kwargs):
 
 class Donor(models.Model):
 
-    name = models.CharField(max_length=200, blank=True)
+    name = models.CharField(max_length=200, null=True)
     email = models.EmailField(null = True, blank= True)
-    message = models.TextField(null = True, blank=True)
+    amount = models.PositiveIntegerField(null=True, blank=True )
+    ref = models.CharField(null=True,max_length=200)
     date = models.DateTimeField(auto_now_add = True, null = True, blank=True)
 
     class Meta:
@@ -64,6 +65,8 @@ class Donor(models.Model):
 
     def _str_(self):
         return self.name
+    
+
 
 
 def create_donor(sender, instance, created, **kwargs):

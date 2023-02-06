@@ -160,9 +160,11 @@ h3 {
   text-align: center;
   margin-block-end: 2rem;
 }
-#send-btn {
+.submit-box > input {
   background-color: whitesmoke;
   padding-block: 0.8rem;
+  padding-inline: 2rem;
+  width: 100%;
   font-weight: 600;
   font-size: 1rem;
   color: #15a2d7;

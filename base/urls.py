@@ -11,7 +11,7 @@ urlpatterns = [
     #CreateAPI Routers
     path('', HomePage.as_view(), name ="main"),
     path('volunteer/', VolCreateView.as_view(), name="mainvol"),
-    path('donor/', DonCreateView.as_view(), name="maindon"),
+    # path('donor/', DonCreateView.as_view(), name="maindon"),
     path('contact/', ContactView.as_view(), name="mainmessage"),
     path('management/', Management.as_view(), name="management"),
     path('programmes/', Programmes.as_view(), name="prog"),
@@ -26,7 +26,7 @@ urlpatterns = [
     path('privacy/', Privacy.as_view(), name="privacy"),
 
     path('error/', views.error, name="error"),
-
+    path('donate', views.donate, name='maindon'),
 
 
 

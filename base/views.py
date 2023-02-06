@@ -1,5 +1,7 @@
 from api.mixins import (IsStaffPermissionMixin, IsSuperAdminPermissionMixin,
                         IsSuperStaffPermissionMixin)
+import paystack
+import requests, json
 from django.shortcuts import get_list_or_404, redirect, render
 from django.views.generic.base import TemplateView
 from django.views.generic import View
@@ -81,7 +83,7 @@ class VolCreateView(View):
         return redirect('glf:main')
 
 
-
+'''
 class DonCreateView(View):
     template_name = 'base/donate.html'
 
@@ -100,7 +102,7 @@ class DonCreateView(View):
         return redirect('glf:main')
   
    
- 
+'''
 
 
 class ContactView(View):
@@ -125,3 +127,40 @@ class ContactView(View):
 def error(request, reason=""):
     ctx = {'message': 'some custom messages'}
     return render('base/maintenance.html', ctx)
+
+
+
+
+
+
+
+def donate(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        amount = request.POST.get('amount')
+        paystack_secret_key = "sk_test_3d2dd3bbd888a8dc0b88687560defe702c116457"
+        headers = {
+            'Authorization': 'Bearer ' + paystack_secret_key,
+            'Content-Type': 'application/json',
+        }
+        data = {
+            "amount": {{ Donor.amount_value }}, 
+            "email": {{ Donor.email}},
+            "reference": {96685849494},
+            "callback_url": " {% static url 'about' %}", # URL for the callback
+        }
+        response = requests.post(
+            "https://api.paystack.co/transaction/initialize",
+            headers=headers,
+            data=json.dumps(data),
+        )
+        if response.status_code == 200:
+            response_json = response.json()
+            transaction_reference = response_json["data"]["reference"]
+            # redirect the user to the payment page
+            return redirect(response_json["data"]["authorization_url"])
+        else:
+            # handle the error
+            pass
+    return render(request, 'base/donate.html')
