@@ -1,6 +1,7 @@
 
 from datetime import datetime
 from django.db import models
+import secrets
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.db.models.signals import post_save, pre_save
@@ -66,15 +67,16 @@ class Donor(models.Model):
     def _str_(self):
         return self.name
     
-
-
-
-def create_donor(sender, instance, created, **kwargs):
-    if created:
-        Donor.objects.create(username=instance)
-        print('New donor form submitted')
-
-
+    def amount_value(self) ->int:
+        return self.amount*100
+    
+    def reference(self, *args,**kwargs)-> None:
+        while not self.ref:
+            ref = secrets.token_urlsafe(50)
+            object_with_similar_ref = Donor.objects.filter(ref=ref)
+            if not object_with_similar_ref:
+                self.ref=ref
+        super().save(*args,**kwargs)
 
 class Message(models.Model):
     firstName = models.CharField(max_length=200, null= True)
