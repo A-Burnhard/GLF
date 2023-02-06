@@ -3,7 +3,8 @@ from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
-from django.db.models.signals import post_save, pre_save, request_finished
+from django.db.models.signals import post_save, pre_save
+from django.core.signals import request_finished
 from django.dispatch import receiver
 
 class PageHit(models.Model):
