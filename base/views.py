@@ -139,16 +139,20 @@ def donate(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         amount = request.POST.get('amount')
+        amount_in_cents = int(amount) * 100
+        donor = Donor.objects.create(name=name, email=email, amount=amount)
+        donor.reference()
+
         paystack_secret_key = "sk_test_3d2dd3bbd888a8dc0b88687560defe702c116457"
         headers = {
             'Authorization': 'Bearer ' + paystack_secret_key,
             'Content-Type': 'application/json',
         }
         data = {
-            "amount": amount, 
-            "email": email,
-            "reference": 'ghana8yrhe',
-            "callback_url": "{% static  'about' %}", # URL for the callback
+            "amount": amount_in_cents, 
+            "email": donor.email,
+            "reference": donor.ref,
+            "callback_url": "{% url  'about' %}", 
         }
         response = requests.post(
             "https://api.paystack.co/transaction/initialize",
@@ -158,9 +162,6 @@ def donate(request):
         if response.status_code == 200:
             response_json = response.json()
             transaction_reference = response_json["data"]["reference"]
-            donor = Donor.objects.create(
-                name=name, email=email, amount=amount, ref=reference
-            )
             # redirect the user to the payment page
             return redirect(response_json["data"]["authorization_url"])
         else:

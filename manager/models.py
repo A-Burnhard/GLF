@@ -1,15 +1,25 @@
-
-from datetime import datetime
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.contrib.auth.models import User
  
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
+class profile(AbstractUser):
+    name = models.CharField(max_length=200,null=True)
+    email = models.EmailField(unique=True, null= True)
+    bio = models.TextField(null=True)
 
-class Notification(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='sender_notification')
-    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipient_notification')
-    message = models.TextField()
-    read = models.BooleanField(default=False)
-    recieved_date = models.DateTimeField(auto_now_add=True)
+    avatar = models.ImageField(null=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    groups = models.ManyToManyField(
+        Group,
+        blank=True,
+        related_name='profile_groups',
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        blank=True,
+        related_name='profile_permissions',
+    )
