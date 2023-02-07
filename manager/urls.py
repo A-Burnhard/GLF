@@ -12,6 +12,7 @@ urlpatterns = [
     path('donor/', DonorList.as_view(), name= 'don'),
     path('calendar/', Calendar.as_view(), name= 'cal'),
     path('primary/', Primary.as_view(), name= 'prim'),
+    path('chat/<str:pk>', Chat.as_view(), name= 'chat'),
     path('account/', Account.as_view(), name= 'account'),
     path('messages/', MessageList.as_view(), name = 'message'),
     path('docs/', Documentation.as_view(), name= 'docs'),

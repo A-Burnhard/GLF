@@ -16,12 +16,12 @@ class profile(AbstractUser):
     groups = models.ManyToManyField(
         Group,
         blank=True,
-        related_name='profile_groups',
+        related_name='profile_user_groups',
     )
     user_permissions = models.ManyToManyField(
         Permission,
         blank=True,
-        related_name='profile_permissions',
+        related_name='profile_user_permissions',
     )
 
 class Room(models.Model):

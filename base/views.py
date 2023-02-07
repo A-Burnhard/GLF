@@ -22,7 +22,7 @@ class Management(TemplateView):
 
 
 class test(TemplateView):
-    template_name = 'base/donate.html'
+    template_name = 'manager/chat.html'
 
 class Programmes(TemplateView):
     template_name = 'base/programmes.html'

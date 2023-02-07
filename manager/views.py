@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from manager import serializers
+from django.db.models import Sum
 
 from rest_framework import generics, mixins, permissions
 from rest_framework.decorators import api_view
@@ -19,6 +20,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from base import models
 from base.models import Volunteer, Donor, User, Message
+from manager.models import profile, Room, Message
 from manager.serializers import VolunteerSerializer,DonorSerializer
 # from manager import models
 # from manager.models import Notification
@@ -125,7 +127,8 @@ class DonorList(APIView):
 
     def get(self, request):
         queryset = Donor.objects.all()
-        return Response({'don': queryset})    
+        total_amount = Donor.objects.all().sum()
+        return Response({'don': queryset},{'total':total_amount})    
 
 class MessageList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
@@ -137,10 +140,37 @@ class MessageList(APIView):
         queryset = Message.objects.all()
         return Response({'message': queryset}) 
 
-############### Chat View #########################
+########################## Chat View #########################
 
+class Chat(View):
+    template_name = 'manager/chat.html'
 
+    def get(self, request, pk,*args, **kwargs):
+        room = Room.objects.get(id=pk)
+        room_messages = room.message_set.all()
+        room_participants = room.participants.all()
+        room = Room.objects.get(id=pk)
+        message = Message.objects.create(
+            user = request.profile,
+            room =room,
+            body=request.POST.get('body')
+        )
+        room.participants.add(request.profile)
+        return redirect('room',pk = room.id)
+       
+        context = {'room': room, 'room_messages': room_messages,
+        'participants': participants}
+        return render(request, self.template_name, context)
 
+    def post(self, request, pk, *args, **kwargs):
+        room = Room.objects.get(id=pk)
+        message = Message.objects.create(
+            user = request.profile,
+            room =room,
+            body=request.POST.get('body')
+        )
+        room.participants.add(request.profile)
+        
 
 
 
