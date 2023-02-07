@@ -5,6 +5,7 @@ import requests, json
 from django.shortcuts import get_list_or_404, redirect, render
 from django.views.generic.base import TemplateView
 from django.views.generic import View
+from django.urls import reverse
 from manager.serializers import DonorSerializer, VolunteerSerializer
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
@@ -143,6 +144,8 @@ def donate(request):
         donor = Donor.objects.create(name=name, email=email, amount=amount)
         donor.reference()
 
+        callback_url = request.build_absolute_uri(reverse('glf:ds'))
+
         paystack_secret_key = "sk_test_3d2dd3bbd888a8dc0b88687560defe702c116457"
         headers = {
             'Authorization': 'Bearer ' + paystack_secret_key,
@@ -152,7 +155,7 @@ def donate(request):
             "amount": amount_in_cents, 
             "email": donor.email,
             "reference": donor.ref,
-            "callback_url": "{% url  'about' %}", 
+            "callback_url": callback_url,
         }
         response = requests.post(
             "https://api.paystack.co/transaction/initialize",

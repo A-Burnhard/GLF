@@ -1,14 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
-from django.contrib.auth.models import User
- 
+from django.contrib.auth.models import BaseUserManager
+
+class UserManager(BaseUserManager):
+    def create_user(self, username, email, password=None, **extra_fields):
+        # Code to create a normal user
+
+        def create_superuser(self, username, email, password, **extra_fields):
+        # Code to create a superuser
 
 class profile(AbstractUser):
     name = models.CharField(max_length=200,null=True)
     email = models.EmailField(unique=True, null= True)
     bio = models.TextField(max_length=200,null=True)
 
-    avatar = models.ImageField(null=True)
+    avatar = models.ImageField(null=True, upload_to='static/images/avatars')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -23,6 +29,7 @@ class profile(AbstractUser):
         blank=True,
         related_name='profile_user_permissions',
     )
+
 
 class Room(models.Model):
     host = models.ForeignKey(profile,on_delete=models.SET_NULL, null=True)

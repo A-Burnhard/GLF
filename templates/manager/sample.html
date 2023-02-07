@@ -1,0 +1,54 @@
+<thead class="thead-light">
+  <tr>
+     
+      <th>
+          <a href="javascript: void(0);"  >
+              Full name
+          </a>
+      </th>
+
+      <th>
+          <a href="javascript: void(0);"  >
+              Email
+          </a>
+      </th>
+      
+      <th>
+          <a href="javascript: void(0);"  >
+              Phone Number
+          </a>
+      </th>
+      <th>
+          <a href="javascript: void(0);" >
+              Message
+          </a>
+      </th>
+      
+      <th>
+          <a href="javascript: void(0);"  >
+              Date
+          </a>
+      </th>
+  </tr>
+</thead>
+
+<tbody class="list">
+ {% for mes in message %}
+  <tr>
+     
+      <td>
+          <div class="avatar avatar-circle avatar-xs me-2">
+              <span class="avatar-title text-bg-primary-soft"> {{ mes.firstName|slice:":1" }}</span>
+
+              <!-- <img src="{% static '/images/' %}" alt="..." class="avatar-img" width="80" height="50"> -->
+          </div>
+          <span class="name fw-bold">{{ mes.firstName }}</span>
+          <span class="name fw-bold">{{ mes.lastName }}</span>
+
+      </td>
+      <td class="email">{{ mes.email }}</td>
+      <td class="id">{{ mes.phoneNumber }}</td>
+      <td class="id">{{ mes.message }}</td>
+      <td class="id">{{ mes.date }}</td>
+  </tr>
+  {% endfor %}  

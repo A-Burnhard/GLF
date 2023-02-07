@@ -119,16 +119,19 @@ class VolunteerList(APIView):
                 
         return Response({'vol': queryset},)
 
-class DonorList(APIView):
-    renderer_classes = [TemplateHTMLRenderer]
+class DonorList(View):
     template_name = 'manager/donorlist.html'
-    permission_classes = [permissions.IsAuthenticated]
-
-
-    def get(self, request):
+  
+    def get(self, request, *args, **kwargs):
         queryset = Donor.objects.all()
         total_amount = Donor.objects.all().aggregate(Sum('amount'))['amount__sum']
-        return Response({'don': queryset},{'total':total_amount})    
+        context = {'don': queryset,'total':total_amount}
+        return render(request, self.template_name, context)
+
+    def post(self,request, *args, **kwargs):
+        pass
+
+
 
 class MessageList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
