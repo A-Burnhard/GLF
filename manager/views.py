@@ -127,7 +127,7 @@ class DonorList(APIView):
 
     def get(self, request):
         queryset = Donor.objects.all()
-        total_amount = Donor.objects.all().sum()
+        total_amount = Donor.objects.all().aggregate(Sum('amount'))['amount__sum']
         return Response({'don': queryset},{'total':total_amount})    
 
 class MessageList(APIView):
