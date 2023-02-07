@@ -25,7 +25,6 @@ from manager.serializers import VolunteerSerializer,DonorSerializer
 
 from django.views.generic import View
 
-@csrf_exempt
 def login_user(request):
 	if request.method == "POST":
 		username = request.POST['username']
@@ -118,25 +117,6 @@ class VolunteerList(APIView):
                 
         return Response({'vol': queryset},)
 
-# def my_handler(sender, instance, created, **kwargs):
-#     sender = User.request
-#     instance = Volunteer.objects.create
-#     notify.send(instance, verb='was saved')
-
-# post_save.connect(my_handler, sender=User.request)
-
-
-
-class TourList(APIView):
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'manager/tourlist.html'
-    permission_classes = [permissions.IsAuthenticated]
-
-
-    def get(self, request):
-        queryset = Tour.objects.all()
-        return Response({'tour': queryset})
-
 class DonorList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'manager/donorlist.html'
@@ -156,6 +136,26 @@ class MessageList(APIView):
     def get(self, request):
         queryset = Message.objects.all()
         return Response({'message': queryset}) 
+
+############### Chat View #########################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ############### VIEWING ALL ENTRIES #########################
